@@ -16,9 +16,9 @@ const useResponsiveStyles = () => {
     const updateStyles = () => {
       if (window.innerWidth <= 480) {
         setContainerStyles({
-          width: '100%', // Full width on mobile
-          height: 'auto', // Adjust height as needed
-          margin: '0 auto',
+          width: '300px', // Full width on mobile
+          height: '360px', // Adjust height as needed
+          margin: '0 0',
         });
       } else if (window.innerWidth <= 768) {
         setContainerStyles({
@@ -28,8 +28,8 @@ const useResponsiveStyles = () => {
         });
       } else if (window.innerWidth <= 1024) {
         setContainerStyles({
-          width: '350px', // Smaller width on tablets
-          height: '450px', // Adjust height as needed
+          width: '340px', // Smaller width on tablets
+          height: '440px', // Adjust height as needed
           margin: '0 0',
         });
       } else {
@@ -40,6 +40,7 @@ const useResponsiveStyles = () => {
         });
       }
     };
+
 
     window.addEventListener('resize', updateStyles);
     updateStyles(); // Initialize styles based on current window size

@@ -25,7 +25,7 @@ const UserProfile = () => {
         formData.append('product', profile_pic);
         
 
-        await fetch('https://projectbisonbackend.onrender.com/upload',{
+        await fetch('http://localhost:4000/upload',{
             method:'POST',
             headers:{
                 Accept:'application/json',
@@ -36,7 +36,7 @@ const UserProfile = () => {
 
         if(responceData.success)
         {
-            fetch('https://projectbisonbackend.onrender.com/addprofilephoto',{
+            fetch('http://localhost:4000/addprofilephoto',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -50,7 +50,7 @@ const UserProfile = () => {
     }
 
     // const RemoveProfilePhoto = async ()=>{
-    //     fetch('https://projectbisonbackend.onrender.com/addprofilephoto',{
+    //     fetch('http://localhost:4000/addprofilephoto',{
     //             method:'POST',
     //             headers:{
     //                 Accept:'application/form-data',
@@ -73,7 +73,7 @@ const UserProfile = () => {
 
     useEffect(() => {
         if (localStorage.getItem('auth-token')) {
-            fetch('https://projectbisonbackend.onrender.com/getuser', {
+            fetch('http://localhost:4000/getuser', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -111,7 +111,7 @@ const UserProfile = () => {
     const changePassword = () => {
         toggleModal();
         if (localStorage.getItem('auth-token') && newPassword) {
-            fetch('https://projectbisonbackend.onrender.com/changepassword', {
+            fetch('http://localhost:4000/changepassword', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',

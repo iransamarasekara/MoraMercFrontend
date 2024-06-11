@@ -67,11 +67,58 @@
   margin-left: 200px;
   margin-right: 200px;
   color: white;
+  text-shadow: 2px 2px 2px #00000085;
+  font-size: 30px;
   position: relative;
   border-radius: 20px; /* Make the corners round */
   border-radius: 20px; /* Make the corners round */
   min-height: 400px; /* Adjust this height as needed */
   border: 2px solid rgb(234, 234, 234); /* Add black border */
+}
+
+.left-box,
+.right-box .item,
+.bottom-box {
+  position: relative;
+}
+
+.left-box::before,
+.right-box .item::before,
+.bottom-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: 1; /* Ensure the overlay is behind the content */
+}
+
+.right-box .item .item-details{
+  font-size: 30px;
+  text-align: left;
+  position: absolute;
+  bottom: 25px;
+  left: 40px;
+  z-index: 2; /* Ensure the content is above the overlay */
+}
+
+.bottom-box .item-details {
+  position: absolute;
+  bottom: 30px;
+  left: -240px;
+  z-index: 2; /* Ensure the content is above the overlay */
+}
+
+.left-box .shirt {
+  font-size: 30px;
+  text-shadow: 2px 2px 2px #00000085;
+  position: absolute;
+  bottom: -160px;
+  left: -60px;
+  z-index: 2; /* Ensure the content is above the overlay */
 }
 
 .right-box .item {
@@ -84,13 +131,13 @@
   width: 500px;
   padding: 100px;
   color: white;
+  text-shadow: 2px 2px 2px #00000085;
   position: relative;
   border-radius: 20px; /* Make the corners round */
   min-height: 180px; /* Adjust this height as needed */
 }
 
 .item-details {
-  background: rgba(0, 0, 0, 0.5);
   padding: 10px;
   width: 80%;
   text-align: center;
@@ -98,7 +145,6 @@
 }
 
 .shirt {
-  background: rgba(0, 0, 0, 0.5);
   padding: 10px;
   width: 80%;
   margin-bottom: 200px;
@@ -114,7 +160,7 @@
 
 
 /* Tablet View Styles */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 480px) and (max-width: 1300px) {
   .newcollection {
     padding: 10px;
     margin-bottom: 75px;
@@ -138,21 +184,21 @@
   .left-box, .bottom-box {
     margin: 50px auto;
     min-height: 400px;
-    width: 85%;
+    width: 80%;
   }
 
   .right-box {
-    margin-top: -15%;
-    margin-bottom: -15%;
-    padding-left: 7.5%;
-    padding-right: 7.5%;
-    min-height: 900px;
+    margin-top: -10%;
+    margin-bottom: -10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    min-height: 1000px;
     width: 100%;
   }
 
   .right-box .item {
     width: 100%;
-    padding: 40px;
+    padding: 50px;
     min-height: 150px;
   }
 
@@ -161,69 +207,22 @@
   }
 }
 
-@media only screen and (min-width: 480px) and (max-width: 768px) {
+@media screen and (max-width: 480px){
   .newcollection {
     padding: 10px;
     margin-bottom: 75px;
+    margin-top: -150px;
   }
 
   .newcollection h1 {
-    font-size: 35px;
-    margin-top: -120px;
-  }
-
-  .newcollection hr {
-    width: 60%;
-    margin: 0 auto -40px;
-  }
-
-  .collections {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .left-box, .bottom-box {
-    margin: 50px auto;
-    min-height: 300px;
-    width: 90%;
-  }
-
-  .right-box {
-    margin-top: -17%;
-    margin-bottom: -17%;
-    padding-left: 5%;
-    padding-right: 5%;
-    min-height: 800px;
-    width: 100%;
-  }
-
-  .right-box .item {
-    width: 100%;
-    padding: 30px;
-    min-height: 150px;
-  }
-
-  .shirt {
-    margin-bottom: 100px;
-  }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-  .newcollection {
-    padding: 10px;
-    margin-bottom: 75px;
-    /* margin-top: 250px; */
-  }
-
-  .newcollection h1 {
+    display: none;
     font-size: 30px;
-    /* margin-top: -120px; */
-    margin-bottom: 25px;
+    margin-top: -150px;
   }
 
   .newcollection hr {
-    width: 60%;
-    margin: 0 auto -40px;
+    width: 90%;
+    margin: 100px auto -10px;
   }
 
   .collections {
@@ -233,36 +232,55 @@
 
   .left-box, .bottom-box {
     margin: 50px auto;
-    min-height: 300px;
-    width: 90%;
+    min-height: 400px;
+    width: 95%;
   }
 
   .right-box {
-    margin-top: -32%;
-    margin-bottom: -32%;
-    padding-left: 5%;
-    padding-right: 5%;
-    min-height: 800px;
+    align-items: center;
+    margin-top: -35%;
+    margin-bottom: -31%;
+    padding-left: 3%;
+    padding-right: 3%;
+    min-height: 1000px;
     width: 100%;
   }
 
   .right-box .item {
+    align-items: center;
     width: 100%;
-    padding: 30px;
+    padding: 50px;
     min-height: 150px;
   }
 
   .shirt {
-    margin-bottom: 100px;
+    margin-bottom: 150px;
   }
-  .item-details h2{
+
+  .right-box .item .item-details{
     font-size: 20px;
+    text-align: left;
+    position: absolute;
+    bottom: 25px;
+    left: 40px;
+    z-index: 2; /* Ensure the content is above the overlay */
   }
+  
+  .bottom-box .item-details {
+    font-size: 20px;
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    z-index: 2; /* Ensure the content is above the overlay */
+  }
+  
+  .left-box .shirt {
+    font-size: 20px;
+    text-shadow: 2px 2px 2px #00000085;
+    position: absolute;
+    bottom: -120px;
+    left: -30px;
+    z-index: 2; /* Ensure the content is above the overlay */
+  }
+  
 }
-
-
-
-
-
-
-

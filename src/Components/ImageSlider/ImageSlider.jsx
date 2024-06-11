@@ -1,12 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ImageSlider.css';
 
 const ImageSlider = ({ slides }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isMobileView, setIsMobileView] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobileView(window.innerWidth <= 480);
+        };
+
+        handleResize(); // Initial check
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const sliderStyles = {
-        height: '100%',
+        height: isMobileView ? '140%': '100%',
         position: 'relative',
+        width: isMobileView ? '95%' : '', // Add the missing colon here
+        margin: isMobileView ? '-90px auto': '0 auto',
     };
 
     const slideStyles = {

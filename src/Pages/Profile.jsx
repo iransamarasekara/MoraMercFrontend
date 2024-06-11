@@ -14,7 +14,7 @@ const Profile = () => {
 
     useEffect(() => {
         if (localStorage.getItem('auth-token')) {
-            fetch('http://localhost:4000/getuser', {
+            fetch('https://projectbisonbackend.onrender.com/getuser', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',

@@ -17,7 +17,7 @@ const DescriptionBox = (props) => {
 
   useEffect(() => {
     if (localStorage.getItem('auth-token')) {
-      fetch('http://localhost:4000/getuser', {
+      fetch('https://projectbisonbackend.onrender.com/getuser', {
         method: 'POST',
         headers: {
           Accept: 'application/form-data',
@@ -59,7 +59,7 @@ const DescriptionBox = (props) => {
       };
       setAllReviews(prevReviews => [newReview, ...prevReviews]);
       if (localStorage.getItem('auth-token')) {
-        fetch('http://localhost:4000/addreview', {
+        fetch('https://projectbisonbackend.onrender.com/addreview', {
           method: 'POST',
           headers: {
             Accept: 'application/json',

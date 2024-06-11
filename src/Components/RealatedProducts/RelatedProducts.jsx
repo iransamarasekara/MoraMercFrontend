@@ -11,7 +11,7 @@ const RelatedProducts = (props) => {
 
     useEffect(() => {
         // if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/getrelatedproducts',{
+            fetch('https://projectbisonbackend.onrender.com/getrelatedproducts',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',

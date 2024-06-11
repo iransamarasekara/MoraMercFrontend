@@ -26,7 +26,7 @@ const Signup = () => {
 
     
       let responseData;
-      await fetch('http://localhost:4000/signup', {
+      await fetch('https://projectbisonbackend.onrender.com/signup', {
         method: 'POST',
         headers: {
           Accept: 'application/form-data',

@@ -38,9 +38,21 @@ const ShopCategory = (props) => {
 
   return (
     <div className='shop-category'>
-      <div style={containerStyles}>
+      <div className='shop-category-banner-mobile' style={containerStyles}>
         <ImageSlider slides={arr}/>
       </div>
+      <div className="shopcategory-products">
+        {productArr.sort(dynamicSort).map((item, i) => {
+          return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price} rating={item.rating} reviewText={item.reviewText} no_of_rators={item.no_of_rators}/>
+        })}
+      </div>
+
+      <div className="shopcategory-products-mobile">
+        {productArr.sort(dynamicSort).map((item, i) => {
+          return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price} rating={item.rating} reviewText={item.reviewText} no_of_rators={item.no_of_rators} imageStyle={{ borderRadius: '60px' }} />
+        })}
+      </div>
+
       <div className='shopcategory-indexSort'>
         <p>
           <span>Showing 1-{productArr.length}</span> out of {productArr.length} products
@@ -54,11 +66,7 @@ const ShopCategory = (props) => {
           </select>
         </div>
       </div>
-      <div className="shopcategory-products">
-        {productArr.sort(dynamicSort).map((item, i) => {
-          return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price} rating={item.rating} reviewText={item.reviewText} no_of_rators={item.no_of_rators}/>
-        })}
-      </div>
+
       <div className="shopcategory-loadmore">
         Explore More
       </div>

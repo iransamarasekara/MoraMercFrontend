@@ -24,8 +24,9 @@
 /* Mobile view */
 @media (max-width: 480px) {
     .breadcrum {
+        display: none;
         margin: 50px 50px; /* Adjusted margin for mobile */
-        font-size: 13px; /* Reduced font size for mobile */
+        font-size: 10px; /* Reduced font size for mobile */
         gap: 4px; /* Reduced gap for mobile */
     }
 }

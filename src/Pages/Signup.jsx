@@ -11,20 +11,12 @@ const Signup = () => {
     faculty: "",
     department: "",
     batch: "",
-    profile_pic: '', //profile_default,////
+    profile_pic: '',//profile_default,////
   });
 
   
 
   const changeHandler = (e) => {
-    // const { name, value } = e.target;
-    // if (name === 'email') {
-    //     const emailRegex = /^[a-zA-Z0-9._%+-]+@uom\.lk$/;
-    //     if (!emailRegex.test(value)) {
-    //         alert('Please enter a valid uom mail address');
-    //         return;
-    //     }
-    // }
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -34,7 +26,7 @@ const Signup = () => {
 
     
       let responseData;
-      await fetch('https://projectbisonbackend.onrender.com/signup', {
+      await fetch('http://localhost:4000/signup', {
         method: 'POST',
         headers: {
           Accept: 'application/form-data',
@@ -53,24 +45,14 @@ const Signup = () => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();   
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@uom\.lk$/;
-    if (!emailRegex.test(formData.email)) {
-        alert('Please enter a valid uom mail address');
-        return;
-    } 
-    const isFormFilled = Object.entries(formData).every(([key, value]) => {
-        if (key === 'profile_pic') {
-            return true;
-        }
-        return value.trim() !== '';
-    });
+    event.preventDefault();    
+    const isFormFilled = Object.values(formData).every(value => value.trim() !== '');
     if (!isFormFilled) {
       alert('Please fill in all the required fields.');
       return;
     }
     signup();
-};
+  };
 
   return (
     <div className='signup'>

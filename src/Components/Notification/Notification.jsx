@@ -10,7 +10,7 @@ const Notification = () => {
 
     useEffect(() => {
         if (localStorage.getItem('auth-token')) {
-            fetch('https://projectbisonbackend.onrender.com/getuser', {
+            fetch('http://localhost:4000/getuser', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -26,7 +26,7 @@ const Notification = () => {
 
     useEffect(() => {
         if (localStorage.getItem('auth-token')) {
-            fetch('https://projectbisonbackend.onrender.com/getordersofuser', {
+            fetch('http://localhost:4000/getordersofuser', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',

@@ -73,7 +73,7 @@ const ShopContextProvider = (props) => {
 
 
     useEffect(() => {
-        fetch('https://projectbisonbackend.onrender.com/alladvertisements').then((response)=>response.json()).then((data)=>setAll_Advertisement(data));
+        fetch('http://localhost:4000/alladvertisements').then((response)=>response.json()).then((data)=>setAll_Advertisement(data));
     },[])
 
     
@@ -83,9 +83,9 @@ const ShopContextProvider = (props) => {
 
 
     useEffect(() => {
-        fetch('https://projectbisonbackend.onrender.com/allproducts').then((response)=>response.json()).then((data)=>setAll_Product(data));
+        fetch('http://localhost:4000/allproducts').then((response)=>response.json()).then((data)=>setAll_Product(data));
         if(localStorage.getItem('auth-token')){
-            fetch('https://projectbisonbackend.onrender.com/getcart',{
+            fetch('http://localhost:4000/getcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -124,7 +124,7 @@ const ShopContextProvider = (props) => {
         // }
         //end
         if(localStorage.getItem('auth-token')){
-            fetch('https://projectbisonbackend.onrender.com/addtocart',{
+            fetch('http://localhost:4000/addtocart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -153,7 +153,7 @@ const ShopContextProvider = (props) => {
 
         //end
         if(localStorage.getItem('auth-token')){
-            fetch('https://projectbisonbackend.onrender.com/removefromcart',{
+            fetch('http://localhost:4000/removefromcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -182,7 +182,7 @@ const ShopContextProvider = (props) => {
 
         //end
         if(localStorage.getItem('auth-token')){
-            fetch('https://projectbisonbackend.onrender.com/removefromcart',{
+            fetch('http://localhost:4000/removefromcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -209,7 +209,7 @@ const ShopContextProvider = (props) => {
         cartItems[itemId].color = [];
         //end
         if(localStorage.getItem('auth-token')){
-            fetch('https://projectbisonbackend.onrender.com/removeallfromcart',{
+            fetch('http://localhost:4000/removeallfromcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',

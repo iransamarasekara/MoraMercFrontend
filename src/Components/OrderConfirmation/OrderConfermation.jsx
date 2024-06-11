@@ -30,7 +30,7 @@ const OrderConfermation = () => {
 
     useEffect(() => {
         if(localStorage.getItem('auth-token')){
-            fetch('https://projectbisonbackend.onrender.com/getuser',{
+            fetch('http://localhost:4000/getuser',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -68,9 +68,6 @@ const OrderConfermation = () => {
         whatsApp:"",
         product_id:currentId,
         order_type:"",
-        total:0,
-        username:"",
-        productname:"",
     }) 
 
     const imageHandler = (e)=>{
@@ -104,22 +101,10 @@ const OrderConfermation = () => {
         let formData = new FormData();
         formData.append('order', image);
 
-        all_product.forEach((product)=>{
-            if(currentId === product.id){
-                order.total=cartItems[currentId].q*product.new_price;
-                order.productname=product.name;
-            }
-        })
-        all_user.forEach((user) => {
-            if (userEmail === user.email) {
-                order.username=user.name;
-            }
-        })
-
         if(imgReq ==='Pre-order')
 
         {
-            await fetch('https://projectbisonbackend.onrender.com/slipupload',{
+            await fetch('http://localhost:4000/slipupload',{
             method:'POST',
             headers:{
                 Accept:'application/json',
@@ -131,24 +116,12 @@ const OrderConfermation = () => {
             if(responceData.success)
             {   
                 
-                // all_product.map((product)=>{
-                //     if(currentId === product.id){
-                //         order.total=cartItems[currentId].q*product.new_price;
-                //         order.productname=product.name;
-                //     }
-                // })
-                // all_user.map((user) => {
-                //     if (userEmail === user.email) {
-                //         order.username=user.name;
-                //     }
-                // })
-
                 order.slip_image = responceData.image_url;
                 order.uder_id = userEmail;
                 order.product_size = cartItems[currentId].size;///////////
                 order.product_color = cartItems[currentId].color;///////////
                 console.log(order);
-                await fetch('https://projectbisonbackend.onrender.com/orderconfirmation',{
+                await fetch('http://localhost:4000/orderconfirmation',{
                     method:'POST',
                     headers:{
                         Accept:'application/json',
@@ -170,7 +143,7 @@ const OrderConfermation = () => {
                 order.product_size = cartItems[currentId].size;///////////
                 order.product_color = cartItems[currentId].color;///////////
                 console.log(order);
-                await fetch('https://projectbisonbackend.onrender.com/orderconfirmation',{
+                await fetch('http://localhost:4000/orderconfirmation',{
                     method:'POST',
                     headers:{
                         Accept:'application/json',

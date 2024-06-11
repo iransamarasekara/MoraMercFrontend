@@ -76,7 +76,7 @@
 .collections1 {
     margin-top: -30px;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+    gap: 50px;
     scale: 1;
 }
 }
@@ -97,7 +97,6 @@
 }
 
 .newcollections1 h2 {
-    margin-top: 2px;
     margin-bottom: 30px;
     font-size: 32px;
     text-align: center;
@@ -113,31 +112,54 @@
 }
 
 /* Small Mobile Version */
+/* Small Mobile Version */
 @media (max-width: 480px) {
-.newcollections1{
-    align-items: center;
-    /* margin: 0%; */
-    display: flex;
-    margin-top: 60px;
-}
-.newcollections1 h1 {
-    font-size: 20px;
-    align-items: center;
-    margin: 12px;
+    .newcollections1 {
+        position: relative;
+        margin-top: 0px;
+    }
+  
+    .newcollections1 h1 {
+        position: absolute;
+        font-size: 16px;
+        left: -20px; /* Fixed position */
+        top: -80px; /* Fixed position */
+    }
+  
+    .newcollections1 h2 {
+        position: absolute;
+        font-size: 21px;
+        left: -20px; /* Fixed position */
+        top: 0px; /* Fixed position */
+    }
+  
+    .collections1 {
+        gap: 20px; /* Reset gap */
+        width: 125.2%; /* Change width to fit its container */
+        height: auto; /* Change height to auto to fit the content */
+        overflow-x: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        scroll-snap-type: x mandatory;
+        padding-right: 25px;
+        padding-left: 25px;
+        padding-bottom: 50px;
+        align-items: center;
+        padding-top: 5px; /* Add padding to accommodate the fixed-position elements */
+    }
+
+    .collections1 img{
+        border-radius: 10px;
+    }
+  
+    .collections1::-webkit-scrollbar {
+        display: none;
+    }
 }
 
-.newcollections1 h2 {
-    font-size: 28px;
-    margin-bottom: 50px;
-}
 
-.collections1 {
-    grid-template-columns: 1fr;
-    row-gap: 40px;
-    scale: 1;
-}
-}
-
+  
 /* Small Mobile Version */
 @media (max-width: 340px) {
     .newcollections1 h1 {

@@ -18,9 +18,9 @@ const UserContextProvider = (props) => {
     const [currentId,setCurrentId] = useState(null);
 
     useEffect(() => {
-        fetch('https://projectbisonbackend.onrender.com/allusers').then((response)=>response.json()).then((data)=>setAll_User(data));
+        fetch('http://localhost:4000/allusers').then((response)=>response.json()).then((data)=>setAll_User(data));
         // if(localStorage.getItem('auth-token')){
-        //     fetch('https://projectbisonbackend.onrender.com/getcart',{
+        //     fetch('http://localhost:4000/getcart',{
         //         method:'POST',
         //         headers:{
         //             Accept:'application/form-data',
@@ -36,7 +36,7 @@ const UserContextProvider = (props) => {
     // const addToCart = (itemId)=>{
     //     setCartItems((prev)=>({...prev, [itemId]:prev[itemId]+1}));
     //     if(localStorage.getItem('auth-token')){
-    //         fetch('https://projectbisonbackend.onrender.com/addtocart',{
+    //         fetch('http://localhost:4000/addtocart',{
     //             method:'POST',
     //             headers:{
     //                 Accept:'application/form-data',
@@ -51,7 +51,7 @@ const UserContextProvider = (props) => {
     // const removeFromCart = (itemId)=>{
     //     setCartItems((prev)=>({...prev, [itemId]:prev[itemId]-1}));
     //     if(localStorage.getItem('auth-token')){
-    //         fetch('https://projectbisonbackend.onrender.com/removefromcart',{
+    //         fetch('http://localhost:4000/removefromcart',{
     //             method:'POST',
     //             headers:{
     //                 Accept:'application/form-data',

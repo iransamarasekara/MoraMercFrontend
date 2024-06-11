@@ -44,6 +44,10 @@
     
 }
 
+.shopcategory-products-mobile{
+    display: none;
+}
+
 .shopcategory-products img{
     /* height: 19vw;  
     width: 15vw;    */
@@ -160,24 +164,51 @@
 
 /* Small Mobile styles */
 @media (max-width: 480px) {
-    .shopcategory-products{
-        grid-template-columns: 1fr;
-        row-gap: 15px; 
-        column-gap: 5px; 
-        margin-bottom: 100px;
-        /* padding-right: 45px; */
-        /* padding-left: 10px; */
+
+    .shop-category-banner-mobile {
+        display: block;
     }
 
-    /* .shopcategory-products img{
-        height: 85vw;  
-        width: 72vw;   
-    } */
-
-    .shopcategory-loadmore{
-        width: 150px;
-        height: 40px;
-        margin-top: -50px;
-        margin-bottom: 20px;
+    .shopcategory-products {
+        display: none;
     }
+
+    .shopcategory-products-mobile {
+        /* position: absolute; */
+        scale: 0.88;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        column-gap: 25px;
+        row-gap: 30px;
+        justify-content: center;
+        padding-top: 0px; /* Add padding to the container */
+    }
+
+    .shopcategory-products-mobile img {
+        border-radius: 10px;
+         /* Ensure images fill their container */
+         /* Maintain aspect ratio */
+    }
+
+    .shopcategory-products-mobile .item {
+        width: 96%; /* Make items take full width of the grid cell */
+        height: auto; /* Allow items to adjust height based on content */
+    }
+
+    .shopcategory-loadmore {
+        font-size: 11px;
+        width: 100px;
+        height: 30px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .shopcategory-indexSort {
+        scale: 0.65;
+        display: flex;
+        margin: 0px 10px;
+        justify-content: space-between;
+        align-items: center;
+    } 
 }

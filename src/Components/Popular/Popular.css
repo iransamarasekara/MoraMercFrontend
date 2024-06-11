@@ -75,10 +75,8 @@
 .popular-item {
     margin-top: -30px;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+    gap: 50px;
     scale: 1;
-    /* margin-left: 7%;
-    margin-right: 7%; */
 }
 }
 
@@ -91,7 +89,6 @@
 }
 
 .popular h1 {
-    margin-top: 55px;
     font-size: 24px;
     text-align: center;
     margin-left: 0;
@@ -99,12 +96,11 @@
 }
 
 .popular h2 {
-    margin-top: 2px;
+    margin-bottom: 30px;
     font-size: 32px;
     text-align: center;
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 50px;
 }
 
 .popular-item {
@@ -114,56 +110,93 @@
 }
 }
 
-/* Small Mobile Version */
 @media (max-width: 480px) {
-
-.popular{
+  .popular {
+    position: relative;
     align-items: center;
-    /* margin: 0%; */
+    margin: 0;
     display: flex;
-    margin-top: 60px;
-    
-    /* grid-template-columns: 1fr; */
-}
-.popular h1 {
-    font-size: 20px;
-    align-items: center;
-    margin: 12px;
+    padding-bottom: 70px;
+    padding-top: 80px; /* Add padding to accommodate the fixed-position elements */
+  }
+
+  .popular h1 {
+    position: absolute;
+    top: 9px;
+    left: 20px;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .popular h2 {
+    position: absolute;
+    top: 90px;
+    left: 20px;
+    font-size: 21px;
+  }
+
+  .popular-item {
+    gap: 20px; /* Reset gap */
+    width: 100%; /* Change width to fit its container */
+    height: auto; /* Change height to auto to fit the content */
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-top: 50px; /* Add padding to accommodate the fixed-position elements */
 }
 
-.popular h2 {
-    font-size: 28px;
-    margin-bottom: 50px;
+  .popular-item img {
+    border-radius: 10px;
+  }
+
+
+  .popular-item::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-.popular-item {
-    /* grid-template-columns: 1fr;
-    column-gap: 0px;
-    row-gap: 40px; */
-    /* align-items: center;
-    justify-content: center; */
-    display:flex;
-    flex-direction: column;
-    
-    margin-left: 5%;
-    margin-right: 5%;
-}
-}
+
+
 
 /* Small Mobile Version */
 @media (max-width: 340px) {
-    .popular h1 {
-        font-size: 15px;
-        margin-bottom: 10px;
-    }
+    .popular {
+        align-items: center;
+        margin: 0;
+        display: flex;
+      }
     
-    .popular h2 {
-        font-size: 20px;
-    }
+      .popular h1 {
+        font-size: 16px;
+        margin-right: 275px;
+        margin-bottom: 8px;
+      }
     
-    .popular-item {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
+      .popular h2 {
+        font-size: 21px;
+        margin-right: 205px;
+      }
+    
+      .popular-item {
+        /* scale: 0.66; */
+        gap: 28px;
+        margin-top: -100px;
+        width: 151.1%; /* Take full width of the screen */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        display: flex;
+        flex-wrap: nowrap; /* Ensure items don't wrap to the next line */
+        padding-left: 18%; /* Add padding to the left */
+        padding-right: 18%; /* Add padding to the right */
+        justify-content: flex-start; /* Center items horizontally */
+      scroll-snap-type: x mandatory; /* Ensure items snap to the center */
+      }
+    
+      .popular-item::-webkit-scrollbar {
+        display: none; /* Hide scrollbar */
+      }
     }
     

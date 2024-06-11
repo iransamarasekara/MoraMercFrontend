@@ -251,6 +251,7 @@
 @media (max-width: 1024px) {
     .productdisplay {
         scale: 1;
+        gap: 15px;
     }
 
     .productdisplay-right-description{

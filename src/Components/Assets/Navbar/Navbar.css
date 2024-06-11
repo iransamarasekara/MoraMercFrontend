@@ -758,9 +758,9 @@ body {
   }
 
   .nav-top hr {
-    width: 1000px;
+    width: 90%;
     margin-top: 28px;
-    margin-left: -42px;
+    /* margin-left: -42px; */
     height: 1px;
     color: #000;
     justify-content: center;

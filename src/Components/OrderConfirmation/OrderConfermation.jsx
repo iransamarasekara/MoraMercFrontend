@@ -30,7 +30,7 @@ const OrderConfermation = () => {
 
     useEffect(() => {
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/getuser',{
+            fetch('https://projectbisonbackend.onrender.com/getuser',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -104,7 +104,7 @@ const OrderConfermation = () => {
         if(imgReq ==='Pre-order')
 
         {
-            await fetch('http://localhost:4000/slipupload',{
+            await fetch('https://projectbisonbackend.onrender.com/slipupload',{
             method:'POST',
             headers:{
                 Accept:'application/json',
@@ -121,7 +121,7 @@ const OrderConfermation = () => {
                 order.product_size = cartItems[currentId].size;///////////
                 order.product_color = cartItems[currentId].color;///////////
                 console.log(order);
-                await fetch('http://localhost:4000/orderconfirmation',{
+                await fetch('https://projectbisonbackend.onrender.com/orderconfirmation',{
                     method:'POST',
                     headers:{
                         Accept:'application/json',
@@ -143,7 +143,7 @@ const OrderConfermation = () => {
                 order.product_size = cartItems[currentId].size;///////////
                 order.product_color = cartItems[currentId].color;///////////
                 console.log(order);
-                await fetch('http://localhost:4000/orderconfirmation',{
+                await fetch('https://projectbisonbackend.onrender.com/orderconfirmation',{
                     method:'POST',
                     headers:{
                         Accept:'application/json',

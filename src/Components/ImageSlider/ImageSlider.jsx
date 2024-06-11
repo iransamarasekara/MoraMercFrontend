@@ -10,7 +10,7 @@ const ImageSlider = ({ slides }) => {
     };
 
     const slideStyles = {
-        width: '100%',
+        width: '100%' ,
         height: '100%',
         borderRadius: '20px',
         backgroundPosition: 'center',

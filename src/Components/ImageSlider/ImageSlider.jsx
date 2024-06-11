@@ -17,10 +17,8 @@ const ImageSlider = ({ slides }) => {
     }, []);
 
     const sliderStyles = {
-        height: isMobileView ? '140%': '100%',
+        height: '100%',
         position: 'relative',
-        width: isMobileView ? '95%' : '', // Add the missing colon here
-        margin: isMobileView ? '-90px auto': '0 auto',
     };
 
     const slideStyles = {

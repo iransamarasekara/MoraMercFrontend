@@ -14,7 +14,7 @@ const Signup = () => {
     profile_pic: '',//profile_default,////
   });
 
-  
+  const [message, setMessage] = useState('');
 
   const changeHandler = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -36,8 +36,7 @@ const Signup = () => {
       }).then((response) => response.json()).then((data) => responseData = data);
 
       if (responseData.success) {
-        localStorage.setItem('auth-token', responseData.token);
-        window.location.replace("/");
+        setMessage('Signup successful! Please check your email to verify your account.');
       } else {
         alert(responseData.errors);
       }
@@ -67,6 +66,7 @@ const Signup = () => {
         </div>
         <div className="signup-form">
           <h1>Sign Up</h1>
+          {message && <p className="message">{message}</p>}
           <div className='signup-fields'>
           <form onSubmit={handleSubmit} className='signup-fields'>
             <input name='username' value={formData.username} onChange={changeHandler} type='text' placeholder='Your Name' required />

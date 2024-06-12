@@ -17,6 +17,7 @@ import Search from './Pages/Search';
 import men_banner from './Components/Assets/banner_mens.png';
 import women_banner from './Components/Assets/banner_women.png';
 import kid_banner from './Components/Assets/banner_kids.png';
+import EmailVerification from './Pages/EmailVerification';
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
           {/* Routes for Login and Signup without layout */}
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
-
+          <Route path="/verify-email" element={<EmailVerification />} />
           {/* Routes with Navbar and Footer */}
           <Route path='/*' element={<WithLayout />} />
         </Routes>

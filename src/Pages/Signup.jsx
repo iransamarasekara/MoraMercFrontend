@@ -45,7 +45,17 @@ const Signup = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();    
-    const isFormFilled = Object.values(formData).every(value => value.trim() !== '');
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@uom\.lk$/;
+    if (!emailRegex.test(formData.email)) {
+        alert('Please enter a valid uom mail address');
+        return;
+    } 
+    const isFormFilled = Object.entries(formData).every(([key, value]) => {
+        if (key === 'profile_pic') {
+            return true;
+        }
+        return value.trim() !== '';
+    });
     if (!isFormFilled) {
       alert('Please fill in all the required fields.');
       return;

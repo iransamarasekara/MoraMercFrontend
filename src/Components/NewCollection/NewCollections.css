@@ -151,8 +151,8 @@
   
   width: 80%;
   margin-bottom: 200px;
-  text-align: center;
-  left: 30px;
+  text-align: left;
+  left: 40px;
   border-radius: 10px; /* Optional: round the corners of the details box */
 }
 

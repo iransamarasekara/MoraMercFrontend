@@ -208,6 +208,11 @@ const ProductDisplay = (props) => {
               </button>
             ))}
           </div>
+          {(product.size_guide)?<div className="sizeguide">
+            <a href = {product.size_guide}>Size Guide</a>
+          </div>
+          :<></>
+          }
         </div>
         <div className="productdisplay-right-addtoCart">
           <button onClick={() => { handleAction() }} className={!product.available ? 'unavailable-button' : ''}>

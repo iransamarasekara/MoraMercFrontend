@@ -68,6 +68,9 @@ const OrderConfermation = () => {
         whatsApp:"",
         product_id:currentId,
         order_type:"",
+        total:0,
+        username:"",
+        productname:"",
     }) 
 
     const imageHandler = (e)=>{
@@ -101,6 +104,18 @@ const OrderConfermation = () => {
         let formData = new FormData();
         formData.append('order', image);
 
+        all_product.forEach((product)=>{
+            if(currentId === product.id){
+                order.total=cartItems[currentId].q*product.new_price;
+                order.productname=product.name;
+            }
+        })
+        all_user.forEach((user) => {
+            if (userEmail === user.email) {
+                order.username=user.name;
+            }
+        })
+
         if(imgReq ==='Pre-order')
 
         {
@@ -116,6 +131,18 @@ const OrderConfermation = () => {
             if(responceData.success)
             {   
                 
+                // all_product.map((product)=>{
+                //     if(currentId === product.id){
+                //         order.total=cartItems[currentId].q*product.new_price;
+                //         order.productname=product.name;
+                //     }
+                // })
+                // all_user.map((user) => {
+                //     if (userEmail === user.email) {
+                //         order.username=user.name;
+                //     }
+                // })
+
                 order.slip_image = responceData.image_url;
                 order.uder_id = userEmail;
                 order.product_size = cartItems[currentId].size;///////////

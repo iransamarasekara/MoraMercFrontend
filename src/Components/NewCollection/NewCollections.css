@@ -108,7 +108,9 @@
 .bottom-box .item-details {
   position: absolute;
   bottom: 30px;
-  left: -240px;
+  /* left: -240px; */
+  text-align: left;
+  left: 40px;
   z-index: 2; /* Ensure the content is above the overlay */
 }
 

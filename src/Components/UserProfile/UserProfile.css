@@ -164,6 +164,7 @@
   border-radius: 3px;
   max-width: 600px;
   min-width: 300px;
+  z-index: 9999;
 }
 
 .modal-content input {

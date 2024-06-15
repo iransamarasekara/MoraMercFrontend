@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import './Navbar.css';
-import logo from '../logo.png';
+import logo from '../M.png';
 import cart_icon from '../cart_icon.png';
 import search_icon from '../search_icon.png';
 import { Link, useNavigate,useLocation} from 'react-router-dom';
@@ -113,10 +113,10 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="nav-title">
-          <Link to='./' style={{ textDecoration: 'none', color: 'black' }}><h1>MORAMERCH</h1></Link>
+          <Link to='./' style={{ textDecoration: 'none', color: 'black' }}><h1>MORAMERC</h1></Link>
         </div>
         <div className="nav-title-desktop">
-          <Link to='./' style={{ textDecoration: 'none', color: 'black' }}><h1>MORAMERCH</h1></Link>
+          <Link to='./' style={{ textDecoration: 'none', color: 'black' }}><h1>MORAMERC</h1></Link>
         </div>
         <hr/>
         <div className="nav-search">

@@ -17,7 +17,7 @@ const ShopCategory = (props) => {
 
   const containerStyles = {
     width:'100%',
-    height:'30vw',
+    height:'25vw',
     margin: '80px auto',
     alignItems : 'center'
   }

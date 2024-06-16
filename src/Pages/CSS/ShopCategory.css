@@ -212,3 +212,54 @@
         align-items: center;
     } 
 }
+
+@media (max-width: 380px) {
+
+    .shop-category-banner-mobile {
+        display: block;
+    }
+
+    .shopcategory-products {
+        display: none;
+    }
+
+    .shopcategory-products-mobile {
+        /* position: absolute; */
+        margin-top: -20px;
+        scale: 0.82;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        column-gap: 25px;
+        row-gap: 25px;
+        justify-content: center;
+        padding-top: 0px; /* Add padding to the container */
+    }
+
+    .shopcategory-products-mobile img {
+        border-radius: 10px;
+         /* Ensure images fill their container */
+         /* Maintain aspect ratio */
+    }
+
+    .shopcategory-products-mobile .item {
+        width: 96%; /* Make items take full width of the grid cell */
+        height: auto; /* Allow items to adjust height based on content */
+    }
+
+    .shopcategory-loadmore {
+        font-size: 11px;
+        width: 100px;
+        height: 30px;
+        margin-top: 0px;
+        margin-bottom: 40px;
+    }
+
+    .shopcategory-indexSort {
+        scale: 0.65;
+        display: flex;
+        margin: 0px 10px;
+        justify-content: space-between;
+        align-items: center;
+    } 
+}

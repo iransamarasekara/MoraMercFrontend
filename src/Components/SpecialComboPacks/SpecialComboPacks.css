@@ -1,0 +1,103 @@
+/* Main styles */
+.shop-category-banner-mobile {
+    width: 50%;
+    height: 30vh;
+    margin: 20px auto 0 auto;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+
+.home-ad {
+    display: flex;
+    /* flex-direction: row; */ 
+    margin: 80px 10%;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-ad-desc {
+    margin-top: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-ad-desc h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #171717;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.home-ad-desc button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.336);
+    background: linear-gradient(90deg,#000428,#004e92);
+    color: white;
+}
+
+.home-ad-desc button:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    .shop-category-banner-mobile {
+        width: 70%;
+    }
+
+    .home-ad {
+        flex-direction: column;
+        margin: 40px 5%;
+    }
+
+    .home-ad-desc {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .home-ad-desc h2 {
+        font-size: 24px;
+    }
+
+    .home-ad-desc button {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .shop-category-banner-mobile {
+        width: 90%;
+    }
+
+    .home-ad {
+        flex-direction: column;
+        margin: 20px 5%;
+    }
+
+    .home-ad-desc {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .home-ad-desc h2 {
+        font-size: 20px;
+    }
+
+    .home-ad-desc button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}

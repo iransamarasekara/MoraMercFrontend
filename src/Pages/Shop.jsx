@@ -3,12 +3,14 @@ import Hero from '../Components/Hero/Hero'
 import Popular from '../Components/Popular/Popular'
 import NewCollections from '../Components/NewCollection/NewCollections'
 import NewCollectionTrue from '../Components/NewCollectionTrue/NewCollectionTrue'
+import SpecialComboPacks from '../Components/SpecialComboPacks/SpecialComboPacks'
 // import NewsLetter from '../Components/NewsLetter/NewsLetter'
 
 const Shop = () => {
   return (
     <div>
       <Hero/>
+      <SpecialComboPacks/>
       <Popular/>
       <NewCollectionTrue/>
       <NewCollections/>

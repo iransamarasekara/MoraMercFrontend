@@ -198,18 +198,18 @@ const Navbar = () => {
           </div>
         </div>
         <div className='dropdown'>
-          <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/caps'>OTHERS {'>'} </Link></li>
+          <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/others'>OTHERS {'>'} </Link></li>
           <div className="dropdown-content">
             <div className="dropdown-column">
               <ul>
-                <li><Link style={{ textDecoration: 'none' }} to='/caps/type1' onClick={closeMenu}>Type 1</Link></li>
-                <li><Link style={{ textDecoration: 'none' }} to='/caps/type2' onClick={closeMenu}>Type 2</Link></li>
+                <li><Link style={{ textDecoration: 'none' }} to='/others/type1' onClick={closeMenu}>Type 1</Link></li>
+                <li><Link style={{ textDecoration: 'none' }} to='/others/type2' onClick={closeMenu}>Type 2</Link></li>
               </ul>
             </div>
             <div className="dropdown-column">
               <ul>
-                <li><Link style={{ textDecoration: 'none' }} to='/caps/type3' onClick={closeMenu}>Type 3</Link></li>
-                <li><Link style={{ textDecoration: 'none' }} to='/caps/type4' onClick={closeMenu}>Type 4</Link></li>
+                <li><Link style={{ textDecoration: 'none' }} to='/others/type3' onClick={closeMenu}>Type 3</Link></li>
+                <li><Link style={{ textDecoration: 'none' }} to='/others/type4' onClick={closeMenu}>Type 4</Link></li>
               </ul>
             </div>
           </div>
@@ -251,7 +251,7 @@ const Navbar = () => {
             <li><Link to='/' onClick={closeMenu}>HOME</Link></li>
             <li><Link to='/t-shirt' onClick={closeMenu}>T-SHIRTS</Link></li>
             <li><Link to='/wristbands' onClick={closeMenu}>WRISTBANDS</Link></li>
-            <li><Link to='/caps' onClick={closeMenu}>OTHERS</Link></li>
+            <li><Link to='/others' onClick={closeMenu}>OTHERS</Link></li>
             <li><Link to='/contact' onClick={closeMenu}>CONTACT</Link></li>
             <div className='powered-by'>
               <p>Powered by BISON Corps.</p>

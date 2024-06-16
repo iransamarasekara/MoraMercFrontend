@@ -27,14 +27,14 @@ const NewCollection = () => {
           </div>
           <div className="item" style={{ backgroundImage: `url(${image3})` }}>
             <div className="item-details">
-            <Link to='/caps' style={{textDecoration:'none', color:'white'}}><h2>LAPTOP STICKERS</h2></Link>
+            <Link to='/others' style={{textDecoration:'none', color:'white'}}><h2>LAPTOP STICKERS</h2></Link>
             </div>
           </div>
         </div>
       </div>
       <div className="bottom-box" style={{ backgroundImage: `url(${image4})` }}>
         <div className="item-details">
-        <Link to='/caps' style={{textDecoration:'none', color:'white'}}><h2>OTHER ITEMS</h2></Link>
+        <Link to='/others' style={{textDecoration:'none', color:'white'}}><h2>OTHER ITEMS</h2></Link>
         </div>
       </div> 
     </div>

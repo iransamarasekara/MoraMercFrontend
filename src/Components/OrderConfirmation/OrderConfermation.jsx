@@ -147,6 +147,7 @@ const OrderConfermation = () => {
                 order.uder_id = userEmail;
                 order.product_size = cartItems[currentId].size;///////////
                 order.product_color = cartItems[currentId].color;///////////
+                removeAllFromCart(currentId);//new-line-has-small-error
                 console.log(order);
                 await fetch('https://projectbisonbackend.onrender.com/orderconfirmation',{
                     method:'POST',
@@ -169,6 +170,7 @@ const OrderConfermation = () => {
                 order.uder_id = userEmail;
                 order.product_size = cartItems[currentId].size;///////////
                 order.product_color = cartItems[currentId].color;///////////
+                removeAllFromCart(currentId);//new-line-has-small-error
                 console.log(order);
                 await fetch('https://projectbisonbackend.onrender.com/orderconfirmation',{
                     method:'POST',

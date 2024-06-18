@@ -20,7 +20,7 @@ const OrderConfermation = () => {
 
     const toggleModal = () => {
         setModal(!modal);
-        checkImgReq(e);
+        // checkImgReq(e);
     };
 
     // if(modal) {
@@ -290,9 +290,8 @@ const OrderConfermation = () => {
                 navigate('/cart'); // Navigate back to the cart page
             };
 
-            const copyToClipboard = (e) => {
-                // const accountNumber = "1234567890123456";
-                navigator.clipboard.writeText(e);
+            const copyToClipboard = (accountNumber) => {
+                navigator.clipboard.writeText(accountNumber);
                 alert('Account number copied to clipboard!');
             };
     
@@ -405,7 +404,7 @@ const OrderConfermation = () => {
                                             <hr/>
                                             <p>Bank : {product.bank}</p>
                                             <p>Account Number :
-                                            <span className="account-number">{product.acc_no} &nbsp;<FaCopy className="copy-icon" onClick={copyToClipboard(product.acc_no)} /></span>
+                                            <span className="account-number">{product.acc_no} &nbsp;<FaCopy className="copy-icon" onClick={() => copyToClipboard(product.acc_no)} /></span>
                                             </p>
                                             <p>Account Name : {product.acc_name}</p>
                                             </>

@@ -1,367 +1,215 @@
-/* Desktop styles */
-@media (min-width: 600px) {
-
-    
-    .topbar {
-        display: none;
-    }
-
-    .orderconfirmation {
-        display: grid;
-        
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        margin-right:auto;
-        width: 80%;
-        box-sizing: border-box;
-    }
-
-    .orderconfirmation-left {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    /* .orderconfirmation-details {
-        height: 250px;
-        border: 1px solid #00000056;
-        border-radius: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        display: grid;
-        padding: 30px;
-        grid-template-columns: 1fr 2fr;
-        box-sizing: border-box;
-        align-items: center;
-    } */
-
-    .orderconfirmation-product img {
-        width: 150px;
-        height: 180px;
-        padding-right:10px;
-    }
-
-    .capsule {
-        margin-left: 10px;
-        list-style: none;
-        border: 1px solid #00000056;
-        border-radius: 20px;
-        padding: 1px;
-        display: inline-block;
-        height: auto;
-        width: auto;
-    }
-
-    .sizecolor img {
-        width: 16px;
-        height: 21px;
-        margin-left: 5px;
-        margin-right: 5px;
-        padding-top:5px;
-        display: inline-block;
-    }
-
-    .orderconfirmation-sizes li {
-        border: none;
-        box-shadow: none;
-        background-color: white;
-        list-style: none;
-        margin-left: 5px;
-        margin-right: 5px;
-        padding-bottom: 3px;
-        display: inline-block;
-    }
-
-    .productname {
-        margin-bottom: 10px;
-        margin-top: -15px;
-        font-size: 16px;
-    }
-
-    .sizecolor {
-        margin-bottom: 10px;
-        font-size: 14px;
-        color: #5f5f5f;
-    }
-
-    .productprize {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: -15px;
-    }
-
-    .orderconfirmation-billinput, .orderconfirmation-third {
-        padding-top: 20px;
-        width: 100%;
-    }
-
-    .paymentmethods, .pickup-method {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-        margin-bottom: 0px;
-    }
-
-    .paymentmethods p, .pickup-method p {
-        margin-bottom: 20px;
-        font-weight: 600;
-    }
-
-    .switch-toggle-container {
-        display: none;
-        align-items: center;
-    }
-
-    .switch-toggle {
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 35px;
-        background: #ddd;
-        border-radius: 50px;
-        transition: background .2s ease-in-out;
-        cursor: pointer;
-    }
-
-    .switch-toggle-input {
-        opacity: 0;
-        position: absolute;
-        z-index: -1;
-    }
-
-    .switch-toggle::after {
-        content: '';
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        width: 28px;
-        height: 28px;
-        background: #fff;
-        border-radius: 50px;
-        box-shadow: 0 0 3px 1px rgba(0,0,0,0.15);
-        transition: left .2s ease-in-out, width .2s ease-in-out, transform .2s ease-in-out;
-    }
-
-    .switch-toggle-input:checked + .switch-toggle {
-        background: #30e16b;
-    }
-
-    .switch-toggle-input:checked + .switch-toggle::after {
-        left: calc(100% - 2px);
-        transform: translateX(-100%);
-    }
-
-    .switch-toggle-input:disabled {
-        pointer-events: none;
-    }
-
-    .switch-toggle-input:disabled + .switch-toggle {
-        cursor: not-allowed;
-        background: #b2b2b2;
-    }
-
-    .switch-toggle-input:disabled + .switch-toggle::after {
-        background: #c7c7c7;
-    }
-
-    .switch-toggle-input:focus + .switch-toggle::before,
-    .switch-toggle-container:active .switch-toggle-input:not([disabled]) + .switch-toggle::before {
-        outline: 2px solid #5195fe;
-        outline-offset: 2px;
-    }
-
-    .switch-toggle-container:active .switch-toggle-input:not([disabled]) + .switch-toggle::after {
-        width: 34px;
-    }
-
-    .banktransfer {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        gap: 20px;
-        padding: 10px 20px;
-        border-radius: 12px;
-        border: 1px solid #00000056;
-        background: linear-gradient(90deg, #000000 0%, #130F40 100%);
-    }
-
-    .banktransfer p {
-        font-size: 16px;
-        font-weight: 500;
-        margin: 0;
-        white-space: nowrap;
-        color: white;
-    }
-
-    .banktransfer svg {
-        fill: white;
-        width: 60px;
-        height: 60px;
-        scale: 1.2;
-    }
-
-    .payhere img {
-        display: inline-flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        gap: 20px;
-        padding: 10px 0;
-        opacity: 0.2;
-    }
-
-    .orderconfirmation-thumnail-img {
-        max-width: 100%;
-        height: 200px;
-        width: 450px;
-        display: block;
-        margin: 40px auto;
-    }
-
-    .ordertype {
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
-
-    .ordertype p {
-        display: flex;
-        flex-direction: row;
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 30px;
-    }
-
-    .ordertype label {
-        margin: 10px;
-        align-items: center;
-        margin-bottom: 10px;
-        cursor: pointer;
-        position: relative;
-        padding-left: 30px;
-        margin-right: 40px;
-    }
-
-    .ordertype input[type="radio"] {
-        display: none;
-    }
-
-    .ordertype label::before {
-        content: "";
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #000000;
-        border-radius: 50%;
-        margin-right: 10px;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: background-color 0.3s ease;
-        box-sizing: border-box;
-    }
-
-    .ordertype input[type="radio"]:checked + label::before {
-        background-color: #ffffff;
-    }
-
-    .ordertype label::after {
-        content: "";
-        display: inline-block;
-        width: 12px;
-        height: 12px;
-        background-color: rgb(0, 0, 0);
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 10px;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: 1;
-    }
-
-    .ordertype input[type="radio"]:checked + label::after {
-        opacity: 1;
-    }
-
-    .orderconfirmation-right {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .orderconfirmation-total {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        padding: 20px;
-        border: 1px solid #00000056;
-        border-radius: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .orderconfirmation-total-item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    .orderconfirmation-total-item p {
-        margin: 0;
-        font-size: 18px;
-    }
-
-    .orderconfirmation-total-price p {
-        font-weight: 700;
-        font-size: 24px;
-    }
-
-    .orderconfirmation-confirm-btn {
-        background-color: linear-gradient(90deg, #000000 0%, #130F40 100%);
-        color: #ffffff;
-        width: 100%;
-        padding: 20px;
-        font-size: 20px;
-        font-weight: 800;
-        border: none;
-        border-radius: 30px;
-        text-align: center;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .orderconfirmation-confirm-btn:hover {
-        background-color: #333333;
-    }
-
-    .confirm {
-        display: none; 
-    }
-
-    
-    .orderconfirmation-left .paymentmethods {
-        order: 2;
-    }
-
-    .orderconfirmation-left .orderconfirmation-details {
-        order: 1;
-    }
+/* General styles for the order confirmation page */
+.maindiv{
+    margin-top: 80px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
+.orderconfirmation {
+    display: grid;
+    flex-direction: column;
+    grid-template-columns: 1fr 0.2fr;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 60px;
+}
 
+/* Styles for the left column */
+.orderconfirmation-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
 
+/* Styles for the right column */
+.orderconfirmation-right {
+    flex: 1;
+    margin-left: 20px;
+}
 
+/* Styles for the user's information section */
+.orderconfirmation-first,
+.orderconfirmation-payment,
+.orderconfirmation-sizes {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
 
+.orderconfirmation-first-item {
+    display: grid;
+    grid-template-columns: 0.8fr 5fr;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.orderconfirmation-first-item-name {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orderconfirmation-first-item-mail {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orderconfirmation-first-item-total {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orderconfirmation-first-item p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e2e2e2;
+    margin: 10px 0;
+}
+
+/* Styles for form fields and buttons */
+.orderconfirmation-itemfield,
+.orderconfirmation-itemfield-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    /* margin-left: 10%;
+    margin-right: 10%; */
+    align-items: center;
+}
+
+.orderconfirmation-itemfield p,
+.orderconfirmation-itemfield-btn p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.orderconfirmation-itemfield input,
+.orderconfirmation-itemfield-btn button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+}
+
+.orderconfirmation-itemfield-btn button {
+    cursor: pointer;
+}
+
+.add-order-btn {
+    /* margin-left: 10%;
+    margin-right: 10%; */
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.orderconfirmation-itemfield input:focus,
+.orderconfirmation-itemfield-btn button:focus,
+.add-order-btn:focus {
+    border-color: #0049ba;
+    outline: none;
+}
+
+.add-order-btn {
+    background-color: #0049ba;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.add-order-btn:hover {
+    background-color: #003080;
+}
+
+/* Styles for the modal to upload the bank slip */
+.orderconfirmation-second {
+    width: 100%;
+    /* margin-left: 10%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px 0px 0px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.orderconfirmation-thumnail-img {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    object-fit: cover;
+    transition: border-color 0.3s;
+}
+
+.orderconfirmation-thumnail-img:hover {
+    border-color: #0049ba;
+}
+
+/* Styles for sizes and colors section */
+.orderconfirmation-sizes p {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.orderconfirmation-sizes ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.orderconfirmation-sizes li {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.cartitems-remove-icon {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.active-modal {
+    overflow: hidden;
+}
 
 /* Tablet styles */
-/* @media (max-width: 1024px) {
+@media (max-width: 1024px) {
     .orderconfirmation {
         grid-template-columns: 1fr 0.4fr;
         gap: 20px;
@@ -403,11 +251,7 @@
     .orderconfirmation-sizes p {
         font-size: 14px;
     }
-
-    .confirm-desktop-only {
-        display: none; 
-    }
-} */
+}
 
 /* Mobile styles */
 @media (max-width: 768px) {
@@ -447,1082 +291,44 @@
 
 /* Small Mobile styles */
 @media (max-width: 600px) {
-
-    .confirm-desktop-only {
-        display: none; /* Hide by default */
-    }
-    
-    .topbar {
-        background: linear-gradient(90deg, #000000 0%, #130F40 100%);;
-        width: 100%;
-        height: 45px;
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        backdrop-filter: blur(10px);
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
-
-    .topbar svg {
-        fill: #ffffff;
-        height: 20px;
-        margin-top:2px;
-        width: 15px;
-    }
-
-    .topbar p {
-        color: #ffffff;
-        font-size: 13px;
-        font-weight: 500;
-        margin-right:auto;
-    }
-    
-    .back-button {
-        background-color: transparent;
-        border: none;
-        color: #333333;
-        font-size: 16px;
-        cursor: pointer;
-        padding: 5px 10px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-    
-    .back-button:hover {
-        background-color: #f0f0f0;
-    }
-    
     .orderconfirmation {
-        border: none;
-        border-radius: 20px;
-        padding: 10px;
-        margin: -120px;
-        margin-left: 0px;
-        margin-right: 0px;
-
-        margin-bottom: 170px;
-        width: calc(100% - 0px); /* Adjust width to fit within viewport */
-        width: auto; /* Set a max-width for larger screens */
-        box-sizing: border-box; /* Include padding and border in width calculation */
-        display: flex;
-        flex-direction: column; /* Adjust as needed */
-        align-items: center;
-        justify-content: center;
-    }
-
-    .orderconfirmation-details {
-        border: 1px solid #00000056;
-        border-radius: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        display: grid;
-        padding: auto;
         grid-template-columns: 1fr;
-        width: 100%; /* Ensure it takes the full width of its parent */
-        box-sizing: border-box; /* Include padding and border in width calculation */
-        align-items: center;
-        margin-top: 50px;
-        grid-template-columns: 1fr 3fr;
-        
+        padding: 10px;
     }
 
-    .orderconfirmation-product img {
-        width: 125px;
-        height: 162px;
-        margin-left: 7px;
-        margin-top: 6px;
-        border: 1px solid #00000056;
-        border-radius: 15px;
-    }
-
+    .orderconfirmation-first,
+    .orderconfirmation-payment,
     .orderconfirmation-sizes {
-        border: none;
-        box-shadow: none;
-        margin: 0px;
-        font-size: 12px;
-        background: none;
-        padding-right: 0%;
-        display: inline-block;
+        padding: 10px;
     }
 
-    .orderconfirmation-sizes img {
-        width: 8px;
-        height: 8px;
+    .orderconfirmation-first-item p,
+    .orderconfirmation-itemfield p,
+    .orderconfirmation-itemfield-btn p {
+        font-size: 14px;
     }
 
-    .capsule {
-        /* margin-left: 10px; */
-        list-style: none;
-        border: 1px solid #00000056;
-        border-radius: 20px;
-        padding: 1px 10px; /* Added horizontal padding for spacing */
-        height: 25px;
-        padding-right:  0px;
-        width: fit-content;
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* Ensures space between words and image */
-        white-space: nowrap;
-        gap: 5px; /* Adjust as needed */
-        scale: 0.8;
+    .orderconfirmation-itemfield input,
+    .orderconfirmation-itemfield-btn button,
+    .add-order-btn {
+        padding: 8px;
+        font-size: 14px;
+    }
 
+    .orderconfirmation-thumnail-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .orderconfirmation-sizes p {
+        font-size: 14px;
     }
     
-    .capsule-container {
-        display: flex;
-        flex-wrap: wrap; /* Allows wrapping to next line if there are too many capsules */
-        /* display: inline-flex; */
-    }
-    
-    .capsule img {
-        margin-bottom: 6px;
-        width: 20px; /* Adjust the width as needed */
-        height: 20px; /* Adjust the height as needed */
-    }
-    
-
-    .sizecolor img {
-        width: 16px;
-        height: 21px;
-        margin-left: 5px;
-        margin-right: 5px;
-        padding-top:5px;
-        display: inline-block;
+    .orderconfirmation-sizes ul {
+        gap: 5px;
     }
 
     .orderconfirmation-sizes li {
-        border: none;
-        box-shadow: none;
-        background-color: white;
-        list-style: none;
-
-    }
-
-    .productname {
-        margin-bottom: 10px;
-        margin-top: 0px;
-        font-size: 12px;
-        font-weight:600;
-    }
-
-    .sizecolor {
-        margin-bottom: 10px;
-        font-size: 10px;
-        color: #5f5f5f;
-        margin-left: -12px;
-    }
-
-    .productprize {
-        font-size: 13px;
-        font-weight: 600;
-        margin-bottom: 5px;
-        margin-top: -5px;
-        color: #676767;
-        /* put price in the right of the container */
-    }
-
-    .orderconfirmation-billinput {
-        border: 1px solid #00000056;
-        border-radius: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column; /* Change to column for full-width alignment */
-        white-space: nowrap;
-        padding: 10px;
-        width: 100%;
-    }
-
-    .paymentmethods {
-        display: flex;
-        flex-direction: column; /* Change to column for full-width alignment */
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%; /* Adjust according to your design */
-        box-sizing: border-box;
-        margin-bottom: 20px; /* Adjust as needed */
-    }
-
-    .paymentmethods p {
-        margin-bottom: 20px; /* Adjust as needed */
-        font-weight: 600;
-        margin-right: auto;
-        padding: auto;
-    }
-
-    .switch-toggle-container {
-        display: flex;
-        align-items: center; /* Center items vertically */
-    }
-    
-    .switch-toggle {
-        position: relative;
-        display: inline-block;
-        width: 50px;
-        height: 30px;
-        background: #ddd;
-        border-radius: 50px;
-        transition: background .2s ease-in-out;
-        cursor: pointer;
-    }
-    
-    .switch-toggle-input {
-        opacity: 0;
-        position: absolute;
-        z-index: -1;
-    }
-    
-    .switch-toggle::after {
-        content: '';
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        width: 26px;
-        height: 26px;
-        background: #fff;
-        border-radius: 50px;
-        box-shadow: 0 0 3px 1px rgba(0,0,0,0.15);
-        transition: left .2s ease-in-out, width .2s ease-in-out, transform .2s ease-in-out;
-    }
-    
-    .switch-toggle-input:checked + .switch-toggle {
-        background: #30e16b;
-    }
-    
-    .switch-toggle-input:checked + .switch-toggle::after {
-        left: calc(100% - 2px);
-        transform: translateX(-100%);
-    }
-    
-    .switch-toggle-input:disabled {
-        pointer-events: none;
-    }
-    
-    .switch-toggle-input:disabled + .switch-toggle {
-        cursor: not-allowed;
-        background: #b2b2b2;
-    }
-    
-    .switch-toggle-input:disabled + .switch-toggle::after {
-        background: #c7c7c7;
-    }
-    
-    .switch-toggle-input:focus + .switch-toggle::before,
-    .switch-toggle-container:active .switch-toggle-input:not([disabled]) + .switch-toggle::before {
-        outline: 2px solid #5195fe;
-        outline-offset: 2px;
-    }
-    
-    .switch-toggle-container:active .switch-toggle-input:not([disabled]) + .switch-toggle::after {
-        width: 34px;
-    }
-    
-    
-    .banktransfer {
-        display: flex;
-        flex-direction: row;
-        align-items: center; /* Center items vertically */
-        justify-content: space-between; /* Adjust as needed */
-        width: 100%;
-        gap: 20px;
-        padding: 5px 20px; /* Adjust padding as needed */
-        border-radius: 12px;
-        border: 1px solid #00000056;
-        background: linear-gradient(90deg, #000000 0%, #130F40 100%);;
-    }
-    
-    .banktransfer p {
-        font-size: 14px;
-        font-weight: 500;
-        margin: 0;
-        white-space: nowrap;
-        color: white;
-        padding: 10px 10px;
-        padding-left: 0px;
-    }
-    
-    .banktransfer svg {
-        fill: white;
-        width: 60px;
-        height: 60px;
-        scale:  1.2;
-        margin-right: 10px;
-    }
-    
-
-    .payhere img{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%; /* Ensure full width */
-        height: auto;
-        gap: 20px;
-        padding: 10px 0; /* Adjust padding as needed */
-        opacity: 0.2;
-    }
-
-    .accnumber{
-        font-size: 13px;
-        font-weight: 500;
-        margin: 0;
-        /* white-space: nowrap; */
-        color: rgb(0, 0, 0);
-        padding: 10px 10px;
-        padding-left: 0px;
-        margin-bottom: 20px;
-        border: 1px solid #00000056;
-        border-radius: 15px;
-        padding: 5%;
-
-    }
-
-    .accnumber h5{
-        font-size: 14px;
-        font-weight: 500;
-        margin-top: -10px;
-        white-space: nowrap;
-        color: rgb(0, 0, 0);
-        padding: 8px 8px;
-        padding-left: 0px;
-    }
-
-    .accnumber hr{
-        margin: 5px 0;
-        height: 1.2px;
-    }
-
-    .accnumber p{
-        font-size: 13px;
-        font-weight: 400;
-        margin-top: 0px;
-        white-space: nowrap;
-        color: rgb(0, 0, 0);
-        padding: 2px 2px;
-        padding-left: 0px;
-        white-space: wrap;
-    }
-
-    .account-number{
-        border: 1px solid #00000056;
-        padding: 1%;
-        padding-left:2%;
-        padding-right:2%;
-        font-weight:500;
-        border-radius: 20px;
-        margin-left:4px;
-        display: inline-block;
-    }
-
-    .ordertype {
-        margin-top: 10px;
-        margin-bottom: 20px;
-        /* scale: 0.9; */
-    }
-
-    .ordertype p {
-        display: flex;
-        flex-direction: row;
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 30px;
-        
-    }
-
-    .ordertype label {
-        margin: 8px;
-        align-items: center;
-        margin-bottom: 10px;
-        cursor: pointer;
-        position: relative;
-        padding-left: 30px;
-        margin-right: 30px;
-        font-size: 14px;
-    }
-
-    .ordertype input[type="radio"] {
-        display: none;
-    }
-
-    .ordertype label::before {
-        content: "";
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #000000;
-        border-radius: 50%;
-        margin-right: 10px;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: background-color 0.3s ease;
-        box-sizing: border-box;
-    }
-
-    .ordertype input[type="radio"]:checked + label::before {
-        background-color: #ffffff;
-    }
-
-    .ordertype label::after {
-        content: "";
-        display: inline-block;
-        width: 12px;
-        height: 12px;
-        background-color: rgb(0, 0, 0);
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 10px;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: 1;
-    }
-
-    .ordertype input[type="radio"]:checked + label::after {
-        opacity: 1;
-    }
-
-
-    .orderconfirmation-thumnail-img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 10px auto;
-    }
-
-    .confirm {
-        z-index: 1000;
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        width: 95%;
-        height: 140px;
-        border: 1px solid #ffffff;
-        transform: translateX(-50%);
-        display: inline-block;
-        margin-top: 10px;
-        padding: 10px 12px;
-        background: linear-gradient(90deg, #000000 0%, #130F40 100%);;
-        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(10px);
-        border: none;
-        color: white;
-        border-radius: 20px;
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        animation: slideUp 0.2s ease-out; /* Apply the animation */
-    }
-    
-
-    @keyframes slideUp {
-        from {
-            transform: translateX(-50%) translateY(100%);
-        }
-        to {
-            transform: translateX(-50%) translateY(0);
-        }
-    }
-
-    .add-order-btn {
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-top: auto;
-        height: 50px;
-        color: linear-gradient(90deg, #000000 0%, #130F40 100%);;
-        font-size: 18px;
-        font-weight: 800;
-        background-color: #30e16b;
-        border-radius: 30px;
-    }
-    
-
-    
-    .add-order-btn:hover {
-        background-color: #28b957;
-    }
-    
-    .orderconfirmation-first-item, .orderconfirmation-second-item {
-        display: flex;
-        flex-direction: row;
-        align-items: center; /* Center vertically */
-        padding: 0px;
-        /* Remove any default margin and padding */
-        margin: 10px 20px;
-    }
-
-    .orderconfirmation-second {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%; /* Ensure it takes the full width of the parent container */
-        padding: 50px; /* Add some padding for better spacing */
-    }
-    
-    .orderconfirmation-itemfield {
-        display: flex;
-        scale: 1;
-        flex-direction: column;
-        align-items: center;
-        height:140px;
-        width: 100%; /* Ensure it takes the full width of the parent container */
-        max-width: 100px; /* Set a max width to prevent it from becoming too wide */
-        margin: -10px; /* Center it within the parent container */
-    }
-    
-    .orderconfirmation-thumnail-img {
-        width: 100%; /* Make the image take the full width of the container */
-        height: 100%; /* Maintain aspect ratio */
-        max-width: 600px; /* Ensure it doesn't exceed the width of the parent container */
-        cursor: pointer; /* Indicate that the image is clickable */
-        object-fit: contain; /* Ensure the image fits well within the container */
-    }
-
-    .orderconfirmation-itemfield p{
-        font-size: 11px;
-        margin-left: auto;
-        margin-top:-40px;
-        margin-bottom:20px;
-        color: #b57e00;
-    }
-    
-    #file-input {
-        display: none; /* Hide the file input */
-    }
-    
-    
-    .orderconfirmation-first-item > p {
-        margin: 0;
-        padding-right: 5px; /* Adjust as needed */
-        font-weight: 600;
-        font-size: 18px;
-    }
-    
-    .orderconfirmation-first-item-total > p {
-        margin: 0;
-        font-weight: 700;
-        font-size: 23px;
-    }
-    
-
-    .orderconfirmation-third {
-        border: 1px solid #00000056;
-        border-radius: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column; /* Change to column for full-width alignment */
-        white-space: nowrap;
-        padding: 10px;
-        width: 100%;
-    }
-
-    .pickup-method {
-        display: flex;
-        flex-direction: column; /* Change to column for full-width alignment */
-        width: 100%;
-        height: 100%; /* Adjust according to your design */
-        box-sizing: border-box;
-        margin-bottom: 20px; /* Adjust as needed */
-    }
-    
-    .pickup-method p {
-        margin-bottom: 20px; /* Adjust as needed */
-        font-size: 16px;
-        font-weight: 600;
-        margin-right: auto;
-        padding: 20px;
-        
-    }
-    
-    .pickup-method label {
-        font-size: 13px;
-        margin: 20px;
-        margin-top: -20px;
-        align-items: center;
-        margin-bottom: 10px;
-        opacity: 0.4;
-        /* cursor: pointer; */
-        position: relative;
-        padding-left: 30px; /* Space for the custom radio */
-    }
-    
-    .pickup-method input[type="radio"] {
-        display: none; /* Hide the default radio button */
-    }
-    
-    .pickup-method label::before {
-        content: "";
-        display: inline-block;
-        width: 18px;
-        height: 18px;
-        border: 2px solid #000000;
-        border-radius: 50%;
-        margin-right: 10px;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: background-color 0.3s ease;
-        box-sizing: border-box;
-    }
-    
-    .pickup-method input[type="radio"]:checked + label::before {
-        background-color: #ffffff;
-    }
-    
-    .pickup-method label::after {
-        content: "";
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        background-color: rgb(0, 0, 0);
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 9px;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: 1;
-    }
-    
-    .pickup-method input[type="radio"]:checked + label::after {
-        opacity: 1;
-        /* still i cant see the dots when clicked */
-    }
-
-    .orderconfirmation-second {
-        width: 90%;
-        margin-left: 5%;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .orderconfirmation-first-item p{
-        font-size: 20px;
-        margin-right: auto;
-    }
-
-    .orderconfirmation-first-item-total p {
-        font-size: 25px;
-        gap:40px;
-    }
-
-    .orderconfirmation-itemfield input {
-        padding: 10px;
-        font-size: 12px;
-    }
-
-    .orderconfirmation-thumnail-img {
-        width: 150px;
-        height: 150px;
-    }
-
-    .desktop-only-header{
-        display: none;
-    }
-
-}
-@media (min-width: 600px) {
-    .desktoponly {
-        display: grid;
-        grid-template-columns: 1.8fr 1fr;
-        gap: 10px;
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-bottom: 200px;
-    }
-    .desktop-only-header{
-        /* margin-top: 80px; */
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-    /* .desktoponly .orderconfirmation-details{
-        padding: 30px;
-        align-items: center;
-        justify-content: center;
-        padding-top: 60px;
-    } */
-    .orderconfirmation-details ul{
-        list-style: none;
-    }
-    .desktoponly .capsule-container{
-        margin-top: 30px;
-    }
-    .desktoponly .orderconfirmation-third{
-        padding: 30px;
-    }
-    .leftbox1{
-        display: flex;
-        border: 1px solid #00000056;
-        flex-direction: column;
-        gap: 20px;
-        border-radius: 20px;
-        padding: 50px;
-        
-    }
-
-    .desktoponly-right .orderconfirmation-details {
-        /* height: 250px; */
-        border: 1px solid #00000056;
-        border-radius: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        /* display: grid; */
-        /* display: flex; */
-        padding: 30px;
-        width: auto;
-        /* grid-template-columns: 1fr 1fr; */
-        white-space: nowrap;
-        box-sizing: border-box;
-        align-items: center;
-    }
-
-    .pickup-method{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 30px;
-        border: 1px solid #00000056;
-        border-radius: 20px;
-    }
-
-    .pickup-method label {
-        font-size: 16px;
-        margin: 20px;
-        margin-top: -20px;
-        align-items: center;
-        margin-bottom: 10px;
-        opacity: 0.4;
-        /* cursor: pointer; */
-        position: relative;
-        padding-left: 30px; /* Space for the custom radio */
-    }
-    
-    .pickup-method input[type="radio"] {
-        display: none; /* Hide the default radio button */
-    }
-    
-    .pickup-method label::before {
-        content: "";
-        display: inline-block;
-        width: 18px;
-        height: 18px;
-        border: 2px solid #000000;
-        border-radius: 50%;
-        margin-right: 10px;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: background-color 0.3s ease;
-        box-sizing: border-box;
-    }
-    
-    .pickup-method input[type="radio"]:checked + label::before {
-        background-color: #ffffff;
-    }
-    
-    .pickup-method label::after {
-        content: "";
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        background-color: rgb(0, 0, 0);
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 9px;
-        transform: translate(-50%, -50%);
-        opacity: 1;
-        transition: opacity 0.3s ease;
-        z-index: 1;
-    }
-
-}
-
-@media (min-width: 910px) {
-
-        .desktop-only-header h1{
-            margin-left: 180px;
-            margin-bottom: 50px;
-            /* margin-top:80px; */
-            font-size: 40px;
-        }
-
-        .desktoponly {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 20px;
-            margin-left: 10%;
-            margin-right: 10%;
-            margin-bottom: 200px;
-        }
-
-        .desktoponly-left {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .leftbox1{
-            display: flex;
-            border: 1px solid #00000056;
-            flex-direction: column;
-            gap: 20px;
-            border-radius: 20px;
-            padding: 50px;
-            
-        }
-
-        .payhere img{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height:100px;
-            gap: 20px;
-            padding: 10px 0;
-            opacity: 0.1;
-            filter: grayscale(100%);
-        }
-
-        .banktransfer {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            gap: 20px;
-            padding: 10px 40px;
-            border-radius: 12px;
-            border: 1px solid #00000056;
-            background: linear-gradient(90deg, #000000 0%, #130F40 100%);
-        }
-
-        .banktransfer p {
-            font-size: 18px;
-            font-weight: 700;
-            margin: 0;
-            white-space: nowrap;
-            color: white;
-        }
-
-        .accnumber{
-            margin: 0;
-            white-space: nowrap;
-            padding: 10px 10px;
-            padding-left: 0px;
-            margin-bottom: 20px;
-            margin-top: -10px;
-            border: 1px solid #00000056;
-            border-radius: 15px;
-            padding: 5%;
-        }
-
-        .accnumber h5{
-            font-size: 17px;
-            font-weight: 600;
-            margin-top: -10px;
-            white-space: nowrap;
-            color: rgb(0, 0, 0);
-            padding: 8px 8px;
-            padding-left: 0px;
-        }
-
-        .accnumber hr{
-            margin: 15px 0;
-            height: 1.2px;
-        }
-
-        .accnumber p{
-            font-size: 16px;
-            font-weight: 400;
-            margin-top: 0px;
-            white-space: nowrap;
-            color: rgb(0, 0, 0);
-            padding: 2px 2px;
-            padding-left: 0px;
-            white-space: wrap;
-        }
-
-        .account-number{
-            border: 1px solid #00000056;
-            padding: 1%;
-            padding-left:2%;
-            padding-right:2%;
-            font-weight:500;
-            border-radius: 20px;
-            margin-left:4px;
-            display: inline-block;
-        }
-
-        .pickup-method{
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 30px;
-            border: 1px solid #00000056;
-            border-radius: 20px;
-        }
-
-        
-        .pickup-method p {
-            margin-bottom: 20px; /* Adjust as needed */
-            font-size: 18px;
-            font-weight: 700;
-            margin-right: auto;
-            padding: 20px;
-            
-        }
-        
-        .pickup-method label {
-            font-size: 16px;
-            margin: 20px;
-            margin-top: -20px;
-            align-items: center;
-            margin-bottom: 10px;
-            opacity: 0.4;
-            /* cursor: pointer; */
-            position: relative;
-            padding-left: 30px; /* Space for the custom radio */
-        }
-        
-        .pickup-method input[type="radio"] {
-            display: none; /* Hide the default radio button */
-        }
-        
-        .pickup-method label::before {
-            content: "";
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-            border: 2px solid #000000;
-            border-radius: 50%;
-            margin-right: 10px;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: background-color 0.3s ease;
-            box-sizing: border-box;
-        }
-        
-        .pickup-method input[type="radio"]:checked + label::before {
-            background-color: #ffffff;
-        }
-        
-        .pickup-method label::after {
-            content: "";
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background-color: rgb(0, 0, 0);
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 9px;
-            transform: translate(-50%, -50%);
-            opacity: 1;
-            transition: opacity 0.3s ease;
-            z-index: 1;
-        }
-
-        .desktoponly-right .orderconfirmation-details {
-            height: 250px;
-            border: 1px solid #00000056;
-            border-radius: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: grid;
-            /* display: flex; */
-            padding: 30px;
-            width: auto;
-            grid-template-columns: 1fr 1fr;
-            white-space: nowrap;
-            box-sizing: border-box;
-            align-items: center;
-        }
-
-        .confirm{
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .confirm p{
-            font-size: 18px;
-            font-weight: 700;
-            margin-right: auto;
-            white-space: nowrap;
-
-        }
-
-        .confirm button{
-            background: linear-gradient(90deg, #000000 0%, #130F40 100%);
-            color: white;
-            width: 100%;
-            padding: 20px;
-            font-size: 15px;
-            font-weight: 800;
-            border: none;
-            border-radius: 30px;
-            text-align: center;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .desktoponly-right ul {
-            list-style: none;
-            display: flex;
-            flex-direction: row;
-        }
-
-        .desktoponly .sizecolor {
-            margin-top: 50px;
-        }
-        .desktoponly-right .confirm {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .total-section{
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .desktoponly-right .orderconfirmation-first-item{
-            
-            display: flex;
-            align-items: center;
-        }
-
-}
-
-
-@media (max-width:600px){
-    /* .desktop-only-header{
-        margin-top: 80px;
-    } */
-    .desktoponly{
-        display: none;
-    }
-}
-
-@media (min-width:600px){
-    .orderconfirmation{
-        display: none;
+        padding: 3px 6px;
     }
 }

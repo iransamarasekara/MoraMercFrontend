@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './Components/Assets/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import Shop from './Pages/Shop';
@@ -18,11 +18,13 @@ import men_banner from './Components/Assets/banner_mens.png';
 import women_banner from './Components/Assets/banner_women.png';
 import kid_banner from './Components/Assets/banner_kids.png';
 import EmailVerification from './Pages/EmailVerification';
+import PreLoader from './Components/PreLoader/PreLoader';
 
 
 function App() {
   return (
     <div>
+      <PreLoader />
       <BrowserRouter>
         <Routes>
           {/* Routes for Login and Signup without layout */}
@@ -39,9 +41,13 @@ function App() {
 
 // Define a component with Navbar and Footer
 const WithLayout = () => {
+  const location = useLocation();
+  const isPaymentPage = location.pathname === '/order';
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
+      <PreLoader />
+      {!isPaymentPage && <Navbar />}
       <Routes>
         <Route path='/' element={<Shop />} />
         <Route path='/t-shirt' element={<ShopCategory banner={men_banner} category="t-shirts" />} />
@@ -59,7 +65,8 @@ const WithLayout = () => {
         <Route path='/search' element={<Search />} />
 
       </Routes>
-      <Footer />
+      {!isPaymentPage && <Footer />}
+      {/* <Footer /> */}
     </div>
   );
 };

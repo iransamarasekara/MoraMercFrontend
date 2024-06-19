@@ -20,9 +20,9 @@ const OrderConfermation = () => {
     const [showOrderTypes, setShowOrderTypes] = useState(true);
     const [currentProduct, setCurrentProduct] = useState(null);
 
-    const toggleModal = (e) => {
+    const toggleModal = () => {
         setModal(!modal);
-        checkImgReq(e);
+        // checkImgReq(e);
     };
 
     // if(modal) {
@@ -122,7 +122,7 @@ const OrderConfermation = () => {
     const [imgReq, setImgReq] = useState(null);
     const checkImgReq = (event) => {
         setImgReq(event.target.value);
-        setField2(event.target.value);
+        // setField2(event.target.value);
         
         changeHandler(event);
         
@@ -252,7 +252,9 @@ const OrderConfermation = () => {
             setOrderType(value);
             setNewFormData({ ...newFormData, order_type: value });
             if (value === 'Pre-order') {
-                toggleModal();
+                // toggleModal();
+                setModal(true);
+                checkImgReq(e);
                 setField2(value);
             } else {
                 setModal(false);

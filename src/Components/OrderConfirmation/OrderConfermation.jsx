@@ -430,7 +430,7 @@ const OrderConfermation = () => {
                                 <label htmlFor="preorder">Pre-order</label>
                                 <input type="radio" id="postorder" name="order_type" value="Post-order" onChange={handleOrderTypeChange} checked={orderType === 'Post-order'} />
                                 <label htmlFor="postorder">Post-order</label>
-                                <div className="orderconfirmation-itemfield">
+                                <div className="orderconfirmation-itemfield1">
                                     <p>Enter Your WhatsApp Number </p>
                                     <input required value={newFormData.whatsApp} onChange={checkWhatsAppReq} type='text' name='whatsApp' placeholder='Type here'/>
                                 </div>
@@ -600,7 +600,7 @@ const OrderConfermation = () => {
                                     <label htmlFor="preorder">Pre-order</label>
                                     <input type="radio" id="postorder" name="order_type" value="Post-order" onChange={handleOrderTypeChange} checked={orderType === 'Post-order'} />
                                     <label htmlFor="postorder">Post-order</label>
-                                    <div className="orderconfirmation-itemfield">
+                                    <div className="orderconfirmation-itemfield1">
                                         <p>Enter Your WhatsApp Number : </p>
                                         <input required value={newFormData.whatsApp} onChange={checkWhatsAppReq} type='text' name='whatsApp' placeholder='Type here'/>
                                     </div>

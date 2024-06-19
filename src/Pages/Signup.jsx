@@ -84,7 +84,7 @@ const Signup = () => {
             <input name='faculty' value={formData.faculty} onChange={changeHandler} type='text' placeholder='Faculty' required />
             <input name='department' value={formData.department} onChange={changeHandler} type='text' placeholder='Department' required />
             <input name='batch' value={formData.batch} onChange={changeHandler} type='text' placeholder='Batch' required />
-            <input name='email' value={formData.email} onChange={changeHandler} type='email' placeholder='Email Address' required />
+            <input name='email' value={formData.email} onChange={changeHandler} type='email' placeholder='University Email Address' required />
             <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' required />
             <button type="submit">Sign Up</button>
           </form>

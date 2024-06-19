@@ -24,7 +24,7 @@ import PreLoader from './Components/PreLoader/PreLoader';
 function App() {
   return (
     <div>
-      <PreLoader />
+      {/* <PreLoader /> */}
       <BrowserRouter>
         <Routes>
           {/* Routes for Login and Signup without layout */}

@@ -37,6 +37,7 @@ const Signup = () => {
 
       if (responseData.success) {
         setMessage('Signup successful! Please check your email to verify your account.');
+        alert('Please check your email to verify your account. If not check your spam folder.');
       } else {
         alert(responseData.errors);
       }
@@ -76,7 +77,7 @@ const Signup = () => {
         </div>
         <div className="signup-form">
           <h1>Sign Up</h1>
-          {message && <p className="message">{message}</p>}
+          {/* {message && <p className="message">{message}</p>} */}
           <div className='signup-fields'>
           <form onSubmit={handleSubmit} className='signup-fields'>
             <input name='username' value={formData.username} onChange={changeHandler} type='text' placeholder='Your Name' required />
@@ -86,9 +87,11 @@ const Signup = () => {
             <input name='batch' value={formData.batch} onChange={changeHandler} type='text' placeholder='Batch' required />
             <input name='email' value={formData.email} onChange={changeHandler} type='email' placeholder='University Email Address' required />
             <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' required />
+            {message && <p className="message">{message}</p>}
             <button type="submit">Sign Up</button>
           </form>
           </div>
+          
           {/* <button onClick={handleSubmit}>Sign Up</button> */}
         </div>
       </div>

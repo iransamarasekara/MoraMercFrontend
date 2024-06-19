@@ -12,7 +12,7 @@ const PreLoader = () => {
         
         <span >MoraMerc</span >
         <span >Powered By</span >
-        <span >BisonCorps</span >
+        <span >BisonCorps.</span >
         
       </div>
     </div>

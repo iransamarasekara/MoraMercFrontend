@@ -17,10 +17,46 @@ const ShopCategory = (props) => {
 
   const containerStyles = {
     width:'100%',
-    height:'25vw',
+    height:'18vw',
     margin: '80px auto',
-    alignItems : 'center'
+    alignItems : 'center',
   }
+
+  
+    const [styles, setStyles] = useState(getStyles(window.innerWidth));
+  
+    function getStyles(width) {
+      if (width <= 480) {
+        return {
+          width: '100%',
+          height: '30vw',
+          margin: '20px auto',
+          alignItems: 'center',
+        };
+      } else if (width <= 768) {
+        return {
+          width: '100%',
+          height: '25vw',
+          margin: '40px auto',
+          alignItems: 'center',
+        };
+      } else {
+        return {
+          width: '100%',
+          height: '20vw',
+          margin: '80px auto',
+          alignItems: 'center',
+        };
+      }
+    }
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setStyles(getStyles(window.innerWidth));
+      };
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
   const changeHandler = (e) => {
     setSortMethod(e.target.value);
@@ -38,7 +74,7 @@ const ShopCategory = (props) => {
 
   return (
     <div className='shop-category'>
-      <div className='shop-category-banner-mobile' style={containerStyles}>
+      <div className='shop-category-banner-mobile' style={styles}>
         <ImageSlider slides={arr}/>
       </div>
       

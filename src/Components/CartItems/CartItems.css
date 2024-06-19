@@ -142,7 +142,7 @@
     height: 50px;
     outline: none;
     border: none;
-    background: #000000;
+    background: linear-gradient(90deg, #000000 0%, #130F40 100%);
     color: #fff;
     font-size: 13px;
     font-weight: 800;

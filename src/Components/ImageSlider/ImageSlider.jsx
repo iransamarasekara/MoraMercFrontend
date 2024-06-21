@@ -119,11 +119,12 @@ const ImageSlider = ({ slides }) => {
             {(slides.length>1) && <div style={leftArrowStyles} onClick={goToPrevious}>❮</div>}
             {(slides.length>1) && <div style={rightArrowStyles} onClick={goToNext}>❯</div>}
             {renderSlide(slides[currentIndex])}
-            <div style={dotsContainerStyles}>
+            {(slides.length>1) && <div style={dotsContainerStyles}>
                 {slides.map((slide, slideIndex) => (
                     <div key={slideIndex} style={dotStyles} onClick={()=>goToSlide(slideIndex)}>⚬</div>
                 ))}
             </div>
+            }
         </div>
     );
 };

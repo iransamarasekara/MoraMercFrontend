@@ -1,28 +1,26 @@
 /* Notification.css */
 
 .notification-container {
-    /* width: 100%; */
     margin: 30px 60px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    /* overflow: hidden; */
-    /* display: flex; */
-    flex-direction: column-reverse; /* Reverse the flex direction to stack messages from bottom to top */
-
+    overflow-y: auto; /* Ensure the container can scroll */
+    max-height: 500px; /* Define a max-height for scrollability */
+    display: flex;
+    flex-direction: column-reverse;
+    /* Stack messages from bottom to top */
 }
 
-.notification-header{
+.notification-header {
     padding: 35px;
     height: 100px;
     width: 100%;
-    /*make the bg colour fade away from left*/
-    /* background: linear-gradient(90deg,#002980 0%, #0049BA 100%); */
-    /* add another color to the gradient */
-    color: #000000; /* White text color */
+    background: linear-gradient(90deg, #002980 0%, #0049BA 50%, #007BFF 100%); /* Gradient background with an additional color */
+    color: #FFFFFF; /* Corrected text color to white */
     font-size: 40px;
     font-weight: bold;
     text-align: center;
-    border-radius: 20px 0 20px 20px; /* Rounded corners on the top */
+    border-radius: 10px 10px 0 0; /* Rounded corners on the top */
 }
 
 .notification-item {
@@ -37,35 +35,28 @@
     margin: 0;
 }
 
-/* Style to make the panel scrollable */
-.notification-container {
-    overflow-y: auto;
-}
-
-/* Style for the new message box */
 .new-message {
-    background-color: #0059ff3c; /* Example background color for new messages */
-    font-weight: 600; /* Example style for new messages */
+    background-color: #0059ff3c; /* Background color for new messages */
+    font-weight: 600; /* Style for new messages */
 }
 
 .latest-tag {
     margin-left: 5px;
     background: linear-gradient(90deg, #002980 0%, #0049BA 100%);
-    color: #ffffff; /* Example text color */
+    color: #ffffff; /* Text color */
     padding: 2px 5px;
     font-size: 15px;
     font-weight: 500;
     border-radius: 10px;
 }
 
-/* New message indicator */
 .new-message-indicator {
     background-color: #ff5555; /* Red background color */
     color: #fff; /* White text color */
     padding: 5px 10px; /* Padding */
     border-radius: 20px; /* Rounded corners */
     font-weight: bold; /* Bold text */
-    position: relative; /* Position it absolutely */
+    position: absolute; /* Position it relative to its parent */
     top: 10px; /* Adjust top position */
     right: 10px; /* Adjust right position */
     z-index: 1; /* Ensure it's on top of other elements */
@@ -73,8 +64,8 @@
 
 .mark-as-read {
     position: absolute;
-    top: 25px; 
-    /* left: 760px;  */
+    top: 25px;
+    right: 20px; /* Adjusted for consistency */
     cursor: pointer; /* Add cursor pointer for interaction */
 }
 

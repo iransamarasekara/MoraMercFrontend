@@ -34,3 +34,29 @@
     opacity: 0;
     color: white;
 }
+
+/* Adjustments for mobile devices */
+@media (max-width: 480px) {
+    .preloader {
+        font-size: 16px;
+    }
+
+    .preloader .texts-container {
+        height: 50px;
+        width: 300px;
+        font-size: 16px;
+    }
+}
+
+/* Adjustments for tablet devices */
+@media (max-width: 768px) {
+    .preloader {
+        font-size: 18px;
+    }
+
+    .preloader .texts-container {
+        height: 55px;
+        width: 350px;
+        font-size: 18px;
+    }
+}

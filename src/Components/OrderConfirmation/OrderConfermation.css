@@ -38,6 +38,8 @@
         width: 150px;
         height: 180px;
         padding-right:10px;
+        border-radius: 15px;
+        padding: 8px;
     }
 
     .capsule {
@@ -1162,9 +1164,9 @@
     .desktoponly .capsule-container{
         margin-top: 30px;
     }
-    .desktoponly .orderconfirmation-third{
-        /* padding: 30px; */
-    }
+    /* .desktoponly .orderconfirmation-third{
+        padding: 30px;
+    } */
     .leftbox1{
         display: flex;
         border: 1px solid #00000056;
@@ -1544,7 +1546,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: grid;
             /* display: flex; */
-            padding: 30px;
+            padding: 20px;
             width: auto;
             grid-template-columns: 1fr 1fr;
             white-space: nowrap;

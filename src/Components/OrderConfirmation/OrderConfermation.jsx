@@ -167,7 +167,7 @@ const OrderConfermation = () => {
                 order.uder_id = userEmail;
                 order.product_size = cartItems[currentId].size;///////////
                 order.product_color = cartItems[currentId].color;///////////
-                removeAllFromCart(currentId);//new-line-has-small-error
+                // removeAllFromCart(currentId);//new-line-has-small-error
                 console.log(order);
                 await fetch('https://projectbisonbackend.onrender.com/orderconfirmation',{
                     method:'POST',
@@ -177,7 +177,8 @@ const OrderConfermation = () => {
                     },
                     body:JSON.stringify(order),
                 }).then((resp) =>resp.json()).then((data)=>{
-                    data.success?alert("Your Response Added Successfully. Thank You!"):alert("Failed");
+                    removeAllFromCart(currentId);
+                    data.success?alert("Your Response Added Successfully. You should recieve an email. Thank You!"):alert("Failed");
                     if(data.success)
                     {
                         removeAllFromCart(currentId);
@@ -190,7 +191,7 @@ const OrderConfermation = () => {
                 order.uder_id = userEmail;
                 order.product_size = cartItems[currentId].size;///////////
                 order.product_color = cartItems[currentId].color;///////////
-                removeAllFromCart(currentId);//new-line-has-small-error
+                // removeAllFromCart(currentId);//new-line-has-small-error
                 console.log(order);
                 await fetch('https://projectbisonbackend.onrender.com/orderconfirmation',{
                     method:'POST',
@@ -200,7 +201,8 @@ const OrderConfermation = () => {
                     },
                     body:JSON.stringify(order),
                 }).then((resp) =>resp.json()).then((data)=>{
-                    data.success?alert("Your Response Added Successfully. Thank You!"):alert("Failed");
+                    removeAllFromCart(currentId);
+                    data.success?alert("Your Response Added Successfully. You should recieve an email. Thank You!"):alert("Failed");
                     if(data.success)
                     {
                         removeAllFromCart(currentId);

@@ -4,6 +4,7 @@ import Popular from '../Components/Popular/Popular'
 import NewCollections from '../Components/NewCollection/NewCollections'
 import NewCollectionTrue from '../Components/NewCollectionTrue/NewCollectionTrue'
 import SpecialComboPacks from '../Components/SpecialComboPacks/SpecialComboPacks'
+import HomeAd from '../Components/HomeAd/HomeAd'
 // import NewsLetter from '../Components/NewsLetter/NewsLetter'
 
 const Shop = () => {
@@ -11,6 +12,7 @@ const Shop = () => {
     <div>
       <Hero/>
       <SpecialComboPacks/>
+      <HomeAd/>
       <Popular/>
       <NewCollectionTrue/>
       <NewCollections/>

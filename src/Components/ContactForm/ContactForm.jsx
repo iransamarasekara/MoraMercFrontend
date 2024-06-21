@@ -38,6 +38,7 @@ function ContactForm() {
         if (widget) {
           widget.style.width = '200px';
           widget.style.height = '400px';
+          widget.style.zIndex = '1050';
           clearInterval(intervalId);
         }
       }, 100);

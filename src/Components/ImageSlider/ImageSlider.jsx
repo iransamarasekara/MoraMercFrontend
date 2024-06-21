@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './ImageSlider.css';
 
-const ImageSlider = ({ slides }) => {
+const ImageSlider = ({ slides, autoSlideInterval = 6000 }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isMobileView, setIsMobileView] = useState(false);
+    const autoSlideRef = useRef();
 
     useEffect(() => {
         const handleResize = () => {
@@ -15,6 +16,19 @@ const ImageSlider = ({ slides }) => {
 
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+    useEffect(() => {
+        autoSlideRef.current = goToNext;
+    });
+
+    useEffect(() => {
+        const play = () => {
+            autoSlideRef.current();
+        };
+
+        const interval = setInterval(play, autoSlideInterval);
+        return () => clearInterval(interval);
+    }, [currentIndex, autoSlideInterval]);
 
     const sliderStyles = {
         height: '100%',
@@ -65,13 +79,13 @@ const ImageSlider = ({ slides }) => {
 
     const goToPrevious = () => {
         const isFirstSlide = currentIndex === 0;
-        const newIndex = isFirstSlide ? slides.length - 1: currentIndex-1;
+        const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
         setCurrentIndex(newIndex);
     };
 
     const goToNext = () => {
-        const isLastSlide = currentIndex === slides.length-1;
-        const newIndex = isLastSlide ? 0 : currentIndex +1;
+        const isLastSlide = currentIndex === slides.length - 1;
+        const newIndex = isLastSlide ? 0 : currentIndex + 1;
         setCurrentIndex(newIndex);
     };
 
@@ -116,15 +130,14 @@ const ImageSlider = ({ slides }) => {
 
     return (
         <div style={sliderStyles}>
-            {(slides.length>1) && <div style={leftArrowStyles} onClick={goToPrevious}>❮</div>}
-            {(slides.length>1) && <div style={rightArrowStyles} onClick={goToNext}>❯</div>}
+            {(slides.length > 1) && <div style={leftArrowStyles} onClick={goToPrevious}>❮</div>}
+            {(slides.length > 1) && <div style={rightArrowStyles} onClick={goToNext}>❯</div>}
             {renderSlide(slides[currentIndex])}
-            {(slides.length>1) && <div style={dotsContainerStyles}>
+            {(slides.length > 1) && <div style={dotsContainerStyles}>
                 {slides.map((slide, slideIndex) => (
-                    <div key={slideIndex} style={dotStyles} onClick={()=>goToSlide(slideIndex)}>⚬</div>
+                    <div key={slideIndex} style={dotStyles} onClick={() => goToSlide(slideIndex)}>⚬</div>
                 ))}
-            </div>
-            }
+            </div>}
         </div>
     );
 };

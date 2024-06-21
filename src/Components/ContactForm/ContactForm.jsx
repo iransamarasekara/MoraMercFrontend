@@ -11,7 +11,6 @@ function ContactForm() {
     const script = document.createElement('script');
     script.src = "https://cdn.botpress.cloud/webchat/v1/inject.js";
     script.async = true;
-    script.style.zIndex = '1050';
     document.body.appendChild(script);
 
     script.onload = () => {
@@ -39,7 +38,6 @@ function ContactForm() {
         if (widget) {
           widget.style.width = '200px';
           widget.style.height = '400px';
-          widget.style.zIndex = '1050';
           clearInterval(intervalId);
         }
       }, 100);

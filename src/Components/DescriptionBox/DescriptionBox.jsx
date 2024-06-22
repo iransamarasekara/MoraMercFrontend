@@ -71,7 +71,9 @@ const DescriptionBox = (props) => {
       setReview('');
       setIsAnonymous(false);
       setRating(null);
-    } else {
+    } if (!currentUser) {
+      alert('Please login to submit a review.');
+    } if (!rating && currentUser){
       alert('Rate the product to submit.');
     }
   }, [isAnonymous, product, rating, review, currentUser]);

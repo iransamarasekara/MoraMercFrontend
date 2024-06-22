@@ -153,9 +153,8 @@
   .review-form button:hover {
     background:linear-gradient(90deg, #002980 0%, #0049BA 100%);
   }
-  
-  /* Review box */
-  .review-box {
+
+  /* .review-box {
     max-height: 700px;
     overflow-y: auto;
     border: 1px solid #ccc;
@@ -164,12 +163,35 @@
     
   }
   
-  /* Scrollable review box */
+
   .scrollable-review-box {
     max-height: 800px;
     overflow-y: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+    border-radius: 25px;
+    padding: 10px;
+  } */
+
+  .review-box {
+    max-height: 400px; /* Adjust this value based on your needs */
+    overflow-y: auto; /* Enables vertical scrolling */
+    scrollbar-width: thin; /* Optional: Makes the scrollbar thinner */
+    scrollbar-color: #ccc #f0f0f0; /* Optional: Customizes the scrollbar color (thumb and track) */
+}
+
+/* For WebKit browsers like Chrome, Safari */
+.review-box::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.review-box::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Color of the scrollbar track */
+}
+
+.review-box::-webkit-scrollbar-thumb {
+    background-color: #ccc; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Rounded corners on the scrollbar thumb */
+}
   
   /* Reviewer box */
   .reviewer-box {

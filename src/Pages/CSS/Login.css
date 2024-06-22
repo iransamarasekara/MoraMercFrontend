@@ -5,7 +5,7 @@
     height: auto;
     background-color: #ffffff;
     font-size: 18px;
-    color: #002980;
+    color: linear-gradient(90deg, #000000 0%, #130F40 100%);
     text-align: center;
   }
   
@@ -39,7 +39,7 @@
     width: 160px;
     height: 40px;
     padding: 10px;
-    background-color: #002980;
+    background: linear-gradient(90deg, #000000 0%, #130F40 100%);
     color: rgb(255, 255, 255);
     border: none;
     border-radius: 25px;
@@ -48,11 +48,11 @@
   }
   
   .login button:hover {
-    background-color: #0056b3;
+    background-color: #ffffff;
   }
   
   .welcome-container {
-    background: linear-gradient(90deg, #002980 0%, #0049BA 100%);
+    background: linear-gradient(90deg, #000000 0%, #130F40 100%);
     color: white;
     display: flex;
     flex-direction: column;
@@ -73,6 +73,6 @@
   }
   .switch.login.button:hover {
     background-color: #f1f1f1;
-    color: #002980;
+    color: #ffffff;
   }
   

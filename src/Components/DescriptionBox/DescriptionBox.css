@@ -29,7 +29,7 @@
   }
   
   .descriptionbox-nav-box.active {
-    background: linear-gradient(90deg, #002980 0%, #0049BA 100%);
+    background: linear-gradient(90deg, #000000 0%, #130F40 100%);
     color: #ffffff;
   }
   
@@ -131,7 +131,7 @@
   
   
   .review-form button {
-    background:linear-gradient(90deg, #002980 0%, #0049BA 100%);
+    background:linear-gradient(90deg, #000000 0%, #130F40 100%);
     color: white;
     border: none;
     border-radius: 10px;
@@ -151,7 +151,7 @@
   }
   
   .review-form button:hover {
-    background:linear-gradient(90deg, #002980 0%, #0049BA 100%);
+    background:linear-gradient(90deg, #000000 0%, #130F40 100%);
   }
   
   /* Review box */
@@ -177,6 +177,7 @@
     align-items: center;
     margin-bottom: 10px;
     height: 100px;
+    
   }
   
   .reviewer-profile-photo {
@@ -192,6 +193,11 @@
   
   .reviewer-name {
     font-weight: bold;
+    /* display: inline-block;
+    white-space: wrap;
+    justify-content: center;
+    align-items: center; */
+    margin-top: 10px;
   }
   
   /* Review item */
@@ -201,7 +207,7 @@
     margin-bottom: 15px;
     position: relative;
     display: grid;
-    grid-template-columns: 1.5fr 1fr 4fr;
+    grid-template-columns: 2.5fr 1fr 4fr;
   }
   
   .review-item::after {

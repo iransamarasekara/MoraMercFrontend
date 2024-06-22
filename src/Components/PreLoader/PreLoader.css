@@ -13,6 +13,7 @@
     justify-content: center;
     color: white;
     overflow: hidden !important;
+    flex-direction: column;
 }
 
 /* @media (max-width: 480px) {
@@ -35,6 +36,11 @@
     color: white;
 }
 
+.preloader img {
+    height:70px;
+    width: 70px;
+}
+
 /* Adjustments for mobile devices */
 @media (max-width: 480px) {
     .preloader {
@@ -46,6 +52,7 @@
         width: 300px;
         font-size: 16px;
     }
+
 }
 
 /* Adjustments for tablet devices */

@@ -19,6 +19,7 @@ import women_banner from './Components/Assets/banner_women.png';
 import kid_banner from './Components/Assets/banner_kids.png';
 import EmailVerification from './Pages/EmailVerification';
 import PreLoader from './Components/PreLoader/PreLoader';
+import ThankYou from './Components/ThankYou/ThankYou';
 
 
 function App() {
@@ -63,6 +64,7 @@ const WithLayout = () => {
         <Route path='/userprofile' element={<UserProfile />} />
         <Route path='/notification' element={<Notification />} />
         <Route path='/search' element={<Search />} />
+        <Route path='/thanks' element={<ThankYou />} />
 
       </Routes>
       {!isPaymentPage && <Footer />}

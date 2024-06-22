@@ -43,7 +43,7 @@
     cursor: pointer;
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.336);
-    background: linear-gradient(90deg,#000428,#004e92);
+    background: linear-gradient(90deg, #000000 0%, #130F40 100%);
     color: white;
 }
 

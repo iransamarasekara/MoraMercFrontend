@@ -6,7 +6,7 @@ import { UserContext } from '../../Context/UserContext'
 import upload_area from '../Assets/upload_area.svg'
 import remove_icon from '../Assets/minusicon.png'
 import payherebutton from '../Assets/payhere_button.png'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaCopy } from 'react-icons/fa';
 
 const OrderConfermation = () => {
@@ -178,11 +178,11 @@ const OrderConfermation = () => {
                     body:JSON.stringify(order),
                 }).then((resp) =>resp.json()).then((data)=>{
                     removeAllFromCart(currentId);
-                    data.success?alert("Your Response Added Successfully. You should recieve an email. Thank You!"):alert("Failed");
+                    data.success?alert("Response Added Successfully."):alert("Failed");
                     if(data.success)
                     {
                         removeAllFromCart(currentId);
-                        window.location.replace("/cart");
+                        window.location.replace("/thanks");
                     }
                 })
             }
@@ -202,11 +202,11 @@ const OrderConfermation = () => {
                     body:JSON.stringify(order),
                 }).then((resp) =>resp.json()).then((data)=>{
                     removeAllFromCart(currentId);
-                    data.success?alert("Your Response Added Successfully. You should recieve an email. Thank You!"):alert("Failed");
+                    data.success?alert("Response Added Successfully."):alert("Failed");
                     if(data.success)
                     {
                         removeAllFromCart(currentId);
-                        window.location.replace("/cart");
+                        window.location.replace("/thanks");
                     }
                 })
         }

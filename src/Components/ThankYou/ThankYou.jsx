@@ -1,6 +1,6 @@
 import React from 'react'
 import './ThankYou.css'
-import M_logo from '../Assets/M_logo_new.jpg'
+import bison_logo from '../Assets/bison_logo.png'
 import logo from '../Assets/M.png'
 import { Link } from 'react-router-dom'
 
@@ -8,7 +8,7 @@ const ThankYou = () => {
   return (
     <div className='thank-you'>
       <div className="greeting">
-        <img src={M_logo} alt="logo" />
+        <img src={logo} alt="logo" />
         <h1>Thank You</h1>
         <h2>For Your Payment!</h2>
         <p>We sent you an email of receipt.</p>
@@ -16,11 +16,11 @@ const ThankYou = () => {
       </div>
       <div className="footer-small">
         <div className="footer-left">
-            <p>Proudly Design & Developed</p>
-            <p>by BISON CORPS.</p>
+            <p>Proudly Design & Developed<br></br>by BISON CORPS.</p>
+            {/* <p>by BISON CORPS.</p> */}
         </div>
         <div className="footer-right">
-            <img src={logo} alt="logo" />
+            <img src={bison_logo} alt="logo" />
         </div>
         
       </div>

@@ -44,11 +44,12 @@ function App() {
 const WithLayout = () => {
   const location = useLocation();
   const isPaymentPage = location.pathname === '/order';
+  const isThanksPage = location.pathname === '/thanks';
   return (
     <div>
       {/* <Navbar /> */}
       <PreLoader />
-      {!isPaymentPage && <Navbar />}
+      {!isPaymentPage && !isThanksPage && <Navbar />}
       <Routes>
         <Route path='/' element={<Shop />} />
         <Route path='/t-shirt' element={<ShopCategory banner={men_banner} category="t-shirts" />} />
@@ -67,7 +68,7 @@ const WithLayout = () => {
         <Route path='/thanks' element={<ThankYou />} />
 
       </Routes>
-      {!isPaymentPage && <Footer />}
+      {!isPaymentPage && !isThanksPage && <Footer />}
       {/* <Footer /> */}
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './PreLoader.css'
 import { preLoaderAnim } from '../../animations/index'
-import M_logo from '../Assets/M_logo_new.jpg'
+import M_logo from '../Assets/M_logo_new_2.jpg'
 
 const PreLoader = () => {
   useEffect(() => {

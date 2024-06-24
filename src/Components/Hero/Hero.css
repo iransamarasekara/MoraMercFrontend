@@ -79,8 +79,8 @@
     height: 70px;
     border-radius: 75px;
     margin-top: 60px;
-    border: 1px solid rgba(255, 255, 255, 0.336);
-    background: linear-gradient(90deg,#000428,#004e92);
+    border: 1px solid rgba(255, 255, 255, 0.434);
+    background: linear-gradient(90deg, #000000 0%, #130F40 100%);
     color: white;
     font-size: 22px;
     font-weight: 500;

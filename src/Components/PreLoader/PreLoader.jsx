@@ -20,7 +20,7 @@ const PreLoader = () => {
         <span >BisonCorps.</span > */}
 
         <span >Made</span >
-        <span >in</span >
+        <span >for</span >
         <span >MORA.</span >
         
       </div>

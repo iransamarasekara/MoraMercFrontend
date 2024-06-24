@@ -122,15 +122,15 @@
     .relatedproducts h1 {
         position: absolute;
         font-size: 16px;
-        left: -20px; /* Fixed position */
-        top: -80px; /* Fixed position */
+        left: -20px; 
+        top: -120px; 
     }
 
     .relatedproducts h2 {
         position: absolute;
         font-size: 21px;
-        left: -20px; /* Fixed position */
-        top: 0px; /* Fixed position */
+        left: -20px; 
+        top: -35px; 
     }
 
     .relatedproducts-item {

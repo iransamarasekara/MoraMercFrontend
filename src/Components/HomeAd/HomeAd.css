@@ -3,7 +3,7 @@
     height: 20vw;
     padding-left: 10%;
     padding-right: 10%;
-    margin-top: 130px;
+    margin-top: 100px;
     margin-bottom: 100px;
     justify-content: space-between;
     
@@ -15,7 +15,7 @@
         height: 25vw; 
         padding-left: 5%; 
         padding-right: 5%;
-        margin-top: 120px; 
+        margin-top: 80px; 
         margin-bottom: 80px;
     }
 }
@@ -24,9 +24,9 @@
 @media (max-width: 480px) {
     .home-ad-below {
         height: 30vw; 
-        padding-left: 2%; 
-        padding-right: 2%;
-        margin-top: 80px; 
-        margin-bottom: 50px;
+        padding-left: 5%; 
+        padding-right: 5%;
+        margin-top: 0px; 
+        margin-bottom: 140px;
     }
 }

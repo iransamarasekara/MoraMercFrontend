@@ -15,9 +15,13 @@ const PreLoader = () => {
       </div>
       <div className="texts-container">
         
-        <span >MoraMerc</span >
+        {/* <span >MoraMerc</span >
         <span >Powered By</span >
-        <span >BisonCorps.</span >
+        <span >BisonCorps.</span > */}
+
+        <span >Made</span >
+        <span >in</span >
+        <span >MORA.</span >
         
       </div>
     </div>

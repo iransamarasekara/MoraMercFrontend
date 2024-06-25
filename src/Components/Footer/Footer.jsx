@@ -24,7 +24,7 @@ const Footer = () => {
       <div className='footer'>
         <div className="footer-card footer-logo-card">
           <div className="footer-logo">
-            <img src={footer_logo} alt='Shopper' className="low-opacity-logo" />
+          <a href="#"><img src={footer_logo} alt='Shopper' className="low-opacity-logo" /></a>
             {/* <img src={high_opacity_logo} alt='Shopper' className="high-opacity-logo" /> */}
           </div>
         </div>
@@ -64,7 +64,7 @@ const Footer = () => {
         <div className="footer-mobile-layout">
           <div className="footer-mobile-card footer-mobile-logo-card">
             <div className="footer-logo">
-              <img src={footer_logo} alt='Shopper' className="low-opacity-logo" />
+            <a href="#"><img src={footer_logo} alt='Shopper' className="low-opacity-logo" /></a>
               {/* <img src={high_opacity_logo} alt='Shopper' className="high-opacity-logo" /> */}
             </div>
           </div>

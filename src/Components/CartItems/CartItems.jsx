@@ -30,7 +30,7 @@ const CartItems = () => {
     <div className='cartpg'>
         {/* <h2>Your Cart</h2> */}
         <div className='cartitems'>
-        <h2>Your Cart</h2>
+        <h2>Your Bag</h2>
           {isLargeViewport ? (
             <>
             <div className="cartitems-header">

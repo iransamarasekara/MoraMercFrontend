@@ -83,7 +83,7 @@ const ProductDisplay = (props) => {
         } else {
           // Perform the action
           addToCart(product.id, size1, color1);
-          setAlertMessage('Added to cart'); // Clear the alert message if action is successful
+          setAlertMessage('Added to bag'); // Clear the alert message if action is successful
         }
       } else {
         setAlertMessage('*Please login before order');
@@ -216,7 +216,7 @@ const ProductDisplay = (props) => {
         </div>
         <div className="productdisplay-right-addtoCart">
           <button onClick={() => { handleAction() }} className={!product.available ? 'unavailable-button' : ''}>
-            {product.available ? 'ADD TO CART' : 'UNAVAILABLE'}
+            {product.available ? 'ADD TO BAG' : 'UNAVAILABLE'}
           </button>
           {alertMessage && <p className="alert-message">{alertMessage}</p>}
         </div>

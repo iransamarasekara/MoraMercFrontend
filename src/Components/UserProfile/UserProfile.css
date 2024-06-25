@@ -81,7 +81,7 @@
   }
   
   .profile-photo button:hover {
-    background: linear-gradient(90deg, #002980 0%, #0049BA 100%);
+    background: linear-gradient(90deg, #000000 0%, #130F40 100%);
     color: #fff;
     transition: 0.2s ease-in;
   }
@@ -128,7 +128,7 @@
   width: 200px;
   height: 50px;
   margin-top: 20px;
-  background: linear-gradient(90deg, #002980 0%, #0049BA 100%);
+  background: linear-gradient(90deg, #000000 0%, #130F40 100%);
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -178,7 +178,7 @@
 .check-btn,
 .close-modal {
     padding: 10px 20px;
-    background-color: #007bff;
+    background: linear-gradient(90deg, #000000 0%, #130F40 100%);
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -187,7 +187,7 @@
 
 .check-btn:hover,
 .close-modal:hover {
-    background-color: #0056b3;
+    background: linear-gradient(90deg, #000000 0%, #130F40 100%);
 }
 
 body.active-modal {

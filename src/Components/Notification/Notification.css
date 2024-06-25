@@ -13,9 +13,9 @@
 
 .notification-header {
     padding: 35px;
-    height: 100px;
+    height: 120px;
     width: 100%;
-    background: linear-gradient(90deg, #002980 0%, #0049BA 50%, #007BFF 100%); /* Gradient background with an additional color */
+    background: linear-gradient(90deg, #000000 0%, #130F40 100%); /* Gradient background with an additional color */
     color: #FFFFFF; /* Corrected text color to white */
     font-size: 40px;
     font-weight: bold;

@@ -144,8 +144,9 @@ const Navbar = () => {
           <li><Link style={{ textDecoration: 'none', color: "black" }} to='/'>HOME</Link></li>
         </div>
         <div className='dropdown'>
-          <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/t-shirt'>T-SHIRTS {'>'} </Link></li>
-          <div className="dropdown-content">
+          <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/t-shirt'>T-SHIRTS</Link></li>
+          {/* <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/t-shirt'>T-SHIRTS {'>'} </Link></li> */}
+          {/* <div className="dropdown-content">
             <div className="dropdown-column">
               <h5>Faculty Shirts</h5>
               <ul>
@@ -178,10 +179,11 @@ const Navbar = () => {
                 ))}
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className='dropdown'>
-          <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/wristbands'>WRISTBANDS {'>'} </Link></li>
+          <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/wristbands'>WRISTBANDS</Link></li>
+          {/* <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/wristbands'>WRISTBANDS {'>'} </Link></li>
           <div className="dropdown-content">
             <div className="dropdown-column">
               <ul>
@@ -195,10 +197,11 @@ const Navbar = () => {
                 <li><Link style={{ textDecoration: 'none' }} to='/wristbands/type4' onClick={closeMenu}>Type 4</Link></li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className='dropdown'>
-          <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/others'>OTHERS {'>'} </Link></li>
+        <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/others'>OTHERS</Link></li>
+          {/* <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/others'>OTHERS {'>'} </Link></li>
           <div className="dropdown-content">
             <div className="dropdown-column">
               <ul>
@@ -212,7 +215,7 @@ const Navbar = () => {
                 <li><Link style={{ textDecoration: 'none' }} to='/others/type4' onClick={closeMenu}>Type 4</Link></li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
         <div>
           <li><Link style={{ textDecoration: 'none', color: "black" }} to='/contact'>CONTACT</Link></li>

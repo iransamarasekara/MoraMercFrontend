@@ -196,7 +196,7 @@ const ProductDisplay = (props) => {
           </div>
         </div>
         <div className="productdisplay-right-size">
-          <h1>Select Size</h1>
+          <h4>Select Size</h4>
           <div className="productdisplay-right-sizes">
             {product.avl_size.map((size, index) => (
               <button

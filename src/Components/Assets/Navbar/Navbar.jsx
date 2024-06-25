@@ -128,7 +128,7 @@ const Navbar = () => {
             ?<>
             <button className='nav-auth-logout' onClick={() => { localStorage.removeItem('auth-token'); window.location.replace('/') }}>Logout</button>
             <Link className='nav-auth-profile' style={{ textDecoration: 'none', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', border: '1px solid black'}} to='/profile'>
-                {currentuser && currentuser.profile_pic? <img style={{width: '32px', height: '32px',borderRadius:'50%',borderColor:'black'}} src={currentuser.profile_pic} alt=''/> : <span style={{ fontSize: '2px' }}>&#128100;</span>}
+                {currentuser && currentuser.profile_pic? <img style={{width: '32px', height: '32px',borderRadius:'50%',borderColor:'black'}} src={currentuser.profile_pic} alt=''/> : <span style={{ fontSize: '20px' }}>&#128100;</span>}
             </Link>
             </>
             : <>

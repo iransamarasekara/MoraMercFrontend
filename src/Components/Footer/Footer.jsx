@@ -54,9 +54,9 @@ const Footer = () => {
             <button type="submit" className="signup-button">Submit</button>
           </form>
           <div className="footer-social-icons">
-            <a href="#"><img src={facebook_icon} alt='Facebook' /></a>
-            <a href="#"><img src={instagram_icon} alt='Instagram' /></a>
-            <a href="#"><img src={whatsapp_icon} alt='WhatsApp' /></a>
+            <a href="https://www.facebook.com/profile.php?id=61560774282709&mibextid=LQQJ4d"><img src={facebook_icon} alt='Facebook' /></a>
+            <a href="https://www.instagram.com/moramerc_?igsh=dHFrZG9wdGQ0ajhv"><img src={instagram_icon} alt='Instagram' /></a>
+            <a href="https://wa.me/+94775963961"><img src={whatsapp_icon} alt='WhatsApp' /></a>
           </div>
         </div>
       </div>
@@ -93,9 +93,9 @@ const Footer = () => {
             <button type="submit" className="signup-button">Submit</button>
           </form>
           <div className="footer-social-icons">
-            <a href="#"><img src={facebook_icon} alt='Facebook' /></a>
-            <a href="#"><img src={instagram_icon} alt='Instagram' /></a>
-            <a href="#"><img src={whatsapp_icon} alt='WhatsApp' /></a>
+            <a href="https://www.facebook.com/profile.php?id=61560774282709&mibextid=LQQJ4d"><img src={facebook_icon} alt='Facebook' /></a>
+            <a href="https://www.instagram.com/moramerc_?igsh=dHFrZG9wdGQ0ajhv"><img src={instagram_icon} alt='Instagram' /></a>
+            <a href="https://wa.me/+94775963961"><img src={whatsapp_icon} alt='WhatsApp' /></a>
           </div>
         </div>
       </div>

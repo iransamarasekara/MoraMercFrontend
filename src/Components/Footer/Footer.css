@@ -132,7 +132,7 @@
 }
 
 /* Hide mobile view for desktop */
-@media (min-width: 851px) {
+@media (min-width: 768px) {
   .footer-mobile {
       display: none;
   }

@@ -2,10 +2,10 @@ import React from 'react';
 import './NewCollections.css';
 
 // Import images
-import image1 from './images/image_1.jpg';
-import image2 from './images/image_2.jpg';
-import image3 from './images/image_3.jpg';
-import image4 from './images/image_4.jpg';
+import image1 from './images/tshirt_banner.jpg';
+import image2 from './images/wristdand_banner.jpg';
+import image3 from './images/stickers_banner.jpg';
+import image4 from './images/hat_banner.jpg';
 import { Link } from 'react-router-dom';
 
 const NewCollection = () => {

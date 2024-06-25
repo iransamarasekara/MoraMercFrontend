@@ -57,7 +57,7 @@
 .bottom-box {
   flex: 1;
   background-size: cover;
-  background-position: top;
+  background-position: center;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -92,7 +92,7 @@
   width: 100%;
   height: 100%;
   border-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  /* background-color: rgba(0, 0, 0, 0.5);  */
   z-index: 1; /* Ensure the overlay is behind the content */
 }
 

@@ -421,7 +421,21 @@ const OrderConfermation = () => {
                                     <span className="account-number">{currentProduct && currentProduct.acc_no} &nbsp;<FaCopy className="copy-icon" onClick={copyToClipboard} /></span>
                                     
                                 </p>
-                                <p>Account Name : {currentProduct && currentProduct.acc_name}</p>
+                                <p>Name : {currentProduct && currentProduct.acc_name}</p>
+                                <p>Branch : {currentProduct && currentProduct.acc_branch}</p>
+                                
+                                {currentProduct && currentProduct.bank2 && 
+                                <>
+                                <hr/>
+                                <p>Bank : {currentProduct && currentProduct.bank2}</p>
+                                <p>Account Number :  
+                                    <span className="account-number">{currentProduct && currentProduct.acc_no2} &nbsp;<FaCopy className="copy-icon" onClick={copyToClipboard} /></span>
+                                    
+                                </p>
+                                <p>Account Name : {currentProduct && currentProduct.acc_name2}</p>
+                                <p>Branch : {currentProduct && currentProduct.acc_branch2}</p>
+                                </>
+                                }
                             </div>
                         )}       
 
@@ -592,6 +606,20 @@ const OrderConfermation = () => {
                                         
                                     </p>
                                     <p>Account Name : {currentProduct && currentProduct.acc_name}</p>
+                                    <p>Branch : {currentProduct && currentProduct.acc_branch}</p>
+                                
+                                    {currentProduct && currentProduct.bank2 && 
+                                    <>
+                                    <hr/>
+                                    <p>Bank : {currentProduct && currentProduct.bank2}</p>
+                                    <p>Account Number :  
+                                        <span className="account-number">{currentProduct && currentProduct.acc_no2} &nbsp;<FaCopy className="copy-icon" onClick={copyToClipboard} /></span>
+                                        
+                                    </p>
+                                    <p>Account Name : {currentProduct && currentProduct.acc_name2}</p>
+                                    <p>Branch : {currentProduct && currentProduct.acc_branch2}</p>
+                                    </>
+                                    }
                                 </div>
                             )}        
 

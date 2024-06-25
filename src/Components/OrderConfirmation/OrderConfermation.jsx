@@ -442,10 +442,19 @@ const OrderConfermation = () => {
                         {showOrderTypes && (
                             <div className="ordertype">
                                 <p>Order Type</p>
+                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'pre' || currentProduct.avl_order_types === 'both') && (
+                                    <>
                                 <input type="radio" id="preorder" name="order_type" value="Pre-order" onChange={handleOrderTypeChange} checked={orderType === 'Pre-order'} />
                                 <label htmlFor="preorder">Pre-order</label>
+                                </>
+                                )}
+
+                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'post' || currentProduct.avl_order_types === 'both') && (
+                                    <>
                                 <input type="radio" id="postorder" name="order_type" value="Post-order" onChange={handleOrderTypeChange} checked={orderType === 'Post-order'} />
                                 <label htmlFor="postorder">Post-order</label>
+                                </>
+                                )}
                                 <div className="orderconfirmation-itemfield1">
                                     <p>Enter Your WhatsApp Number </p>
                                     <input required value={newFormData.whatsApp} onChange={checkWhatsAppReq} type='text' name='whatsApp' placeholder='Type here'/>
@@ -626,10 +635,19 @@ const OrderConfermation = () => {
                             {showOrderTypes && (
                                 <div className="ordertype">
                                     <p>Order Type</p>
-                                    <input type="radio" id="preorder" name="order_type" value="Pre-order" onChange={handleOrderTypeChange} checked={orderType === 'Pre-order'} />
-                                    <label htmlFor="preorder">Pre-order</label>
-                                    <input type="radio" id="postorder" name="order_type" value="Post-order" onChange={handleOrderTypeChange} checked={orderType === 'Post-order'} />
-                                    <label htmlFor="postorder">Post-order</label>
+                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'pre' || currentProduct.avl_order_types === 'both') && (
+                                    <>
+                                <input type="radio" id="preorder" name="order_type" value="Pre-order" onChange={handleOrderTypeChange} checked={orderType === 'Pre-order'} />
+                                <label htmlFor="preorder">Pre-order</label>
+                                </>
+                                )}
+
+                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'post' || currentProduct.avl_order_types === 'both') && (
+                                    <>
+                                <input type="radio" id="postorder" name="order_type" value="Post-order" onChange={handleOrderTypeChange} checked={orderType === 'Post-order'} />
+                                <label htmlFor="postorder">Post-order</label>
+                                </>
+                                )}
                                     <div className="orderconfirmation-itemfield1">
                                         <p>Enter Your WhatsApp Number : </p>
                                         <input required value={newFormData.whatsApp} onChange={checkWhatsAppReq} type='text' name='whatsApp' placeholder='Type here'/>

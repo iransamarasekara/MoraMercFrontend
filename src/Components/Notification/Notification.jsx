@@ -58,12 +58,12 @@ return (
                 {const isNewMessage = i === orders.length - 1 && hasNewMessage; // Check if this is the latest message and has not been read
 
                 return (
-                    <div key={i} className={`notification-item ${isNewMessage ? 'new-message' : ''}`} onClick={handleMessageClick}>
+                    <div key={i} className={`notification-item ${isNewMessage ? 'new-message' : ''}`} >
                         <span role="img" aria-label="Envelope">📩</span> {/* Icon */}
                         {isNewMessage && <span className="latest-tag">Latest</span>} {/* Latest tag */}
                         <p>You have successfully {item.order_type} {item.num_purchase_products} items of {product.name}</p>
                         {!isNewMessage && (
-                            <span role="img" aria-label="Mark as Read" className="mark-as-read" onClick={handleMessageClick}>✔️</span> /* Mark as Read icon */
+                            <span role="img" aria-label="Mark as Read" className="mark-as-read" /> /* Mark as Read icon */
                         )}
                     </div>
                 )}else{

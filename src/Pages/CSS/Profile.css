@@ -62,8 +62,8 @@
     text-align: center;
     transition: all 0.3s ease; /* Smooth transition */
     font-weight: 400; /* Style the active tab */
-    border: 2px solid #000000;
-    box-shadow: 3px 3px 3px rgb(109, 112, 113);
+    border: 1px solid #000000;
+    box-shadow: 0px 0px 10px 0px #00000036;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     border-left: none;

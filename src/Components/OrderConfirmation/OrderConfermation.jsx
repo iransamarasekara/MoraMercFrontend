@@ -95,6 +95,7 @@ const OrderConfermation = () => {
         total:0,
         username:"",
         productname:"",
+        index:"",
     }) 
 
     useEffect(() => {
@@ -145,6 +146,7 @@ const OrderConfermation = () => {
         all_user.forEach((user) => {
             if (userEmail === user.email) {
                 order.username=user.name;
+                order.index=user.index;
             }
         })
 

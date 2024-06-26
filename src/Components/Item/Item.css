@@ -158,6 +158,43 @@
     }
 }
 
+
+@media (max-width: 620px) {
+    .item {
+        width: 100%;
+    }
+
+    .name {
+        font-size: 12px;
+    }
+
+    .item-prices {
+        gap: 15px;
+    }
+
+    .item-price-new {
+        font-size: 14px;
+    }
+
+    .item img {
+        height: 230px;
+        width: 190px;
+    }
+
+    .productdisplay-right-star {
+        font-size: 12px;
+    }
+
+    .productdisplay-right-star img {
+        height: 12px;
+        width: 12px;
+    }
+
+    .item-sold {
+        gap: 15px;
+    }
+}
+
 /* Small Mobile styles */
 @media (max-width: 480px) {
     .item {

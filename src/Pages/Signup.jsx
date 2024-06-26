@@ -46,11 +46,11 @@ const Signup = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();    
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@uom\.lk$/;
-    if (!emailRegex.test(formData.email)) {
-        alert('Please enter a valid uom mail address');
-        return;
-    } 
+    // const emailRegex = /^[a-zA-Z0-9._%+-]+@uom\.lk$/;
+    // if (!emailRegex.test(formData.email)) {
+    //     alert('Please enter a valid uom mail address');
+    //     return;
+    // } 
     const isFormFilled = Object.entries(formData).every(([key, value]) => {
         if (key === 'profile_pic') {
             return true;
@@ -85,7 +85,7 @@ const Signup = () => {
             <input name='faculty' value={formData.faculty} onChange={changeHandler} type='text' placeholder='Faculty' required />
             <input name='department' value={formData.department} onChange={changeHandler} type='text' placeholder='Department' required />
             <input name='batch' value={formData.batch} onChange={changeHandler} type='text' placeholder='Batch' required />
-            <input name='email' value={formData.email} onChange={changeHandler} type='email' placeholder='University Email Address' required />
+            <input name='email' value={formData.email} onChange={changeHandler} type='email' placeholder='Email Address' required />
             <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' required />
             {message && <p className="message">{message}</p>}
             <button type="submit">Sign Up</button>

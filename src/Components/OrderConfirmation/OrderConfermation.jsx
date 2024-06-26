@@ -416,7 +416,7 @@ const OrderConfermation = () => {
 
                         {showOrderTypes && (
                             <div className="accnumber">
-                                <h5>Account Number</h5>
+                                <h5>Account Details</h5>
                                 <hr/>
                                 <p>Bank : {currentProduct && currentProduct.bank}</p>
                                 <p>Account Number :  
@@ -609,7 +609,7 @@ const OrderConfermation = () => {
 
                             {showOrderTypes && (
                                 <div className="accnumber">
-                                    <h5>Account Number</h5>
+                                    <h5>Account Details</h5>
                                     <hr/>
                                     <p>Bank : {currentProduct && currentProduct.bank}</p>
                                     <p>Account Number :  

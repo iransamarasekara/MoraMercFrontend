@@ -66,11 +66,11 @@ function ContactForm() {
             </div>
             <div className="information">
               <img src={email} className="icon" alt="" />
-              <p>bisoncorpstm@gmail.com</p>
+              <p>moramerchandise@gmail.com</p>
             </div>
             <div className="information">
               <img src={phone} className="icon" alt="" />
-              <p>+94-71-9548297</p>
+              <p>+94-77-5963961</p>
             </div>
           </div>
 

@@ -1,268 +1,285 @@
-.newcollection {
-  padding: 10px;
-  margin-bottom: 100px;
-  margin-top: 250px;
-}
-
-.newcollection h1 {
-  font-family: 'Poppins', sans-serif;
-  color: #171717;
-  font-size: 50px;
-  font-weight: 800;
-  margin-top:-200px ;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.newcollection hr {
-  width: 50%;
-  margin: 0 auto -50px;
-}
-
-.collections {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px; /* Add some space between the boxes */
-}
-
-.left-box {
-  flex: 1;
-  background-size: cover;
-  background-position: top;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  margin: 100px;
-  padding-top: -20px;
-  padding-bottom: 20px;
-  margin-right: 10px;
-  margin-left: 210px;
-  color: white;
-  position: relative;
-  border-radius: 20px; /* Make the corners round */
-  min-height: 600px; /* Adjust this height as needed */
-}
 
 
-.right-box {
-  flex: 1;
-  display: flex;
-  padding-top: 100px;
-  margin-right: 170px;
-  padding-bottom: 100px;
-  flex-direction: column;
-  gap: 30px; /* Add some space between the boxes */
-}
 
-.bottom-box {
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-top: 100px;
-  padding-bottom: 20px;
-  margin-top: -70px;
-  margin-left: 200px;
-  margin-right: 200px;
-  color: white;
-  text-shadow: 2px 2px 2px #00000085;
-  font-size: 30px;
-  position: relative;
-  border-radius: 20px; /* Make the corners round */
-  border-radius: 20px; /* Make the corners round */
-  min-height: 400px; /* Adjust this height as needed */
-  border: 2px solid rgb(234, 234, 234); /* Add black border */
-}
-
-.left-box,
-.right-box .item,
-.bottom-box {
-  position: relative;
-}
-
-.left-box::before,
-.right-box .item::before,
-.bottom-box::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  /* background-color: rgba(0, 0, 0, 0.5);  */
-  z-index: 1; /* Ensure the overlay is behind the content */
-}
-
-.right-box .item .item-details{
-  font-size: 30px;
-  text-align: left;
-  position: absolute;
-  bottom: 25px;
-  left: 40px;
-  z-index: 2; /* Ensure the content is above the overlay */
-}
-
-.bottom-box .item-details {
-  position: absolute;
-  bottom: 30px;
-  /* left: -240px; */
-  text-align: left;
-  left: 40px;
-  z-index: 2; /* Ensure the content is above the overlay */
-}
-
-.left-box .shirt {
-  font-size: 30px;
-  text-shadow: 2px 2px 2px #00000085;
-  position: absolute;
-  bottom: -160px;
-  /* left: -60px; */
-  z-index: 2; /* Ensure the content is above the overlay */
-}
-
-.right-box .item {
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  width: 500px;
-  padding: 100px;
-  color: white;
-  text-shadow: 2px 2px 2px #00000085;
-  position: relative;
-  border-radius: 20px; /* Make the corners round */
-  min-height: 180px; /* Adjust this height as needed */
-}
-
-.item-details {
-  padding: 10px;
-  width: 80%;
-  text-align: center;
-  border-radius: 10px; /* Optional: round the corners of the details box */
-}
-
-.shirt {
-  padding: 10px;
+@media only screen and (min-width: 940px){
+  .newcollection {
+    /* padding: 10px; */
+    margin-bottom: 100px;
+    /* margin-top: 250px; */
+    margin-left: 10%;
+    margin-right: 10%;
+  }
   
-  width: 80%;
-  margin-bottom: 200px;
-  text-align: left;
-  left: 40px;
-  border-radius: 10px; /* Optional: round the corners of the details box */
+  .newcollection h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #171717;
+    font-size: 50px;
+    font-weight: 800;
+    /* margin-top:-200px ; */
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .newcollection hr {
+    width: 60%;
+    margin: 0 auto 50px;
+  }
+  
+  .collections {
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* justify-content: space-between; */
+    gap: 20px; /* Add some space between the boxes */
+  }
+  
+  .left-box {
+    /* flex: 1; */
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* margin: 100px; */
+    padding-top: -20px;
+    padding-bottom: 20px;
+    /* margin-right: 10px; */
+    /* margin-left: 210px; */
+    color: white;
+    position: relative;
+    border-radius: 20px; /* Make the corners round */
+    /* min-height: 600px; Adjust this height as needed */
+  }
+  
+  
+  .right-box {
+    /* flex: 1; */
+    display: flex;
+    /* padding-top: 100px; */
+    /* margin-right: 170px; */
+    /* padding-bottom: 100px; */
+    flex-direction: column;
+    gap: 30px; /* Add some space between the boxes */
+  }
+  
+  .bottom-box {
+    /* flex: 1; */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* padding-top: 100px; */
+    padding-bottom: 20px;
+    margin-top: 30px;
+    /* margin-left: 200px;
+    margin-right: 200px; */
+    color: white;
+    text-shadow: 2px 2px 2px #00000085;
+    font-size: 30px;
+    position: relative;
+    border-radius: 20px; /* Make the corners round */
+    border-radius: 20px; /* Make the corners round */
+    min-height: 400px; /* Adjust this height as needed */
+    border: 2px solid rgb(234, 234, 234); /* Add black border */
+  }
+  
+  .left-box,
+  .right-box .item,
+  .bottom-box {
+    position: relative;
+  }
+  
+  .left-box::before,
+  .right-box .item::before,
+  .bottom-box::before {
+    content: '';
+    position: absolute;
+    /* top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; */
+    border-radius: 20px;
+    z-index: 1;
+  }
+  
+  .right-box .item .item-details{
+    font-size: 30px;
+    text-align: left;
+    position: absolute;
+    bottom: 25px;
+    left: 40px;
+    z-index: 2; /* Ensure the content is above the overlay */
+  }
+  
+  .bottom-box .item-details {
+    position: absolute;
+    bottom: 30px;
+    /* left: -240px; */
+    text-align: left;
+    left: 40px;
+    z-index: 2; /* Ensure the content is above the overlay */
+  }
+  
+  .left-box .shirt {
+    font-size: 30px;
+    text-shadow: 2px 2px 2px #00000085;
+    position: absolute;
+    /* bottom: -160px; */
+    /* left: -60px; */
+    z-index: 2; /* Ensure the content is above the overlay */
+  }
+  
+  .right-box .item {
+    /* flex: 1; */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: center;
+    /* width: 500px; */
+    /* padding: 100px; */
+    color: white;
+    text-shadow: 2px 2px 2px #00000085;
+    position: relative;
+    border-radius: 20px; /* Make the corners round */
+    min-height: 280px; /* Adjust this height as needed */
+  }
+  
+  .item-details {
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px; /* Optional: round the corners of the details box */
+  }
+  
+  .shirt {
+    padding: 10px;
+    
+    /* width: 80%; */
+    /* margin-bottom: 200px; */
+    text-align: left;
+    left: 40px;
+    border-radius: 10px; /* Optional: round the corners of the details box */
+  }
+  
+  .item h2 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+
 }
 
-.item h2 {
-  margin: 0;
-  font-size: 1.5em;
-}
+
+
+
 
 
 
 /* Tablet View Styles */
-@media only screen and (min-width: 480px) and (max-width: 1300px) {
+@media only screen and (min-width: 768px) and (max-width: 940px) {
+
   .newcollection {
-    padding: 10px;
-    margin-bottom: 75px;
+    /* padding: 10px; */
+    margin-bottom: 100px;
+    /* margin-top: 250px; */
+    margin-left: 10%;
+    margin-right: 10%;
   }
-
+  
   .newcollection h1 {
-    font-size: 40px;
-    margin-top: -150px;
+    font-family: 'Poppins', sans-serif;
+    color: #171717;
+    font-size: 50px;
+    font-weight: 800;
+    /* margin-top:-200px ; */
+    text-align: center;
+    margin-bottom: 10px;
   }
-
+  
   .newcollection hr {
     width: 60%;
-    margin: 0 auto -40px;
+    margin: 0 auto 50px;
   }
-
+  
   .collections {
-    flex-direction: column;
-    gap: 15px;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* justify-content: space-between; */
+    gap: 20px; /* Add some space between the boxes */
   }
-
-  .left-box, .bottom-box {
-    margin: 50px auto;
-    min-height: 400px;
-    width: 80%;
+  
+  .left-box {
+    /* flex: 1; */
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* margin: 100px; */
+    padding-top: -20px;
+    padding-bottom: 20px;
+    /* margin-right: 10px; */
+    /* margin-left: 210px; */
+    color: white;
+    position: relative;
+    border-radius: 20px; /* Make the corners round */
+    /* min-height: 600px; Adjust this height as needed */
   }
-
+  
+  
   .right-box {
-    margin-top: -10%;
-    margin-bottom: -10%;
-    padding-left: 10%;
-    padding-right: 10%;
-    min-height: 1000px;
-    width: 100%;
-  }
-
-  .right-box .item {
-    width: 100%;
-    padding: 50px;
-    min-height: 150px;
-  }
-
-  .shirt {
-    margin-bottom: 150px;
-    text-align: left;
-    left:40px;
-  }
-}
-
-@media screen and (max-width: 480px){
-  .newcollection {
-    padding: 10px;
-    margin-bottom: 75px;
-    margin-top: -150px;
-  }
-
-  .newcollection h1 {
-    display: none;
-    font-size: 30px;
-    margin-top: -150px;
-  }
-
-  .newcollection hr {
-    width: 90%;
-    margin: 100px auto -10px;
-  }
-
-  .collections {
+    /* flex: 1; */
+    display: flex;
+    /* padding-top: 100px; */
+    /* margin-right: 170px; */
+    /* padding-bottom: 100px; */
     flex-direction: column;
-    gap: 15px;
+    gap: 30px; /* Add some space between the boxes */
   }
-
-  .left-box, .bottom-box {
-    margin: 50px auto;
-    min-height: 400px;
-    width: 95%;
+  
+  .bottom-box {
+    /* flex: 1; */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* padding-top: 100px; */
+    padding-bottom: 20px;
+    margin-top: 30px;
+    /* margin-left: 200px;
+    margin-right: 200px; */
+    color: white;
+    text-shadow: 2px 2px 2px #00000085;
+    font-size: 20px;
+    position: relative;
+    border-radius: 20px; /* Make the corners round */
+    border-radius: 20px; /* Make the corners round */
+    min-height: 400px; /* Adjust this height as needed */
+    border: 2px solid rgb(234, 234, 234); /* Add black border */
   }
-
-  .right-box {
-    align-items: center;
-    margin-top: -35%;
-    margin-bottom: -31%;
-    padding-left: 3%;
-    padding-right: 3%;
-    min-height: 1000px;
+  
+  .left-box,
+  .right-box .item,
+  .bottom-box {
+    position: relative;
+  }
+  
+  .left-box::before,
+  .right-box .item::before,
+  .bottom-box::before {
+    content: '';
+    position: absolute;
+    /* top: 0;
+    left: 0;
     width: 100%;
+    height: 100%; */
+    border-radius: 20px;
+    z-index: 1;
   }
-
-  .right-box .item {
-    align-items: center;
-    width: 100%;
-    padding: 50px;
-    min-height: 150px;
-  }
-
-  .shirt {
-    margin-bottom: 150px;
-  }
-
+  
   .right-box .item .item-details{
     font-size: 20px;
     text-align: left;
@@ -273,9 +290,10 @@
   }
   
   .bottom-box .item-details {
-    font-size: 20px;
     position: absolute;
     bottom: 30px;
+    /* left: -240px; */
+    text-align: left;
     left: 40px;
     z-index: 2; /* Ensure the content is above the overlay */
   }
@@ -284,11 +302,387 @@
     font-size: 20px;
     text-shadow: 2px 2px 2px #00000085;
     position: absolute;
-    bottom: -120px;
+    /* bottom: -160px; */
+    /* left: -60px; */
+    z-index: 2; /* Ensure the content is above the overlay */
+  }
+  
+  .right-box .item {
+    /* flex: 1; */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: center;
+    /* width: 500px; */
+    /* padding: 100px; */
+    color: white;
+    text-shadow: 2px 2px 2px #00000085;
+    position: relative;
+    border-radius: 20px; /* Make the corners round */
+    min-height: 280px; /* Adjust this height as needed */
+  }
+  
+  .item-details {
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px; /* Optional: round the corners of the details box */
+  }
+  
+  .shirt {
+    padding: 10px;
+    
+    /* width: 80%; */
+    /* margin-bottom: 200px; */
     text-align: left;
     left: 40px;
-    /* left: -30px; */
+    border-radius: 10px; /* Optional: round the corners of the details box */
+  }
+  
+  .item h2 {
+    margin: 0;
+    font-size: 28px;
+  }
+}
+
+@media only screen and (min-width: 530px) and (max-width: 768px) {
+
+  .newcollection {
+    /* padding: 10px; */
+    margin-bottom: 100px;
+    /* margin-top: 250px; */
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  .newcollection h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #171717;
+    font-size: 50px;
+    font-weight: 800;
+    /* margin-top:-200px ; */
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .newcollection hr {
+    width: 80%;
+    margin: 0 auto 50px;
+  }
+  
+  .collections {
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* justify-content: space-between; */
+    gap: 20px; /* Add some space between the boxes */
+  }
+  
+  .left-box {
+    /* flex: 1; */
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* margin: 100px; */
+    padding-top: -20px;
+    padding-bottom: 20px;
+    /* margin-right: 10px; */
+    /* margin-left: 210px; */
+    color: white;
+    position: relative;
+    border-radius: 20px; /* Make the corners round */
+    /* min-height: 600px; Adjust this height as needed */
+  }
+  
+  
+  .right-box {
+    /* flex: 1; */
+    display: flex;
+    /* padding-top: 100px; */
+    /* margin-right: 170px; */
+    /* padding-bottom: 100px; */
+    flex-direction: column;
+    gap: 30px; /* Add some space between the boxes */
+  }
+  
+  .bottom-box {
+    /* flex: 1; */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* padding-top: 100px; */
+    padding-bottom: 20px;
+    margin-top: 30px;
+    /* margin-left: 200px;
+    margin-right: 200px; */
+    color: white;
+    text-shadow: 2px 2px 2px #00000085;
+    font-size: 20px;
+    position: relative;
+    border-radius: 20px; /* Make the corners round */
+    border-radius: 20px; /* Make the corners round */
+    min-height: 400px; /* Adjust this height as needed */
+    border: 2px solid rgb(234, 234, 234); /* Add black border */
+  }
+  
+  .left-box,
+  .right-box .item,
+  .bottom-box {
+    position: relative;
+  }
+  
+  .left-box::before,
+  .right-box .item::before,
+  .bottom-box::before {
+    content: '';
+    position: absolute;
+    /* top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; */
+    border-radius: 20px;
+    z-index: 1;
+  }
+  
+  .right-box .item .item-details{
+    font-size: 20px;
+    text-align: left;
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
     z-index: 2; /* Ensure the content is above the overlay */
+  }
+  
+  .bottom-box .item-details {
+    position: absolute;
+    bottom: 30px;
+    /* left: -240px; */
+    text-align: left;
+    left: 20px;
+    z-index: 2; /* Ensure the content is above the overlay */
+  }
+  
+  .left-box .shirt {
+    font-size: 20px;
+    text-shadow: 2px 2px 2px #00000085;
+    position: absolute;
+    /* bottom: -160px; */
+    /* left: -60px; */
+    z-index: 2; /* Ensure the content is above the overlay */
+  }
+  
+  .right-box .item {
+    /* flex: 1; */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: center;
+    /* width: 500px; */
+    /* padding: 100px; */
+    color: white;
+    text-shadow: 2px 2px 2px #00000085;
+    position: relative;
+    border-radius: 20px; /* Make the corners round */
+    min-height: 280px; /* Adjust this height as needed */
+  }
+  
+  .item-details {
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px; /* Optional: round the corners of the details box */
+  }
+  
+  .shirt {
+    padding: 10px;
+    
+    /* width: 80%; */
+    /* margin-bottom: 200px; */
+    text-align: left;
+    left: 20px;
+    border-radius: 10px; /* Optional: round the corners of the details box */
+  }
+  
+  .item h2 {
+    margin: 0;
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 530px){
+
+  .newcollection {
+    /* padding: 10px; */
+    margin-bottom: 100px;
+    /* margin-top: 250px; */
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  .newcollection h1 {
+    display: none;
+    font-family: 'Poppins', sans-serif;
+    color: #171717;
+    font-size: 50px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .newcollection hr {
+    width: 90%;
+    margin: 0 auto 50px;
+  }
+  
+  .collections {
+    display: flex;
+    flex-direction: column;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    /* justify-content: space-between; */
+    gap: 30px; /* Add some space between the boxes */
+  }
+  
+  .left-box {
+    /* flex: 1; */
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* margin: 100px; */
+    padding-top: -20px;
+    padding-bottom: 20px;
+    /* margin-right: 10px; */
+    /* margin-left: 210px; */
+    color: white;
+    position: relative;
+    border-radius: 20px; /* Make the corners round */
+    min-height: 280px;
+    /* min-height: 600px; Adjust this height as needed */
+  }
+  
+  
+  .right-box {
+    /* flex: 1; */
+    display: flex;
+    /* padding-top: 100px; */
+    /* margin-right: 170px; */
+    /* padding-bottom: 100px; */
+    flex-direction: column;
+    gap: 30px; /* Add some space between the boxes */
+  }
+  
+  .bottom-box {
+    /* flex: 1; */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* padding-top: 100px; */
+    padding-bottom: 20px;
+    margin-top: 30px;
+    /* margin-left: 200px;
+    margin-right: 200px; */
+    color: white;
+    text-shadow: 2px 2px 2px #00000085;
+    font-size: 1.5em;
+    position: relative;
+    border-radius: 20px; /* Make the corners round */
+    border-radius: 20px; /* Make the corners round */
+    min-height: 280px; /* Adjust this height as needed */
+    border: 2px solid rgb(234, 234, 234); /* Add black border */
+  }
+  
+  .left-box,
+  .right-box .item,
+  .bottom-box {
+    position: relative;
+  }
+  
+  .left-box::before,
+  .right-box .item::before,
+  .bottom-box::before {
+    content: '';
+    position: absolute;
+    /* top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; */
+    border-radius: 20px;
+    z-index: 1;
+  }
+  
+  .right-box .item .item-details{
+    font-size: 30px;
+    text-align: left;
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+    z-index: 2; /* Ensure the content is above the overlay */
+  }
+  
+  .bottom-box .item-details {
+    position: absolute;
+    bottom: 30px;
+    /* left: -240px; */
+    text-align: left;
+    left: 20px;
+    z-index: 2; /* Ensure the content is above the overlay */
+  }
+  
+  .left-box .shirt {
+    font-size: 1.5em;
+    text-shadow: 2px 2px 2px #00000085;
+    position: absolute;
+    /* bottom: -160px; */
+    /* left: -60px; */
+    z-index: 2; /* Ensure the content is above the overlay */
+  }
+  
+  .right-box .item {
+    /* flex: 1; */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: center;
+    /* width: 500px; */
+    /* padding: 100px; */
+    color: white;
+    text-shadow: 2px 2px 2px #00000085;
+    position: relative;
+    border-radius: 20px; /* Make the corners round */
+    min-height: 280px; /* Adjust this height as needed */
+  }
+  
+  .item-details {
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px; /* Optional: round the corners of the details box */
+  }
+  
+  .shirt {
+    padding: 10px;
+    
+    /* width: 80%; */
+    /* margin-bottom: 200px; */
+    text-align: left;
+    left: 20px;
+    border-radius: 10px; /* Optional: round the corners of the details box */
+  }
+  
+  .item h2 {
+    margin: 0;
+    font-size: 1.2em;
   }
   
 }

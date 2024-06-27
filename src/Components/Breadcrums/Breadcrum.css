@@ -8,15 +8,22 @@
     font-size: 16px;
     font-weight: 600;
     margin-top: 80px;
+    margin-bottom: -50px;
     /* margin: 80px 170px 0px 170px; */
     text-transform: capitalize;
 }
-
+@media (max-width: 1024px) {
+    .breadcrum {
+        margin: 40px 0px -50px 100px; /* Adjusted margin for tablets */
+        font-size: 12px; /* Reduced font size for tablets */
+        gap: 6px; /* Reduced gap for tablets */
+    }
+}
 /* Tablet view */
 @media (max-width: 768px) {
     .breadcrum {
-        margin: 40px 100px; /* Adjusted margin for tablets */
-        font-size: 15px; /* Reduced font size for tablets */
+        margin: 40px 40px 0px 50px; /* Adjusted margin for tablets */
+        font-size: 10px; /* Reduced font size for tablets */
         gap: 6px; /* Reduced gap for tablets */
     }
 }

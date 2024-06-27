@@ -22,13 +22,13 @@ const useResponsiveStyles = () => {
         });
       } else if (window.innerWidth <= 768) {
         setContainerStyles({
-          width: '300px', // Smaller width on tablets
-          height: '450px', // Adjust height as needed
+          width: '250px', // Smaller width on tablets
+          height: '300px', // Adjust height as needed
           margin: '0 0',
         });
       } else if (window.innerWidth <= 1024) {
         setContainerStyles({
-          width: '340px', // Smaller width on tablets
+          width: '350px', // Smaller width on tablets
           height: '440px', // Adjust height as needed
           margin: '0 0',
         });
@@ -109,12 +109,12 @@ const ProductDisplay = (props) => {
   return (
     <div className='productdisplay'>
       <div className="productdisplay-left">
-        <div className="productdisplay-img-list">
+        {/* <div className="productdisplay-img-list">
           <img src={product.image} alt='' />
           <img src={product.image} alt='' />
           <img src={product.image} alt='' />
           <img src={product.image} alt='' />
-        </div>
+        </div> */}
         <div style={containerStyles}>
           <ImageSlider slides={slides} />
         </div>

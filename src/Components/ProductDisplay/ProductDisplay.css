@@ -450,7 +450,7 @@
 /* Mobile view */
 @media (max-width: 480px) {
     .productdisplay-right-sizes {
-        grid-template-columns: repeat(7, 1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
     .productdisplay {
       margin-top: 10px;

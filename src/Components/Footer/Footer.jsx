@@ -24,7 +24,7 @@ const Footer = () => {
       <div className='footer'>
         <div className="footer-card footer-logo-card">
           <div className="footer-logo">
-          <a href="#"><img src={footer_logo} alt='Shopper' className="low-opacity-logo" /></a>
+          <a href="/"><img src={footer_logo} alt='Shopper' className="low-opacity-logo" /></a>
             {/* <img src={high_opacity_logo} alt='Shopper' className="high-opacity-logo" /> */}
           </div>
         </div>
@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="footer-card footer-links-card">
           <ul className='footer-links'>
             <h3>Quick Links</h3>
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/t-shirt">T-Shirts</a></li>
             <li><a href="/wristbands">Wristbands</a></li>
             <li><a href="/others">Others</a></li>
@@ -64,14 +64,14 @@ const Footer = () => {
         <div className="footer-mobile-layout">
           <div className="footer-mobile-card footer-mobile-logo-card">
             <div className="footer-logo">
-            <a href="#"><img src={footer_logo} alt='Shopper' className="low-opacity-logo" /></a>
+            <a href="/"><img src={footer_logo} alt='Shopper' className="low-opacity-logo" /></a>
               {/* <img src={high_opacity_logo} alt='Shopper' className="high-opacity-logo" /> */}
             </div>
           </div>
           <div className="footer-mobile-card footer-mobile-links-card">
             <ul className='footer-links'>
               <h3>Quick Links</h3>
-              <li><a href="#">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li><a href="/t-shirt">T-Shirts</a></li>
               <li><a href="/wristbands">Wristbands</a></li>
               <li><a href="/others">Others</a></li>

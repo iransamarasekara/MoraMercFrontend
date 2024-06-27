@@ -279,8 +279,8 @@ const Navbar = () => {
             </div>
           </ul>
         </div>
-        {/* {menuOpen && <div className="overlay show" onClick={toggleMenu}></div>} */}
-        {/* {searchBarOpen && <div className="overlay show" onClick={toggleSearchBar}></div>} */}
+        {menuOpen && <div className="overlay-show" onClick={toggleMenu}></div>}
+        {searchBarOpen && <div className="overlay-show" onClick={toggleSearchBar}></div>}
       </div>
       <div className={`sliding-search-bar-container ${searchBarOpen ? 'open' : ''}`}>
       <div className="sliding-search-bar">

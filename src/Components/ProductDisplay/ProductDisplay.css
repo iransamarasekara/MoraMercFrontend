@@ -359,7 +359,7 @@
         box-shadow: 0px 0px 10px 0px #1c1c1c3f;
     }
     .productdisplay-right-addtoCart button {
-        height: 50px;
+        height: 70px;
     }
 
     .productdisplay-right-description{
@@ -428,7 +428,7 @@
         box-shadow: 0px 0px 10px 0px #1c1c1c3f;
     }
     .productdisplay-right-addtoCart button {
-        height: 50px;
+        height: 70px;
     }
 
     .productdisplay-right-description{
@@ -449,12 +449,16 @@
 
 /* Mobile view */
 @media (max-width: 480px) {
+    .productdisplay-right-sizes {
+        grid-template-columns: repeat(7, 1fr);
+    }
     .productdisplay {
       margin-top: 10px;
       flex-direction: column;
       align-items: center;
       margin-left: 2%;
       margin-right: 2%;
+      margin-bottom: 20px;
       gap: 15px;
       scale: 1;
     }

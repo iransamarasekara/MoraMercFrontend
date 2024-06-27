@@ -259,7 +259,7 @@ const Navbar = () => {
                 ? <>
                   <button className='nav-auth-logout' onClick={() => { localStorage.removeItem('auth-token'); window.location.replace('/') }}>Logout</button>
                   <Link className='nav-auth-profile-mobile' style={{ textDecoration: 'none', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', border: '1px solid black' }} to='/profile' onClick={closeMenu}>
-                    {currentuser && currentuser.profile_pic ? <img style={{ width: '32px', height: '32px', borderRadius: '50%', borderColor: 'black' }} src={currentuser.profile_pic} alt='' /> : <span style={{ fontSize: '2px' }}>&#128100;</span>}
+                    {currentuser && currentuser.profile_pic ? <img style={{ width: '32px', height: '32px', borderRadius: '50%', borderColor: 'black' }} src={currentuser.profile_pic} alt='' /> : <span style={{ fontSize: '20px' }}>&#128100;</span>}
                   </Link>
                 </>
                 : <>
@@ -280,7 +280,7 @@ const Navbar = () => {
           </ul>
         </div>
         {menuOpen && <div className="overlay-show" onClick={toggleMenu}></div>}
-        {searchBarOpen && <div className="overlay-show" onClick={toggleSearchBar}></div>}
+        {/* {searchBarOpen && <div className="overlay-show" onClick={toggleSearchBar}></div>} */}
       </div>
       <div className={`sliding-search-bar-container ${searchBarOpen ? 'open' : ''}`}>
       <div className="sliding-search-bar">

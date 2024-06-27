@@ -686,7 +686,7 @@ body {
   width: 100%;
   height: 120%;
   z-index: -1;
-  background-color: rgba(255, 255, 255, 0.119);
+  background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -749,7 +749,7 @@ body {
   width: 100vw;
   height: 100vw;
   background: rgba(0, 0, 0, 0);
-  z-index: 999;
+  z-index: 99;
   cursor: pointer; 
 }
 
@@ -801,4 +801,39 @@ body {
     margin-top: 55px;
   }
 
+}
+
+.nav-auth-mobile .nav-auth-logout {
+  width: 80%;
+  background: linear-gradient(90deg, #000000 0%, #130F40 100%);
+  color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  height: 35px;
+}
+
+.nav-auth-mobile .nav-auth-login button{
+  /* width: 80%; */
+  /* background: linear-gradient(90deg, #000000 0%, #130F40 100%);
+  color: #ffffff; */
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  height: 35px;
+}
+
+.nav-auth-mobile .nav-auth-signup button{
+  /* width: 80%; */
+  background: linear-gradient(90deg, #000000 0%, #130F40 100%);
+  color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  height: 35px;
 }

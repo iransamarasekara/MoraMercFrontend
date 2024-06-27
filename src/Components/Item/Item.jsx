@@ -11,7 +11,7 @@ const Item = (props) => {
   };
 
   return (
-    <Link to={`/product/${props.id}`} style={{textDecoration:'none', color:'black'}} className="item-link" onClick={handleItemClick}>
+    <Link to={`/product/${props.name.replace(/\s+/g, '_')}`} style={{textDecoration:'none', color:'black'}} className="item-link" onClick={handleItemClick}>
       <div className='item'>
         <img src={props.image} alt='' />
         <p className='name'>{props.name}</p>

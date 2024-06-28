@@ -74,10 +74,11 @@ const ShopCategory = (props) => {
 
   return (
     <div className='shop-category'>
+      {arr.length > 0 &&
       <div className='shop-category-banner-mobile' style={styles}>
         <ImageSlider slides={arr}/>
       </div>
-      
+      }
 
       <div className='shopcategory-indexSort'>
         <p>

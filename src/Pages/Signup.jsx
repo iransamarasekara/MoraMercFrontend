@@ -51,7 +51,7 @@ const Signup = () => {
     //     alert('Please enter a valid uom mail address');
     //     return;
     // } 
-    setMessage('Plase wait while we process your request...')
+    setMessage('Please wait while we process your request...')
     const isFormFilled = Object.entries(formData).every(([key, value]) => {
         if (key === 'profile_pic') {
             return true;

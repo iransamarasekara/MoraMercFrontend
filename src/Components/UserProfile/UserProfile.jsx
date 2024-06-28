@@ -4,7 +4,7 @@ import { UserContext } from '../../Context/UserContext';
 import Profile_icon from '../Assets/profile_photo_default.webp';
 
 const UserProfile = () => {
-    const { all_user } = useContext(UserContext);
+    // const { all_user } = useContext(UserContext);
     const [userEmail, setUserEmail] = useState(null);
     const [modal, setModal] = useState(false);
     const [currentUser, setCurrentUser] = useState(null);
@@ -88,9 +88,25 @@ const UserProfile = () => {
     }, []);
 
     useEffect(() => {
-        const user = all_user.find((user) => userEmail === user.email);
-        setCurrentUser(user);
-    }, [all_user, userEmail]);
+        if (userEmail) {
+            fetch('https://projectbisonbackend.onrender.com/getuserbymail', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/form-data',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ 'email': userEmail }),
+            })
+                .then((response) => response.json())
+                .then((data) => setCurrentUser(data))
+                .catch((error) => console.error('Error fetching user data:', error));
+        }
+    }, [userEmail]);
+
+    // useEffect(() => {
+    //     const user = all_user.find((user) => userEmail === user.email);
+    //     setCurrentUser(user);
+    // }, [all_user, userEmail]);
 
     const changeHandler = (e) => {
         setPassword(e.target.value);
@@ -135,14 +151,15 @@ const UserProfile = () => {
     return (
         <div className="profile">
             <h2 className="userAcc-header">User Account</h2>
-            {all_user.map((user) => {
-                if (userEmail === user.email) {
-                    return (
-                        <React.Fragment key={user.email}>
+            {/* {all_user.map((user) => {
+                if (userEmail === user.email) { */}
+                    {/* return ( */}
+                        {currentUser && 
+                        <React.Fragment key={currentUser.email}>
                             <div className='profile-photo'>
                                 <label htmlFor='file-input'>
                                     <p>Click to Change</p>
-                                    <img src={profile_pic?URL.createObjectURL(profile_pic):user.profile_pic?user.profile_pic:Profile_icon} className='addproduct-thumnail-img' alt="" />
+                                    <img src={profile_pic?URL.createObjectURL(profile_pic):currentUser.profile_pic?currentUser.profile_pic:Profile_icon} className='addproduct-thumnail-img' alt="" />
                                 </label>
                             <input onChange={imageHandler} type="file" name='profile_pic' id='file-input' hidden/>
                             <button onClick={() => {Add_Dp()}} className='add-product-btn'>Save Changes</button>
@@ -152,19 +169,19 @@ const UserProfile = () => {
                             <div className="profile-details">
                                 <div className="profile-name">
                                     <p>Name : </p>
-                                    <p>{user.name}</p>
+                                    <p>{currentUser.name}</p>
                                     <hr/>
                                 </div>
 
                                 <div className="profile-name">
                                     <p>Index : </p>
-                                    <p>{user.index}</p>
+                                    <p>{currentUser.index}</p>
                                     <hr/>
                                 </div>
 
                                 <div className="profile-email">
                                     <p>Email : </p>
-                                    <p>{user.email}</p>
+                                    <p>{currentUser.email}</p>
                                     <hr/>
                                 </div>
 
@@ -193,11 +210,12 @@ const UserProfile = () => {
                                 )}
                             </div>
                         </React.Fragment>
-                    );
-                } else {
+                        }
+                    {/* ); */}
+                {/* } else {
                     return null;
-                }
-            })}
+                } */}
+            {/* })} */}
         </div>
     );
 };

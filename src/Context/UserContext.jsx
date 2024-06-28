@@ -14,11 +14,11 @@ export const UserContext = createContext(null);
 
 
 const UserContextProvider = (props) => {
-    const [all_user,setAll_User] = useState([]);
+    // const [all_user,setAll_User] = useState([]);
     const [currentId,setCurrentId] = useState(null);
 
-    useEffect(() => {
-        fetch(process.env.LinkForUsers).then((response)=>response.json()).then((data)=>setAll_User(data));
+    // useEffect(() => {
+    //     fetch(process.env.LinkForUsers).then((response)=>response.json()).then((data)=>setAll_User(data));
         // if(localStorage.getItem('auth-token')){
         //     fetch('https://projectbisonbackend.onrender.com/getcart',{
         //         method:'POST',
@@ -30,7 +30,7 @@ const UserContextProvider = (props) => {
         //         body:"",
         //     }).then((response)=>response.json()).then((data)=>setCartItems(data));
         // }
-    },[])
+    // },[])
     
 
     // const addToCart = (itemId)=>{
@@ -79,7 +79,7 @@ const UserContextProvider = (props) => {
       setCurrentId(currentId);
     }
 
-    const contextValue = { all_user, getProductId, currentId};
+    const contextValue = { getProductId, currentId};
 
     return(
         <UserContext.Provider value={contextValue}>

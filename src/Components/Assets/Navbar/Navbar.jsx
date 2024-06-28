@@ -14,7 +14,7 @@ const Navbar = () => {
   const clubItems = ["IEEE", "Leo Club", "Rotaract Club","Moraspirit","Gavel","Chess Club"];
   const eventsItems = ["Exmo", "Orientation"];
   const navigate = useNavigate(); 
-  const { all_user } = useContext(UserContext);
+  // const { all_user } = useContext(UserContext);
 
   const [userEmail, setUserEmail] = useState(null);
   const [currentuser, setCurrentUser] = useState(null);
@@ -37,9 +37,25 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const user = all_user.find((user) => userEmail === user.email);
-    setCurrentUser(user);
-  }, [all_user, userEmail]);
+    if (userEmail) {
+        fetch('https://projectbisonbackend.onrender.com/getuserbymail', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/form-data',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 'email': userEmail }),
+        })
+            .then((response) => response.json())
+            .then((data) => setCurrentUser(data))
+            .catch((error) => console.error('Error fetching user data:', error));
+    }
+}, [userEmail]);
+
+  // useEffect(() => {
+  //   const user = all_user.find((user) => userEmail === user.email);
+  //   setCurrentUser(user);
+  // }, [all_user, userEmail]);
 
   const [searchItem, setSearchItem] = useState(null);
 

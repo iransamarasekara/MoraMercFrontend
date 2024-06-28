@@ -5,7 +5,7 @@ import { UserContext } from '../../Context/UserContext';
 
 const DescriptionBox = (props) => {
   const { product } = props;
-  const { all_user } = useContext(UserContext);
+  // const { all_user } = useContext(UserContext);
   const [activeTab, setActiveTab] = useState('description');
   const [allReviews, setAllReviews] = useState(product.reviewText);
   const [review, setReview] = useState('');
@@ -30,9 +30,25 @@ const DescriptionBox = (props) => {
   }, []);
 
   useEffect(() => {
-    const user = all_user.find((user) => userEmail === user.email);
-    setCurrentUser(user);
-  }, [all_user, userEmail]);
+    if (userEmail) {
+        fetch('https://projectbisonbackend.onrender.com/getuserbymail', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/form-data',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 'email': userEmail }),
+        })
+            .then((response) => response.json())
+            .then((data) => setCurrentUser(data))
+            .catch((error) => console.error('Error fetching user data:', error));
+    }
+}, [userEmail]);
+
+  // useEffect(() => {
+  //   const user = all_user.find((user) => userEmail === user.email);
+  //   setCurrentUser(user);
+  // }, [all_user, userEmail]);
 
   useEffect(() => {
     if (product && product.reviewText) {

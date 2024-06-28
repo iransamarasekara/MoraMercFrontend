@@ -12,7 +12,7 @@ import { FaCopy } from 'react-icons/fa';
 const OrderConfermation = () => {
 
     const {all_product, cartItems, removeAllFromCart, removeFromCartById} = useContext(ShopContext);
-    const {all_user,currentId} = useContext(UserContext);
+    const {currentId} = useContext(UserContext);
     const [userEmail, setUserEmail] = useState(null);
     const [image,setImage] = useState(false);
     const [productImages, setProductImages] = useState({});
@@ -20,6 +20,7 @@ const OrderConfermation = () => {
     const [showOrderTypes, setShowOrderTypes] = useState(true);
     const [currentProduct, setCurrentProduct] = useState(null);
     const [message, setMessage] = useState('');
+    const [currentUser, setCurrentUser] = useState(null);
 
     const toggleModal = () => {
         setModal(!modal);
@@ -47,6 +48,22 @@ const OrderConfermation = () => {
             }).then((response)=>response.json()).then((data)=>setUserEmail(data));
         }
     },[])
+
+    useEffect(() => {
+        if (userEmail) {
+            fetch('https://projectbisonbackend.onrender.com/getuserbymail', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/form-data',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ 'email': userEmail }),
+            })
+                .then((response) => response.json())
+                .then((data) => setCurrentUser(data))
+                .catch((error) => console.error('Error fetching user data:', error));
+        }
+    }, [userEmail]);
 
     // useEffect(() => {
     //     window.addEventListener('beforeunload', alertUser);
@@ -147,15 +164,15 @@ const OrderConfermation = () => {
                 order.productname=product.name;
             }
         })
-        all_user.forEach((user) => {
-            if (userEmail === user.email) {
-                order.username=user.name;
-                order.index=user.index;
-                order.batch=user.batch;
-                order.faculty=user.faculty;
-                order.department=user.department;
-            }
-        })
+        // all_user.forEach((user) => {
+        //     if (userEmail === user.email) {
+                order.username=currentUser.name;
+                order.index=currentUser.index;
+                order.batch=currentUser.batch;
+                order.faculty=currentUser.faculty;
+                order.department=currentUser.department;
+        //     }
+        // })
 
         if(imgReq ==='Pre-order')
 

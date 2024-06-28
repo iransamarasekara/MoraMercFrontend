@@ -18,7 +18,7 @@ const UserContextProvider = (props) => {
     const [currentId,setCurrentId] = useState(null);
 
     useEffect(() => {
-        fetch('https://projectbisonbackend.onrender.com/allusers').then((response)=>response.json()).then((data)=>setAll_User(data));
+        fetch(process.env.LinkForUsers).then((response)=>response.json()).then((data)=>setAll_User(data));
         // if(localStorage.getItem('auth-token')){
         //     fetch('https://projectbisonbackend.onrender.com/getcart',{
         //         method:'POST',

@@ -29,7 +29,7 @@ const Signup = () => {
       await fetch('https://projectbisonbackend.onrender.com/signup', {
         method: 'POST',
         headers: {
-          Accept: 'application/form-data',
+          Accept: 'application/form-data',   
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
@@ -40,6 +40,7 @@ const Signup = () => {
         alert('Please check your email to verify your account. If not check your spam folder.');
       } else {
         alert(responseData.errors);
+        setMessage(responseData.errors);
       }
     
   };

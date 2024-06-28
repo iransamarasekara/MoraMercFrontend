@@ -21,6 +21,7 @@ const SpecialComboPacks = () => {
     // } style={containerStyles}
 
     return (
+        arr.length > 0 &&
         <div  className='home-ad'>
             <div className='home-ad-desc'>
                 <h2>Check Special Offers for You.</h2>

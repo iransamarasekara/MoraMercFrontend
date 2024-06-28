@@ -95,6 +95,7 @@ const Signup = () => {
                   <option value='Department of Mechanical Engineering'>Department of Mechanical Engineering</option>
                   <option value='Department of Electronic & Telecom. Engineering'>Department of Electronic & Telecom. Engineering</option>
                   <option value='Department of Chemical & Process Engineering'>Department of Chemical & Process Engineering</option>
+                  <option value='Department of Electrical Engineering'>Department of Electrical Engineering</option>
                   <option value='Department of Civil Engineering'>Department of Civil Engineering</option>
                   <option value='Department of Textile & Apparel Engineering'>Department of Textile & Apparel Engineering</option>
                   <option value='Department of Earth Resource Engineering'>Department of Earth Resource Engineering</option>
@@ -110,7 +111,7 @@ const Signup = () => {
                 <option value='22'>22</option>
                 <option value='23'>23</option>
               </select>
-              <input name='email' value={formData.email} onChange={changeHandler} type='email' placeholder=' University Email Address' required />
+              <input name='email' value={formData.email} onChange={changeHandler} type='email' placeholder='Email Address' required />
               <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder=' Password' required />
               {message && <p className="message">{message}</p>}
               <button type="submit">Sign Up</button>

@@ -22,13 +22,13 @@ const useResponsiveStyles = () => {
         });
       } else if (window.innerWidth <= 768) {
         setContainerStyles({
-          width: '300px', // Smaller width on tablets
-          height: '450px', // Adjust height as needed
+          width: '250px', // Smaller width on tablets
+          height: '300px', // Adjust height as needed
           margin: '0 0',
         });
       } else if (window.innerWidth <= 1024) {
         setContainerStyles({
-          width: '340px', // Smaller width on tablets
+          width: '350px', // Smaller width on tablets
           height: '440px', // Adjust height as needed
           margin: '0 0',
         });
@@ -83,7 +83,7 @@ const ProductDisplay = (props) => {
         } else {
           // Perform the action
           addToCart(product.id, size1, color1);
-          setAlertMessage('Added to cart'); // Clear the alert message if action is successful
+          setAlertMessage('Added to bag'); // Clear the alert message if action is successful
         }
       } else {
         setAlertMessage('*Please login before order');
@@ -109,12 +109,12 @@ const ProductDisplay = (props) => {
   return (
     <div className='productdisplay'>
       <div className="productdisplay-left">
-        <div className="productdisplay-img-list">
+        {/* <div className="productdisplay-img-list">
           <img src={product.image} alt='' />
           <img src={product.image} alt='' />
           <img src={product.image} alt='' />
           <img src={product.image} alt='' />
-        </div>
+        </div> */}
         <div style={containerStyles}>
           <ImageSlider slides={slides} />
         </div>
@@ -196,7 +196,7 @@ const ProductDisplay = (props) => {
           </div>
         </div>
         <div className="productdisplay-right-size">
-          <h1>Select Size</h1>
+          <h4>Select Size</h4>
           <div className="productdisplay-right-sizes">
             {product.avl_size.map((size, index) => (
               <button
@@ -216,7 +216,7 @@ const ProductDisplay = (props) => {
         </div>
         <div className="productdisplay-right-addtoCart">
           <button onClick={() => { handleAction() }} className={!product.available ? 'unavailable-button' : ''}>
-            {product.available ? 'ADD TO CART' : 'UNAVAILABLE'}
+            {product.available ? 'ADD TO BAG' : 'UNAVAILABLE'}
           </button>
           {alertMessage && <p className="alert-message">{alertMessage}</p>}
         </div>

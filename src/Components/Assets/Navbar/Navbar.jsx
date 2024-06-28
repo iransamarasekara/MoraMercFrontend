@@ -128,15 +128,27 @@ const Navbar = () => {
             ?<>
             <button className='nav-auth-logout' onClick={() => { localStorage.removeItem('auth-token'); window.location.replace('/') }}>Logout</button>
             <Link className='nav-auth-profile' style={{ textDecoration: 'none', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', border: '1px solid black'}} to='/profile'>
-                {currentuser && currentuser.profile_pic? <img style={{width: '32px', height: '32px',borderRadius:'50%',borderColor:'black'}} src={currentuser.profile_pic} alt=''/> : <span style={{ fontSize: '2px' }}>&#128100;</span>}
+                {currentuser && currentuser.profile_pic? <img style={{width: '32px', height: '32px',borderRadius:'50%',borderColor:'black'}} src={currentuser.profile_pic} alt=''/> : <span style={{ fontSize: '20px' }}>&#128100;</span>}
             </Link>
             </>
             : <>
               <Link className='nav-auth-login' style={{ textDecoration: 'none' }} to='/login'><button>Login</button></Link>
               <Link className='nav-auth-signup' style={{ textDecoration: 'none' }} to='/signup'><button>Signup</button></Link>
             </>}
-          <Link className='nav-auth-cart' style={{ textDecoration: 'none' }} to='/cart'><img src={cart_icon} alt='' /></Link>
+          <Link className='nav-auth-cart' style={{ textDecoration: 'none' }} to='/cart'>
+            <svg fill="#000000" height="25px" width="26px" viewBox="0 0 483.1 483.1" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <path d="M434.55,418.7l-27.8-313.3c-0.5-6.2-5.7-10.9-12-10.9h-58.6c-0.1-52.1-42.5-94.5-94.6-94.5s-94.5,42.4-94.6,94.5h-58.6
+                  c-6.2,0-11.4,4.7-12,10.9l-27.8,313.3c0,0.4,0,0.7,0,1.1c0,34.9,32.1,63.3,71.5,63.3h243c39.4,0,71.5-28.4,71.5-63.3
+                  C434.55,419.4,434.55,419.1,434.55,418.7z M241.55,24c38.9,0,70.5,31.6,70.6,70.5h-141.2C171.05,55.6,202.65,24,241.55,24z
+                  M363.05,459h-243c-26,0-47.2-17.3-47.5-38.8l26.8-301.7h47.6v42.1c0,6.6,5.4,12,12,12s12-5.4,12-12v-42.1h141.2v42.1
+                  c0,6.6,5.4,12,12,12s12-5.4,12-12v-42.1h47.6l26.8,301.8C410.25,441.7,389.05,459,363.05,459z"/>
+              </g>
+            </svg>
+          </Link>
+          <Link className='nav-auth-cart' style={{ textDecoration: 'none' }} to='/cart'>
           <div className='nav-cart-count'>{getTotalCartItems()}</div>
+          </Link>
         </div>
       </div>
       <ul className='nav-menu'>
@@ -144,8 +156,9 @@ const Navbar = () => {
           <li><Link style={{ textDecoration: 'none', color: "black" }} to='/'>HOME</Link></li>
         </div>
         <div className='dropdown'>
-          <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/t-shirt'>T-SHIRTS {'>'} </Link></li>
-          <div className="dropdown-content">
+          <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/t-shirt'>T-SHIRTS</Link></li>
+          {/* <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/t-shirt'>T-SHIRTS {'>'} </Link></li> */}
+          {/* <div className="dropdown-content">
             <div className="dropdown-column">
               <h5>Faculty Shirts</h5>
               <ul>
@@ -178,10 +191,11 @@ const Navbar = () => {
                 ))}
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className='dropdown'>
-          <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/wristbands'>WRISTBANDS {'>'} </Link></li>
+          <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/wristbands'>WRISTBANDS</Link></li>
+          {/* <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/wristbands'>WRISTBANDS {'>'} </Link></li>
           <div className="dropdown-content">
             <div className="dropdown-column">
               <ul>
@@ -195,10 +209,11 @@ const Navbar = () => {
                 <li><Link style={{ textDecoration: 'none' }} to='/wristbands/type4' onClick={closeMenu}>Type 4</Link></li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className='dropdown'>
-          <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/others'>OTHERS {'>'} </Link></li>
+        <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/others'>OTHERS</Link></li>
+          {/* <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/others'>OTHERS {'>'} </Link></li>
           <div className="dropdown-content">
             <div className="dropdown-column">
               <ul>
@@ -212,7 +227,7 @@ const Navbar = () => {
                 <li><Link style={{ textDecoration: 'none' }} to='/others/type4' onClick={closeMenu}>Type 4</Link></li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
         <div>
           <li><Link style={{ textDecoration: 'none', color: "black" }} to='/contact'>CONTACT</Link></li>
@@ -223,9 +238,19 @@ const Navbar = () => {
           <img src={search_icon} alt="Search" />
         </div>
         <Link className='cart-mobile' style={{ textDecoration: 'none' }} to='/cart'>
-          <img src={cart_icon} alt='' />
+          <svg fill="#000000" height="25px" width="26px" viewBox="0 0 483.1 483.1" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <path d="M434.55,418.7l-27.8-313.3c-0.5-6.2-5.7-10.9-12-10.9h-58.6c-0.1-52.1-42.5-94.5-94.6-94.5s-94.5,42.4-94.6,94.5h-58.6
+                  c-6.2,0-11.4,4.7-12,10.9l-27.8,313.3c0,0.4,0,0.7,0,1.1c0,34.9,32.1,63.3,71.5,63.3h243c39.4,0,71.5-28.4,71.5-63.3
+                  C434.55,419.4,434.55,419.1,434.55,418.7z M241.55,24c38.9,0,70.5,31.6,70.6,70.5h-141.2C171.05,55.6,202.65,24,241.55,24z
+                  M363.05,459h-243c-26,0-47.2-17.3-47.5-38.8l26.8-301.7h47.6v42.1c0,6.6,5.4,12,12,12s12-5.4,12-12v-42.1h141.2v42.1
+                  c0,6.6,5.4,12,12,12s12-5.4,12-12v-42.1h47.6l26.8,301.8C410.25,441.7,389.05,459,363.05,459z"/>
+              </g>
+            </svg>
         </Link>
+        <Link className='cart-mobile' style={{ textDecoration: 'none' }} to='/cart'>
         <div className='count-mobile'>{getTotalCartItems()}</div>
+        </Link>
         <div className="hamburger-menu" onClick={toggleMenu}>
           <div></div>
           <div></div>
@@ -238,7 +263,7 @@ const Navbar = () => {
                 ? <>
                   <button className='nav-auth-logout' onClick={() => { localStorage.removeItem('auth-token'); window.location.replace('/') }}>Logout</button>
                   <Link className='nav-auth-profile-mobile' style={{ textDecoration: 'none', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', border: '1px solid black' }} to='/profile' onClick={closeMenu}>
-                    {currentuser && currentuser.profile_pic ? <img style={{ width: '32px', height: '32px', borderRadius: '50%', borderColor: 'black' }} src={currentuser.profile_pic} alt='' /> : <span style={{ fontSize: '2px' }}>&#128100;</span>}
+                    {currentuser && currentuser.profile_pic ? <img style={{ width: '32px', height: '32px', borderRadius: '50%', borderColor: 'black' }} src={currentuser.profile_pic} alt='' /> : <span style={{ fontSize: '20px' }}>&#128100;</span>}
                   </Link>
                 </>
                 : <>
@@ -258,8 +283,8 @@ const Navbar = () => {
             </div>
           </ul>
         </div>
-        {/* {menuOpen && <div className="overlay show" onClick={toggleMenu}></div>} */}
-        {/* {searchBarOpen && <div className="overlay show" onClick={toggleSearchBar}></div>} */}
+        {menuOpen && <div className="overlay-show" onClick={toggleMenu}></div>}
+        {/* {searchBarOpen && <div className="overlay-show" onClick={toggleSearchBar}></div>} */}
       </div>
       <div className={`sliding-search-bar-container ${searchBarOpen ? 'open' : ''}`}>
       <div className="sliding-search-bar">

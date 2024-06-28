@@ -19,6 +19,7 @@ const OrderConfermation = () => {
     const [modal, setModal] = useState(false);
     const [showOrderTypes, setShowOrderTypes] = useState(true);
     const [currentProduct, setCurrentProduct] = useState(null);
+    const [message, setMessage] = useState('');
 
     const toggleModal = () => {
         setModal(!modal);
@@ -95,6 +96,10 @@ const OrderConfermation = () => {
         total:0,
         username:"",
         productname:"",
+        index:"",
+        batch:"",
+        faculty:"",
+        department:"",
     }) 
 
     useEffect(() => {
@@ -145,6 +150,10 @@ const OrderConfermation = () => {
         all_user.forEach((user) => {
             if (userEmail === user.email) {
                 order.username=user.name;
+                order.index=user.index;
+                order.batch=user.batch;
+                order.faculty=user.faculty;
+                order.department=user.department;
             }
         })
 
@@ -182,7 +191,11 @@ const OrderConfermation = () => {
                     if(data.success)
                     {
                         removeAllFromCart(currentId);
+                        setMessage('');
                         window.location.replace("/thanks");
+                    }
+                    else{
+                        setMessage('Failed to add the order. Please try again later.');
                     }
                 })
             }
@@ -206,7 +219,11 @@ const OrderConfermation = () => {
                     if(data.success)
                     {
                         removeAllFromCart(currentId);
+                        setMessage('');
                         window.location.replace("/thanks");
+                    }
+                    else{
+                        setMessage('Failed to add the order. Please try again later.');
                     }
                 })
         }
@@ -221,6 +238,7 @@ const OrderConfermation = () => {
 
         const handleSubmit = (event) => {
             event.preventDefault();
+            setMessage('Plase wait while we process your request...');
             if (!field1 || !field2) {
                 alert('Please fill all required fields');
                 return;
@@ -414,24 +432,47 @@ const OrderConfermation = () => {
 
                         {showOrderTypes && (
                             <div className="accnumber">
-                                <h5>Account Number</h5>
+                                <h5>Account Details</h5>
                                 <hr/>
                                 <p>Bank : {currentProduct && currentProduct.bank}</p>
                                 <p>Account Number :  
                                     <span className="account-number">{currentProduct && currentProduct.acc_no} &nbsp;<FaCopy className="copy-icon" onClick={copyToClipboard} /></span>
                                     
                                 </p>
-                                <p>Account Name : {currentProduct && currentProduct.acc_name}</p>
+                                <p>Name : {currentProduct && currentProduct.acc_name}</p>
+                                <p>Branch : {currentProduct && currentProduct.acc_branch}</p>
+                                
+                                {currentProduct && currentProduct.bank2 && 
+                                <>
+                                <hr/>
+                                <p>Bank : {currentProduct && currentProduct.bank2}</p>
+                                <p>Account Number :  
+                                    <span className="account-number">{currentProduct && currentProduct.acc_no2} &nbsp;<FaCopy className="copy-icon" onClick={copyToClipboard} /></span>
+                                    
+                                </p>
+                                <p>Name : {currentProduct && currentProduct.acc_name2}</p>
+                                <p>Branch : {currentProduct && currentProduct.acc_branch2}</p>
+                                </>
+                                }
                             </div>
                         )}       
 
                         {showOrderTypes && (
                             <div className="ordertype">
                                 <p>Order Type</p>
+                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'pre' || currentProduct.avl_order_types === 'both') && (
+                                    <>
                                 <input type="radio" id="preorder" name="order_type" value="Pre-order" onChange={handleOrderTypeChange} checked={orderType === 'Pre-order'} />
                                 <label htmlFor="preorder">Pre-order</label>
+                                </>
+                                )}
+
+                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'post' || currentProduct.avl_order_types === 'both') && (
+                                    <>
                                 <input type="radio" id="postorder" name="order_type" value="Post-order" onChange={handleOrderTypeChange} checked={orderType === 'Post-order'} />
                                 <label htmlFor="postorder">Post-order</label>
+                                </>
+                                )}
                                 <div className="orderconfirmation-itemfield1">
                                     <p>Enter Your WhatsApp Number </p>
                                     <input required value={newFormData.whatsApp} onChange={checkWhatsAppReq} type='text' name='whatsApp' placeholder='Type here'/>
@@ -460,6 +501,8 @@ const OrderConfermation = () => {
                                 <label htmlFor="pickup">University Pick-Up</label>
                         </div>
                     </div>
+                    
+                    {message && <p className="message">{message}</p>}
 
 
                     {/* <div className='orderconfirmation-first'>
@@ -584,24 +627,47 @@ const OrderConfermation = () => {
 
                             {showOrderTypes && (
                                 <div className="accnumber">
-                                    <h5>Account Number</h5>
+                                    <h5>Account Details</h5>
                                     <hr/>
                                     <p>Bank : {currentProduct && currentProduct.bank}</p>
                                     <p>Account Number :  
                                         <span className="account-number">{currentProduct && currentProduct.acc_no} &nbsp;<FaCopy className="copy-icon" onClick={copyToClipboard} /></span>
                                         
                                     </p>
-                                    <p>Account Name : {currentProduct && currentProduct.acc_name}</p>
+                                    <p>Name : {currentProduct && currentProduct.acc_name}</p>
+                                    <p>Branch : {currentProduct && currentProduct.acc_branch}</p>
+                                
+                                    {currentProduct && currentProduct.bank2 && 
+                                    <>
+                                    <hr/>
+                                    <p>Bank : {currentProduct && currentProduct.bank2}</p>
+                                    <p>Account Number :  
+                                        <span className="account-number">{currentProduct && currentProduct.acc_no2} &nbsp;<FaCopy className="copy-icon" onClick={copyToClipboard} /></span>
+                                        
+                                    </p>
+                                    <p>Name : {currentProduct && currentProduct.acc_name2}</p>
+                                    <p>Branch : {currentProduct && currentProduct.acc_branch2}</p>
+                                    </>
+                                    }
                                 </div>
                             )}        
 
                             {showOrderTypes && (
                                 <div className="ordertype">
                                     <p>Order Type</p>
-                                    <input type="radio" id="preorder" name="order_type" value="Pre-order" onChange={handleOrderTypeChange} checked={orderType === 'Pre-order'} />
-                                    <label htmlFor="preorder">Pre-order</label>
-                                    <input type="radio" id="postorder" name="order_type" value="Post-order" onChange={handleOrderTypeChange} checked={orderType === 'Post-order'} />
-                                    <label htmlFor="postorder">Post-order</label>
+                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'pre' || currentProduct.avl_order_types === 'both') && (
+                                    <>
+                                <input type="radio" id="preorder" name="order_type" value="Pre-order" onChange={handleOrderTypeChange} checked={orderType === 'Pre-order'} />
+                                <label htmlFor="preorder">Pre-order</label>
+                                </>
+                                )}
+
+                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'post' || currentProduct.avl_order_types === 'both') && (
+                                    <>
+                                <input type="radio" id="postorder" name="order_type" value="Post-order" onChange={handleOrderTypeChange} checked={orderType === 'Post-order'} />
+                                <label htmlFor="postorder">Post-order</label>
+                                </>
+                                )}
                                     <div className="orderconfirmation-itemfield1">
                                         <p>Enter Your WhatsApp Number : </p>
                                         <input required value={newFormData.whatsApp} onChange={checkWhatsAppReq} type='text' name='whatsApp' placeholder='Type here'/>
@@ -718,6 +784,7 @@ const OrderConfermation = () => {
                                     </div>
                                 </div>
                                 <button type="submit" className='add-order-btn' onClick={setField3}>PLACE ORDER</button>
+                                {message && <p className="message">{message}</p>}
                             </div>   
                         )}
                     </div>

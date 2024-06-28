@@ -62,8 +62,8 @@
     text-align: center;
     transition: all 0.3s ease; /* Smooth transition */
     font-weight: 400; /* Style the active tab */
-    border: 2px solid #000000;
-    box-shadow: 3px 3px 3px rgb(109, 112, 113);
+    border: 1px solid #000000;
+    box-shadow: 0px 0px 10px 0px #00000036;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     border-left: none;
@@ -93,7 +93,7 @@
     height: 70px;
     /* Change the color of the text */
     color: #ffffff;
-    background: linear-gradient(90deg, #002980 0%, #0049BA 100%);
+    background: linear-gradient(90deg, #000000 0%, #130F40 100%);
     transition: all 0.3s ease; /* Smooth transition */
 }
 
@@ -373,7 +373,7 @@
     
     .mobile-sidebar ul {
         border: 1px solid #ffffff77;
-        background:linear-gradient(90deg, #002980 0%, #0049BA 100%);
+        background: linear-gradient(90deg, #000000 0%, #130F40 100%);
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         border-radius: 20px;
         display: grid;

@@ -13,14 +13,14 @@
 
 .notification-header {
     padding: 35px;
-    height: 100px;
+    height: 125px;
     width: 100%;
-    background: linear-gradient(90deg, #002980 0%, #0049BA 50%, #007BFF 100%); /* Gradient background with an additional color */
+    background: linear-gradient(90deg, #000000 0%, #130F40 100%); /* Gradient background with an additional color */
     color: #FFFFFF; /* Corrected text color to white */
     font-size: 40px;
     font-weight: bold;
     text-align: center;
-    border-radius: 10px 10px 0 0; /* Rounded corners on the top */
+    border-radius: 20px 10px 0 0; /* Rounded corners on the top */
 }
 
 .notification-item {

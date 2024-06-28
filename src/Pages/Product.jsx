@@ -9,7 +9,8 @@ import RelatedProducts from '../Components/RealatedProducts/RelatedProducts';
 const Product = () => {
   const {all_product} = useContext(ShopContext);
   const {productId} = useParams();
-  const product = all_product.find((e)=> e.id=== Number(productId))
+  const formattedProductId = String(productId).replace(/_/g, ' ');
+  const product = all_product.find((e)=> e.name=== formattedProductId);
 
   //add
   if(!product){

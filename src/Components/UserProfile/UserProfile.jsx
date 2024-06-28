@@ -177,7 +177,7 @@ const UserProfile = () => {
                                         <div onClick={toggleModal} className="overlay"></div>
                                         <div className="modal-content">
                                             {!isCorrect && (
-                                                <input onChange={changeHandler} type="password" placeholder="Password" />
+                                                <input onChange={changeHandler} type="text" placeholder="Current Password" />
                                             )}
                                             {!isCorrect && <button className="check-btn" onClick={checkHandler}>Check</button>}
 

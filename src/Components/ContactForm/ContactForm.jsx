@@ -66,24 +66,24 @@ function ContactForm() {
             </div>
             <div className="information">
               <img src={email} className="icon" alt="" />
-              <p>bisoncorpstm@gmail.com</p>
+              <p>moramerchandise@gmail.com</p>
             </div>
             <div className="information">
               <img src={phone} className="icon" alt="" />
-              <p>+94-71-9548297</p>
+              <p>+94-77-5963961</p>
             </div>
           </div>
 
           <div className="social-media">
             <p>Connect with us :</p>
             <div className="social-icons">
-              <a href="#">
+              <a href="https://www.facebook.com/profile.php?id=61560774282709&mibextid=LQQJ4d">
                 <TiSocialFacebook className="Image" />
               </a>
               <a href="#">
                 <TiSocialTwitter className="Image" />
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/moramerc_?igsh=dHFrZG9wdGQ0ajhv">
                 <TiSocialInstagram className="Image" />
               </a>
               <a href="#">

@@ -32,22 +32,36 @@ const Signup = () => {
       },
       body: JSON.stringify(formData),
     }).then((response) => response.json()).then((data) => responseData = data);
+    
+      let responseData;
+      await fetch('https://projectbisonbackend.onrender.com/signup', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/form-data',   
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      }).then((response) => response.json()).then((data) => responseData = data);
 
-    if (responseData.success) {
-      setMessage('Signup successful! Please check your email to verify your account.');
-      alert('Please check your email to verify your account. If not check your spam folder.');
-    } else {
-      alert(responseData.errors);
-    }
+      if (responseData.success) {
+        setMessage('Signup successful! Please check your email to verify your account.');
+        alert('Please check your email to verify your account. If not check your spam folder.');
+      } else {
+        alert(responseData.errors);
+        setMessage(responseData.errors);
+      }
+    
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@uom\.lk$/;
-    if (!emailRegex.test(formData.email)) {
-      alert('Please enter a valid uom mail address');
-      return;
-    }
+    event.preventDefault();    
+    // const emailRegex = /^[a-zA-Z0-9._%+-]+@uom\.lk$/;
+    // if (!emailRegex.test(formData.email)) {
+    //     alert('Please enter a valid uom mail address');
+    //     return;
+    // } 
+    setMessage('Please wait while we process your request...')
+
     const isFormFilled = Object.entries(formData).every(([key, value]) => {
       if (key === 'profile_pic') {
         return true;
@@ -111,6 +125,7 @@ const Signup = () => {
               {message && <p className="message">{message}</p>}
               <button type="submit">Sign Up</button>
             </form>
+
           </div>
         </div>
       </div>

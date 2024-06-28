@@ -165,6 +165,10 @@
 /* Small Mobile styles */
 @media (max-width: 480px) {
 
+    .shop-category {
+        margin-top: -10px;
+    }
+
     .shop-category-banner-mobile {
         display: block;
     }

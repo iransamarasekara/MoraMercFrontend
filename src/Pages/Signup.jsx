@@ -40,6 +40,7 @@ const Signup = () => {
         alert('Please check your email to verify your account. If not check your spam folder.');
       } else {
         alert(responseData.errors);
+        setMessage(responseData.errors);
       }
     
   };

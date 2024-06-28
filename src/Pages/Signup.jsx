@@ -51,6 +51,7 @@ const Signup = () => {
     //     alert('Please enter a valid uom mail address');
     //     return;
     // } 
+    setMessage('Plase wait while we process your request...')
     const isFormFilled = Object.entries(formData).every(([key, value]) => {
         if (key === 'profile_pic') {
             return true;
@@ -80,7 +81,7 @@ const Signup = () => {
           {/* {message && <p className="message">{message}</p>} */}
           <div className='signup-fields'>
           <form onSubmit={handleSubmit} className='signup-fields'>
-            <input name='username' value={formData.username} onChange={changeHandler} type='text' placeholder='Your Name' required />
+            <input name='username' value={formData.username} onChange={changeHandler} type='text' placeholder='Your Full Name' required />
             <input name='index' value={formData.index} onChange={changeHandler} type='text' placeholder='University Index' required />
             <input name='faculty' value={formData.faculty} onChange={changeHandler} type='text' placeholder='Faculty' required />
             <input name='department' value={formData.department} onChange={changeHandler} type='text' placeholder='Department' required />

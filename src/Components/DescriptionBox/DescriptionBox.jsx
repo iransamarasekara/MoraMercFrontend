@@ -41,6 +41,10 @@ const DescriptionBox = (props) => {
   }, [product]);
 
   const handleTabClick = (tab) => {
+    if(tab === 'reviews' && !product.available) {
+      alert('You cannot view reviews for an unavailable product.');
+      return;
+    }
     setActiveTab(tab);
   };
 

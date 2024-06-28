@@ -19,6 +19,7 @@ const OrderConfermation = () => {
     const [modal, setModal] = useState(false);
     const [showOrderTypes, setShowOrderTypes] = useState(true);
     const [currentProduct, setCurrentProduct] = useState(null);
+    const [message, setMessage] = useState('');
 
     const toggleModal = () => {
         setModal(!modal);
@@ -96,6 +97,9 @@ const OrderConfermation = () => {
         username:"",
         productname:"",
         index:"",
+        batch:"",
+        faculty:"",
+        department:"",
     }) 
 
     useEffect(() => {
@@ -147,6 +151,9 @@ const OrderConfermation = () => {
             if (userEmail === user.email) {
                 order.username=user.name;
                 order.index=user.index;
+                order.batch=user.batch;
+                order.faculty=user.faculty;
+                order.department=user.department;
             }
         })
 
@@ -184,7 +191,11 @@ const OrderConfermation = () => {
                     if(data.success)
                     {
                         removeAllFromCart(currentId);
+                        setMessage('');
                         window.location.replace("/thanks");
+                    }
+                    else{
+                        setMessage('Failed to add the order. Please try again later.');
                     }
                 })
             }
@@ -208,7 +219,11 @@ const OrderConfermation = () => {
                     if(data.success)
                     {
                         removeAllFromCart(currentId);
+                        setMessage('');
                         window.location.replace("/thanks");
+                    }
+                    else{
+                        setMessage('Failed to add the order. Please try again later.');
                     }
                 })
         }
@@ -223,6 +238,7 @@ const OrderConfermation = () => {
 
         const handleSubmit = (event) => {
             event.preventDefault();
+            setMessage('Plase wait while we process your request...');
             if (!field1 || !field2) {
                 alert('Please fill all required fields');
                 return;
@@ -485,6 +501,8 @@ const OrderConfermation = () => {
                                 <label htmlFor="pickup">University Pick-Up</label>
                         </div>
                     </div>
+                    
+                    {message && <p className="message">{message}</p>}
 
 
                     {/* <div className='orderconfirmation-first'>
@@ -766,6 +784,7 @@ const OrderConfermation = () => {
                                     </div>
                                 </div>
                                 <button type="submit" className='add-order-btn' onClick={setField3}>PLACE ORDER</button>
+                                {message && <p className="message">{message}</p>}
                             </div>   
                         )}
                     </div>

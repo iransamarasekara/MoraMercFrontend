@@ -77,13 +77,13 @@ function ContactForm() {
           <div className="social-media">
             <p>Connect with us :</p>
             <div className="social-icons">
-              <a href="#">
+              <a href="https://www.facebook.com/profile.php?id=61560774282709&mibextid=LQQJ4d">
                 <TiSocialFacebook className="Image" />
               </a>
               <a href="#">
                 <TiSocialTwitter className="Image" />
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/moramerc_?igsh=dHFrZG9wdGQ0ajhv">
                 <TiSocialInstagram className="Image" />
               </a>
               <a href="#">

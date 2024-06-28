@@ -14,29 +14,37 @@ const NewCollection = () => {
       <h1>MORA COLLECTION</h1>
       <hr />
       <div className="collections">
-        <div className="left-box" style={{ backgroundImage: `url(${image1})` }}>
-          <div className="shirt">
-            <Link to='/t-shirt' style={{textDecoration:'none', color:'white'}}> <h2>T-SHIRTS</h2></Link>
+      <Link to='/t-shirt' style={{ textDecoration: 'none' }}>
+          <div className="left-box" style={{ backgroundImage: `url(${image1})` }}>
+            <div className="shirt" style={{ color: 'white' }}>
+              <h2>T-SHIRTS</h2>
+            </div>
           </div>
-        </div>
+        </Link>
         <div className="right-box">
-          <div className="item" style={{ backgroundImage: `url(${image2})` }}>
-            <div className="item-details">
-            <Link to='/wristbands' style={{textDecoration:'none', color:'white'}}><h2>WRISTBANDS</h2></Link>
+        <Link to='/wristbands' style={{ textDecoration: 'none' }}>
+            <div className="item" style={{ backgroundImage: `url(${image2})`, color: 'white' }}>
+              <div className="item-details">
+                <h2>WRISTBANDS</h2>
+              </div>
             </div>
-          </div>
-          <div className="item" style={{ backgroundImage: `url(${image3})` }}>
-            <div className="item-details">
-            <Link to='/others' style={{textDecoration:'none', color:'white'}}><h2>LAPTOP STICKERS</h2></Link>
+          </Link>
+          <Link to='/others' style={{ textDecoration: 'none' }}>
+            <div className="item" style={{ backgroundImage: `url(${image3})`, color: 'white' }}>
+              <div className="item-details">
+                <h2>LAPTOP STICKERS</h2>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
-      <div className="bottom-box" style={{ backgroundImage: `url(${image4})` }}>
-        <div className="item-details">
-        <Link to='/others' style={{textDecoration:'none', color:'white'}}><h2>OTHER ITEMS</h2></Link>
+      <Link to='/others' style={{ textDecoration: 'none' }}>
+        <div className="bottom-box" style={{ backgroundImage: `url(${image4})`, color: 'white' }}>
+          <div className="item-details">
+            <h2>OTHER ITEMS</h2>
+          </div>
         </div>
-      </div> 
+      </Link>
     </div>
   );
 }

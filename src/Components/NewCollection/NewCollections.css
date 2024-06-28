@@ -36,6 +36,7 @@
   .left-box {
     /* flex: 1; */
     background-size: cover;
+    height: 590px;
     background-position: top;
     display: flex;
     align-items: flex-end;
@@ -225,7 +226,7 @@
     color: white;
     position: relative;
     border-radius: 20px; /* Make the corners round */
-    /* min-height: 600px; Adjust this height as needed */
+    min-height: 590px; 
   }
   
   
@@ -394,7 +395,7 @@
     color: white;
     position: relative;
     border-radius: 20px; /* Make the corners round */
-    /* min-height: 600px; Adjust this height as needed */
+    min-height: 430px;
   }
   
   
@@ -426,7 +427,7 @@
     position: relative;
     border-radius: 20px; /* Make the corners round */
     border-radius: 20px; /* Make the corners round */
-    min-height: 400px; /* Adjust this height as needed */
+    min-height: 250px; /* Adjust this height as needed */
     border: 2px solid rgb(234, 234, 234); /* Add black border */
   }
   
@@ -489,7 +490,7 @@
     text-shadow: 2px 2px 2px #00000085;
     position: relative;
     border-radius: 20px; /* Make the corners round */
-    min-height: 280px; /* Adjust this height as needed */
+    min-height: 200px; /* Adjust this height as needed */
   }
   
   .item-details {

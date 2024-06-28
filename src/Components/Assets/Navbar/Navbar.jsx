@@ -146,7 +146,9 @@ const Navbar = () => {
               </g>
             </svg>
           </Link>
+          <Link className='nav-auth-cart' style={{ textDecoration: 'none' }} to='/cart'>
           <div className='nav-cart-count'>{getTotalCartItems()}</div>
+          </Link>
         </div>
       </div>
       <ul className='nav-menu'>
@@ -246,7 +248,9 @@ const Navbar = () => {
               </g>
             </svg>
         </Link>
+        <Link className='cart-mobile' style={{ textDecoration: 'none' }} to='/cart'>
         <div className='count-mobile'>{getTotalCartItems()}</div>
+        </Link>
         <div className="hamburger-menu" onClick={toggleMenu}>
           <div></div>
           <div></div>

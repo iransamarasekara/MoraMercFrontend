@@ -12,6 +12,10 @@ const UserProfile = () => {
     const [password, setPassword] = useState(null);
     const [newPassword, setNewPassword] = useState(null);
     const [profile_pic,setProfile_pic] = useState(false);
+    const [formData, setFormData] = useState({
+        email: "",
+        password: ""
+    });
 
 
     const imageHandler = (e)=>{
@@ -109,15 +113,33 @@ const UserProfile = () => {
     // }, [all_user, userEmail]);
 
     const changeHandler = (e) => {
+        setFormData({ ...formData, email: userEmail, password: e.target.value });
         setPassword(e.target.value);
     };
 
-    const checkHandler = () => {
-        if (password === currentUser.password) {
-            setIsCorrect(true);
+    const checkHandler = async () => {
+        // setFormData({ ...formData, email: userEmail, password: password });
+        let responseData;
+        await fetch('https://projectbisonbackend.onrender.com/login', {
+        method: 'POST',
+        headers: {
+            Accept: 'application/form-data',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+        }).then((response) => response.json()).then((data) => responseData = data);
+
+        if (responseData.success) {
+        localStorage.setItem('auth-token', responseData.token);
+        setIsCorrect(true);
         } else {
             alert('Wrong password');
         }
+        // if (password === currentUser.password) {
+        //     setIsCorrect(true);
+        // } else {
+        //     alert('Wrong password');
+        // }
     };
 
     const changePasswordHandler = (e) => {

@@ -10,7 +10,7 @@
     margin-top: 80px;
     margin-bottom: -50px;
     /* margin: 80px 170px 0px 170px; */
-    text-transform: capitalize;
+    text-transform: capitalize ;
 }
 @media (max-width: 1024px) {
     .breadcrum {

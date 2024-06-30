@@ -29,20 +29,21 @@ const Profile = () => {
     }, []);
 
     useEffect(() => {
-        if (userEmail) {
+        if (localStorage.getItem('auth-token')) {
             fetch('https://projectbisonbackend.onrender.com/getuserbymail', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
+                    'auth-token': `${localStorage.getItem('auth-token')}`,
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ 'email': userEmail }),
+                body: '',
             })
                 .then((response) => response.json())
                 .then((data) => setCurrentUser(data))
                 .catch((error) => console.error('Error fetching user data:', error));
         }
-    }, [userEmail]);
+    }, []);
 
     // useEffect(() => {
     //     const user = all_user.find((user) => userEmail === user.email);

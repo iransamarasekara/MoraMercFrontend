@@ -17,7 +17,8 @@ const OrderConfermation = () => {
     const [image,setImage] = useState(false);
     const [productImages, setProductImages] = useState({});
     const [modal, setModal] = useState(false);
-    const [showOrderTypes, setShowOrderTypes] = useState(true);
+    const [showOrderTypes, setShowOrderTypes] = useState(false);
+    const [showFrimiTypes, setShowFrimiTypes] = useState(false);
     const [currentProduct, setCurrentProduct] = useState(null);
     const [message, setMessage] = useState('');
     const [currentUser, setCurrentUser] = useState(null);
@@ -118,6 +119,9 @@ const OrderConfermation = () => {
         batch:"",
         faculty:"",
         department:"",
+        uni_pickup:"uni_pickup",
+        pre_order_method:"Normal Bank Transfer",
+        address:"",
     }) 
 
     useEffect(() => {
@@ -301,11 +305,18 @@ const OrderConfermation = () => {
         };
 
         const [pickupMethod, setPickupMethod] = useState('Pick-up');
+        const [address, setAddress] = useState('University of Moratuwa');
 
         const handlePickupMethodChange = (e) => {
             const { value } = e.target;
             setPickupMethod(value);
             setNewFormData({ ...newFormData, uni_pickup: value });
+        };
+
+        const handleAddress = (e) => {
+            const { value } = e.target;
+            setAddress(value);
+            setNewFormData({ ...newFormData, address: value });
         };
             
 
@@ -315,11 +326,24 @@ const OrderConfermation = () => {
         };
 
 
-        const handleToggleChange = () => {
-            if (showOrderTypes) {
+        const handleToggleChange = (type) => {
+            // if (showOrderTypes && showFrimiTypes) {
                 resetForm();
+            // }
+        
+            if (type === 'bankTransfer') {
+                if (showFrimiTypes) {
+                    setShowFrimiTypes(false);
+                }
+                setShowOrderTypes(!showOrderTypes);
+            } else if (type === 'frimiPayment') {
+                if (showOrderTypes) {
+                    setShowOrderTypes(false);
+                }
+                setShowFrimiTypes(!showFrimiTypes);
             }
-            setShowOrderTypes(!showOrderTypes);
+        
+            setNewFormData({ ...newFormData, pre_order_method: type });
         };
     
         const resetForm = () => {
@@ -434,12 +458,22 @@ const OrderConfermation = () => {
                             <p>Payment Methods</p>
                             <div className='banktransfer'>
                             <label class="switch-toggle-container">
-                                <input class="switch-toggle-input" type="checkbox" id="bankTransferToggle" onChange={handleToggleChange} checked={showOrderTypes} />
+                                <input class="switch-toggle-input" type="checkbox" id="bankTransferToggle" onChange={() => handleToggleChange('bankTransfer')} checked={showOrderTypes} />
                                 <span class="switch-toggle"></span>
                             </label>
 
                                 <p>Bank Transfer</p><svg height='57' width='75' viewBox="0 0 1000.149 1001.0101" xmlns="http://www.w3.org/2000/svg"><path d="m350.15 409.456h-349c5-3 7-5 9-6 53-28 106-56 158-83 4-2 10-3 14-1 55 28 110 57 165 86 1 1 2 2 3 4zm2 211v26h-348v-26zm0 32v30h-348v-30zm-325-210h47v173h-47zm132 174h-39c-9 0-7-6-7-12v-161h46zm193-201v22h-351c0-3 0-6-1-9-1-10 3-13 13-13zm-110 200h-43v-172h43zm83 0h-43v-172h43zm269-88c0 7-1 13-4 18s-7 9-12 13-11 6-17 7c-7 2-14 3-21 3h-78v-160h89c5 0 10 1 15 4s8 5 11 9c4 4 6 8 8 13 1 5 2 10 2 15 0 8-2 15-5 22-4 6-10 11-18 15 10 3 17 7 22 14s8 16 8 27zm-95-87v33h36c4 0 8-2 11-4 3-3 5-7 5-13 0-5-2-9-5-12s-6-4-10-4zm57 80c0-5-1-10-4-13s-6-5-11-5h-42v35h41c5 0 9-2 12-5s4-7 4-12zm90 50c-5 0-11-1-16-3s-9-4-13-8c-3-3-6-7-8-12s-3-9-3-14c0-6 1-12 3-16s6-9 11-13c4-3 10-6 16-8s13-3 20-3c5 0 10 1 15 1 4 1 8 2 12 4v-5c0-14-8-21-24-21-6 0-12 1-18 3s-12 6-19 10l-10-22c8-5 16-9 24-12 8-2 17-4 27-4 18 0 31 5 41 13s15 21 15 37v30c0 4 0 6 2 8s3 2 7 2v31c-3 0-7 1-10 1h-7c-7 0-12-1-16-4-3-2-5-6-6-11l-1-5c-5 7-11 12-19 16-7 3-15 5-23 5zm11-26c4 0 8 0 11-2 4-1 7-3 9-5 4-3 5-6 5-9v-11c-3-1-6-2-10-3-3 0-7-1-10-1-7 0-12 2-16 5s-7 7-7 12c0 4 2 7 5 10 4 3 8 4 13 4zm202 24h-36v-66c0-8-1-14-4-17-3-4-7-6-12-6-2 0-5 1-8 2-2 1-5 2-7 4s-5 4-6 7c-2 2-4 5-5 8v68h-36v-118h32v20c5-7 11-13 19-17s17-5 27-5c8 0 14 1 19 4s8 6 11 11 4 9 5 14 1 10 1 15zm103 0-31-48-13 13v35h-36v-164h36v95l40-49h39l-43 51 46 67zm-440 48h-24v61h-14v-61h-23v-12h61zm39 19c-4 0-7 1-11 2s-5 4-7 7v33h-14v-54h13v12c2-4 4-7 7-9s6-4 10-4h1c1 0 1 0 2 1v12zm22 43c-2 0-5 0-7-1s-4-2-6-4c-2-1-3-3-4-5s-1-4-1-7 0-5 1-7 3-4 5-6 4-2 7-3 6-1 10-1h7s4 1 6 2v-3c0-4-1-6-3-8s-5-3-9-3c-3 0-6 0-9 1s-5 3-8 5l-4-9c7-5 14-7 22-7s14 2 18 6 7 9 7 16v17c0 1 0 3 1 3s1 1 3 1v12h-4c-1 1-2 1-3 1-3 0-5-1-6-2s-2-3-3-5v-3c-2 3-5 6-9 7-3 2-7 3-11 3zm4-10c2 0 5 0 7-1s3-2 5-3c1-2 2-3 2-4v-7c-2 0-4-1-6-1-1 0-3-1-5-1-4 0-7 1-9 3s-3 3-3 6c0 2 1 4 2 6 2 1 4 2 7 2zm91 9h-14v-30c0-5-1-8-2-10s-4-3-6-3-3 1-5 1c-1 1-2 1-4 2s-2 3-3 4-2 3-2 4v32h-14v-54h12v10c2-3 5-6 9-8s8-3 13-3c3 0 6 1 8 2s4 3 5 5 2 4 2 7 1 5 1 7zm33 1h-7c-2-1-4-1-7-2s-4-1-6-2l-6-3 6-9c7 4 13 6 20 6 3 0 5 0 7-1 1-1 2-3 2-5s-1-3-3-4-5-2-10-3l-9-3s-4-1-6-3c-1-1-2-2-3-4s-1-3-1-5c0-3 1-5 2-7s2-5 4-6c2-2 5-3 7-4 3 0 6-1 9-1 4 0 8 1 11 2s8 3 11 5l-6 8c-3-2-6-3-8-4-3-1-6-1-8-1-3 0-5 0-6 1-2 1-3 3-3 5s1 3 3 4 4 2 8 3 7 2 10 3 5 2 7 3c1 1 3 3 3 4s2 4 2 6c0 3-1 5-2 7s-3 4-4 5c-2 2-5 3-8 4-2 1-5 1-9 1zm34-1v-37h-7v-11h7v-6c0-7 2-12 5-16s8-6 13-6 9 1 14 3l-3 10c-1 0-3-1-4-1s-3-1-4-1c-5 0-7 4-7 10v7h13v11h-13v37zm61 1c-4 0-8-1-12-2s-6-4-9-6-4-6-5-9-2-7-2-11c0-3 0-7 2-10s3-7 5-9c3-3 6-5 9-7s8-2 12-2 9 1 12 2 7 4 9 7c2 2 4 5 6 8s2 7 2 11c0 1 0 2-1 3v2h-42c1 2 1 4 2 5 1 2 2 3 3 5 1 1 3 2 5 2s3 1 5 1 5-1 7-2c3-1 5-3 5-5l12 3c-2 4-5 8-9 10-5 3-10 4-16 4zm14-32c0-5-2-8-4-10-3-3-6-4-10-4-2 0-4 0-5 1s-3 2-4 3c-2 1-3 2-3 4s-2 4-2 6zm55-11c-4 0-8 1-11 2s-6 4-7 7v33h-14v-54h13v12c1-4 4-7 7-9s6-4 9-4h2s1 0 1 1z"/></svg>
                             </div>
+                            {currentProduct && currentProduct.avl_frimi &&(
+                            <div className='banktransfer' style={{ backgroundImage: `url('https://moramerch.s3.eu-north-1.amazonaws.com/slipfiles/order_1719866997389.png')`, backgroundSize: 'cover', backgroundPosition: 'top' }}>
+                            <label class="switch-toggle-container">
+                                <input class="switch-toggle-input" type="checkbox" id="frimiPaymentToggle" onChange={() => handleToggleChange('frimiPayment')} checked={showFrimiTypes} />
+                                <span class="switch-toggle"></span>
+                            </label>
+
+                                <p>Frimi Payment</p><svg height='57' width='75' opacity={0} viewBox="0 0 1000.149 1001.0101" xmlns="http://www.w3.org/2000/svg"><path d="m350.15 409.456h-349c5-3 7-5 9-6 53-28 106-56 158-83 4-2 10-3 14-1 55 28 110 57 165 86 1 1 2 2 3 4zm2 211v26h-348v-26zm0 32v30h-348v-30zm-325-210h47v173h-47zm132 174h-39c-9 0-7-6-7-12v-161h46zm193-201v22h-351c0-3 0-6-1-9-1-10 3-13 13-13zm-110 200h-43v-172h43zm83 0h-43v-172h43zm269-88c0 7-1 13-4 18s-7 9-12 13-11 6-17 7c-7 2-14 3-21 3h-78v-160h89c5 0 10 1 15 4s8 5 11 9c4 4 6 8 8 13 1 5 2 10 2 15 0 8-2 15-5 22-4 6-10 11-18 15 10 3 17 7 22 14s8 16 8 27zm-95-87v33h36c4 0 8-2 11-4 3-3 5-7 5-13 0-5-2-9-5-12s-6-4-10-4zm57 80c0-5-1-10-4-13s-6-5-11-5h-42v35h41c5 0 9-2 12-5s4-7 4-12zm90 50c-5 0-11-1-16-3s-9-4-13-8c-3-3-6-7-8-12s-3-9-3-14c0-6 1-12 3-16s6-9 11-13c4-3 10-6 16-8s13-3 20-3c5 0 10 1 15 1 4 1 8 2 12 4v-5c0-14-8-21-24-21-6 0-12 1-18 3s-12 6-19 10l-10-22c8-5 16-9 24-12 8-2 17-4 27-4 18 0 31 5 41 13s15 21 15 37v30c0 4 0 6 2 8s3 2 7 2v31c-3 0-7 1-10 1h-7c-7 0-12-1-16-4-3-2-5-6-6-11l-1-5c-5 7-11 12-19 16-7 3-15 5-23 5zm11-26c4 0 8 0 11-2 4-1 7-3 9-5 4-3 5-6 5-9v-11c-3-1-6-2-10-3-3 0-7-1-10-1-7 0-12 2-16 5s-7 7-7 12c0 4 2 7 5 10 4 3 8 4 13 4zm202 24h-36v-66c0-8-1-14-4-17-3-4-7-6-12-6-2 0-5 1-8 2-2 1-5 2-7 4s-5 4-6 7c-2 2-4 5-5 8v68h-36v-118h32v20c5-7 11-13 19-17s17-5 27-5c8 0 14 1 19 4s8 6 11 11 4 9 5 14 1 10 1 15zm103 0-31-48-13 13v35h-36v-164h36v95l40-49h39l-43 51 46 67zm-440 48h-24v61h-14v-61h-23v-12h61zm39 19c-4 0-7 1-11 2s-5 4-7 7v33h-14v-54h13v12c2-4 4-7 7-9s6-4 10-4h1c1 0 1 0 2 1v12zm22 43c-2 0-5 0-7-1s-4-2-6-4c-2-1-3-3-4-5s-1-4-1-7 0-5 1-7 3-4 5-6 4-2 7-3 6-1 10-1h7s4 1 6 2v-3c0-4-1-6-3-8s-5-3-9-3c-3 0-6 0-9 1s-5 3-8 5l-4-9c7-5 14-7 22-7s14 2 18 6 7 9 7 16v17c0 1 0 3 1 3s1 1 3 1v12h-4c-1 1-2 1-3 1-3 0-5-1-6-2s-2-3-3-5v-3c-2 3-5 6-9 7-3 2-7 3-11 3zm4-10c2 0 5 0 7-1s3-2 5-3c1-2 2-3 2-4v-7c-2 0-4-1-6-1-1 0-3-1-5-1-4 0-7 1-9 3s-3 3-3 6c0 2 1 4 2 6 2 1 4 2 7 2zm91 9h-14v-30c0-5-1-8-2-10s-4-3-6-3-3 1-5 1c-1 1-2 1-4 2s-2 3-3 4-2 3-2 4v32h-14v-54h12v10c2-3 5-6 9-8s8-3 13-3c3 0 6 1 8 2s4 3 5 5 2 4 2 7 1 5 1 7zm33 1h-7c-2-1-4-1-7-2s-4-1-6-2l-6-3 6-9c7 4 13 6 20 6 3 0 5 0 7-1 1-1 2-3 2-5s-1-3-3-4-5-2-10-3l-9-3s-4-1-6-3c-1-1-2-2-3-4s-1-3-1-5c0-3 1-5 2-7s2-5 4-6c2-2 5-3 7-4 3 0 6-1 9-1 4 0 8 1 11 2s8 3 11 5l-6 8c-3-2-6-3-8-4-3-1-6-1-8-1-3 0-5 0-6 1-2 1-3 3-3 5s1 3 3 4 4 2 8 3 7 2 10 3 5 2 7 3c1 1 3 3 3 4s2 4 2 6c0 3-1 5-2 7s-3 4-4 5c-2 2-5 3-8 4-2 1-5 1-9 1zm34-1v-37h-7v-11h7v-6c0-7 2-12 5-16s8-6 13-6 9 1 14 3l-3 10c-1 0-3-1-4-1s-3-1-4-1c-5 0-7 4-7 10v7h13v11h-13v37zm61 1c-4 0-8-1-12-2s-6-4-9-6-4-6-5-9-2-7-2-11c0-3 0-7 2-10s3-7 5-9c3-3 6-5 9-7s8-2 12-2 9 1 12 2 7 4 9 7c2 2 4 5 6 8s2 7 2 11c0 1 0 2-1 3v2h-42c1 2 1 4 2 5 1 2 2 3 3 5 1 1 3 2 5 2s3 1 5 1 5-1 7-2c3-1 5-3 5-5l12 3c-2 4-5 8-9 10-5 3-10 4-16 4zm14-32c0-5-2-8-4-10-3-3-6-4-10-4-2 0-4 0-5 1s-3 2-4 3c-2 1-3 2-3 4s-2 4-2 6zm55-11c-4 0-8 1-11 2s-6 4-7 7v33h-14v-54h13v12c1-4 4-7 7-9s6-4 9-4h2s1 0 1 1z"/></svg>
+                            </div>
+                            )}
                             <div className='payhere'>
                                 <img src='https://www.payhere.lk/downloads/images/payhere_short_banner_dark.png' alt=''/>
                             </div>
@@ -448,7 +482,7 @@ const OrderConfermation = () => {
                         
                         {/* put a section like order type to show the account number of the seller */}
 
-                        {showOrderTypes && (
+                        {(showOrderTypes || showFrimiTypes) && (
                             <div className="accnumber">
                                 <h5>Account Details</h5>
                                 <hr/>
@@ -475,17 +509,17 @@ const OrderConfermation = () => {
                             </div>
                         )}       
 
-                        {showOrderTypes && (
+                        {(
                             <div className="ordertype">
                                 <p>Order Type</p>
-                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'pre' || currentProduct.avl_order_types === 'both') && (
+                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'pre' || currentProduct.avl_order_types === 'both') && (showOrderTypes || showFrimiTypes) && (
                                     <>
                                 <input type="radio" id="preorder" name="order_type" value="Pre-order" onChange={handleOrderTypeChange} checked={orderType === 'Pre-order'} />
                                 <label htmlFor="preorder">Pre-order</label>
                                 </>
                                 )}
 
-                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'post' || currentProduct.avl_order_types === 'both') && (
+                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'post' || currentProduct.avl_order_types === 'both') && (!showFrimiTypes && !showOrderTypes) &&(
                                     <>
                                 <input type="radio" id="postorder" name="order_type" value="Post-order" onChange={handleOrderTypeChange} checked={orderType === 'Post-order'} />
                                 <label htmlFor="postorder">Post-order</label>
@@ -515,8 +549,19 @@ const OrderConfermation = () => {
                     <div className='orderconfirmation-third'>
                         <div className="pickup-method">
                                 <p>Pick-Up Method</p>
-                                <input type="radio" id="pickup" name="uni_pickup" value="Pick-up" onChange={handlePickupMethodChange} checked={pickupMethod === 'Pick-up'} />
+                                <input type="radio" id="pickup" name="uni_pickup" value="Pick-up-from-uni" onChange={handlePickupMethodChange} checked={pickupMethod === 'Pick-up'} />
                                 <label htmlFor="pickup">University Pick-Up</label>
+                                {currentProduct && currentProduct.avl_home_delivery &&
+                                <>
+                                <input type="radio" id="pickup2" name="uni_pickup" value="Home-delivery" onChange={handlePickupMethodChange} checked={pickupMethod === 'Pick-up'} />
+                                <label htmlFor="pickup2">Home Delivery</label>
+                                </>
+                                }
+                                {currentProduct && currentProduct.avl_home_delivery && pickupMethod === 'Home-delivery' &&
+                                    <div className="orderconfirmation-itemfield1">
+                                    <input value={newFormData.address} onChange={handleAddress} type='text' name='address' placeholder='Enter Your Address'/>
+                                    </div>
+                                }
                         </div>
                     </div>
                     
@@ -627,23 +672,36 @@ const OrderConfermation = () => {
                         
                             <div className="paymentmethods">
                                 <p>Payment Methods</p>
-                                <div className='banktransfer'>
-                                <label class="switch-toggle-container">
-                                    <input class="switch-toggle-input" type="checkbox" id="bankTransferToggle" onChange={handleToggleChange} checked={showOrderTypes} />
-                                    <span class="switch-toggle"></span>
-                                </label>
+                                <div className={`banktransfer ${showOrderTypes ? 'active' : ''}`} onClick={() => handleToggleChange('bankTransfer')} checked={showOrderTypes}>
+                            <label class="switch-toggle-container">
+                                <input class="switch-toggle-input" type="checkbox" id="bankTransferToggle" onChange={() => handleToggleChange('bankTransfer')} checked={showOrderTypes} />
+                                <span class="switch-toggle"></span>
+                            </label>
 
-                                    <p>Bank Transfer</p><svg height='57' width='75' viewBox="0 0 1000.149 1001.0101" xmlns="http://www.w3.org/2000/svg"><path d="m350.15 409.456h-349c5-3 7-5 9-6 53-28 106-56 158-83 4-2 10-3 14-1 55 28 110 57 165 86 1 1 2 2 3 4zm2 211v26h-348v-26zm0 32v30h-348v-30zm-325-210h47v173h-47zm132 174h-39c-9 0-7-6-7-12v-161h46zm193-201v22h-351c0-3 0-6-1-9-1-10 3-13 13-13zm-110 200h-43v-172h43zm83 0h-43v-172h43zm269-88c0 7-1 13-4 18s-7 9-12 13-11 6-17 7c-7 2-14 3-21 3h-78v-160h89c5 0 10 1 15 4s8 5 11 9c4 4 6 8 8 13 1 5 2 10 2 15 0 8-2 15-5 22-4 6-10 11-18 15 10 3 17 7 22 14s8 16 8 27zm-95-87v33h36c4 0 8-2 11-4 3-3 5-7 5-13 0-5-2-9-5-12s-6-4-10-4zm57 80c0-5-1-10-4-13s-6-5-11-5h-42v35h41c5 0 9-2 12-5s4-7 4-12zm90 50c-5 0-11-1-16-3s-9-4-13-8c-3-3-6-7-8-12s-3-9-3-14c0-6 1-12 3-16s6-9 11-13c4-3 10-6 16-8s13-3 20-3c5 0 10 1 15 1 4 1 8 2 12 4v-5c0-14-8-21-24-21-6 0-12 1-18 3s-12 6-19 10l-10-22c8-5 16-9 24-12 8-2 17-4 27-4 18 0 31 5 41 13s15 21 15 37v30c0 4 0 6 2 8s3 2 7 2v31c-3 0-7 1-10 1h-7c-7 0-12-1-16-4-3-2-5-6-6-11l-1-5c-5 7-11 12-19 16-7 3-15 5-23 5zm11-26c4 0 8 0 11-2 4-1 7-3 9-5 4-3 5-6 5-9v-11c-3-1-6-2-10-3-3 0-7-1-10-1-7 0-12 2-16 5s-7 7-7 12c0 4 2 7 5 10 4 3 8 4 13 4zm202 24h-36v-66c0-8-1-14-4-17-3-4-7-6-12-6-2 0-5 1-8 2-2 1-5 2-7 4s-5 4-6 7c-2 2-4 5-5 8v68h-36v-118h32v20c5-7 11-13 19-17s17-5 27-5c8 0 14 1 19 4s8 6 11 11 4 9 5 14 1 10 1 15zm103 0-31-48-13 13v35h-36v-164h36v95l40-49h39l-43 51 46 67zm-440 48h-24v61h-14v-61h-23v-12h61zm39 19c-4 0-7 1-11 2s-5 4-7 7v33h-14v-54h13v12c2-4 4-7 7-9s6-4 10-4h1c1 0 1 0 2 1v12zm22 43c-2 0-5 0-7-1s-4-2-6-4c-2-1-3-3-4-5s-1-4-1-7 0-5 1-7 3-4 5-6 4-2 7-3 6-1 10-1h7s4 1 6 2v-3c0-4-1-6-3-8s-5-3-9-3c-3 0-6 0-9 1s-5 3-8 5l-4-9c7-5 14-7 22-7s14 2 18 6 7 9 7 16v17c0 1 0 3 1 3s1 1 3 1v12h-4c-1 1-2 1-3 1-3 0-5-1-6-2s-2-3-3-5v-3c-2 3-5 6-9 7-3 2-7 3-11 3zm4-10c2 0 5 0 7-1s3-2 5-3c1-2 2-3 2-4v-7c-2 0-4-1-6-1-1 0-3-1-5-1-4 0-7 1-9 3s-3 3-3 6c0 2 1 4 2 6 2 1 4 2 7 2zm91 9h-14v-30c0-5-1-8-2-10s-4-3-6-3-3 1-5 1c-1 1-2 1-4 2s-2 3-3 4-2 3-2 4v32h-14v-54h12v10c2-3 5-6 9-8s8-3 13-3c3 0 6 1 8 2s4 3 5 5 2 4 2 7 1 5 1 7zm33 1h-7c-2-1-4-1-7-2s-4-1-6-2l-6-3 6-9c7 4 13 6 20 6 3 0 5 0 7-1 1-1 2-3 2-5s-1-3-3-4-5-2-10-3l-9-3s-4-1-6-3c-1-1-2-2-3-4s-1-3-1-5c0-3 1-5 2-7s2-5 4-6c2-2 5-3 7-4 3 0 6-1 9-1 4 0 8 1 11 2s8 3 11 5l-6 8c-3-2-6-3-8-4-3-1-6-1-8-1-3 0-5 0-6 1-2 1-3 3-3 5s1 3 3 4 4 2 8 3 7 2 10 3 5 2 7 3c1 1 3 3 3 4s2 4 2 6c0 3-1 5-2 7s-3 4-4 5c-2 2-5 3-8 4-2 1-5 1-9 1zm34-1v-37h-7v-11h7v-6c0-7 2-12 5-16s8-6 13-6 9 1 14 3l-3 10c-1 0-3-1-4-1s-3-1-4-1c-5 0-7 4-7 10v7h13v11h-13v37zm61 1c-4 0-8-1-12-2s-6-4-9-6-4-6-5-9-2-7-2-11c0-3 0-7 2-10s3-7 5-9c3-3 6-5 9-7s8-2 12-2 9 1 12 2 7 4 9 7c2 2 4 5 6 8s2 7 2 11c0 1 0 2-1 3v2h-42c1 2 1 4 2 5 1 2 2 3 3 5 1 1 3 2 5 2s3 1 5 1 5-1 7-2c3-1 5-3 5-5l12 3c-2 4-5 8-9 10-5 3-10 4-16 4zm14-32c0-5-2-8-4-10-3-3-6-4-10-4-2 0-4 0-5 1s-3 2-4 3c-2 1-3 2-3 4s-2 4-2 6zm55-11c-4 0-8 1-11 2s-6 4-7 7v33h-14v-54h13v12c1-4 4-7 7-9s6-4 9-4h2s1 0 1 1z"/></svg>
-                                </div>
-                                <div className='payhere'>
-                                    <img src='https://www.payhere.lk/downloads/images/payhere_short_banner_dark.png' alt=''/>
-                                </div>
+                                <p>Bank Transfer</p><svg height='57' width='75' viewBox="0 0 1000.149 1001.0101" xmlns="http://www.w3.org/2000/svg"><path d="m350.15 409.456h-349c5-3 7-5 9-6 53-28 106-56 158-83 4-2 10-3 14-1 55 28 110 57 165 86 1 1 2 2 3 4zm2 211v26h-348v-26zm0 32v30h-348v-30zm-325-210h47v173h-47zm132 174h-39c-9 0-7-6-7-12v-161h46zm193-201v22h-351c0-3 0-6-1-9-1-10 3-13 13-13zm-110 200h-43v-172h43zm83 0h-43v-172h43zm269-88c0 7-1 13-4 18s-7 9-12 13-11 6-17 7c-7 2-14 3-21 3h-78v-160h89c5 0 10 1 15 4s8 5 11 9c4 4 6 8 8 13 1 5 2 10 2 15 0 8-2 15-5 22-4 6-10 11-18 15 10 3 17 7 22 14s8 16 8 27zm-95-87v33h36c4 0 8-2 11-4 3-3 5-7 5-13 0-5-2-9-5-12s-6-4-10-4zm57 80c0-5-1-10-4-13s-6-5-11-5h-42v35h41c5 0 9-2 12-5s4-7 4-12zm90 50c-5 0-11-1-16-3s-9-4-13-8c-3-3-6-7-8-12s-3-9-3-14c0-6 1-12 3-16s6-9 11-13c4-3 10-6 16-8s13-3 20-3c5 0 10 1 15 1 4 1 8 2 12 4v-5c0-14-8-21-24-21-6 0-12 1-18 3s-12 6-19 10l-10-22c8-5 16-9 24-12 8-2 17-4 27-4 18 0 31 5 41 13s15 21 15 37v30c0 4 0 6 2 8s3 2 7 2v31c-3 0-7 1-10 1h-7c-7 0-12-1-16-4-3-2-5-6-6-11l-1-5c-5 7-11 12-19 16-7 3-15 5-23 5zm11-26c4 0 8 0 11-2 4-1 7-3 9-5 4-3 5-6 5-9v-11c-3-1-6-2-10-3-3 0-7-1-10-1-7 0-12 2-16 5s-7 7-7 12c0 4 2 7 5 10 4 3 8 4 13 4zm202 24h-36v-66c0-8-1-14-4-17-3-4-7-6-12-6-2 0-5 1-8 2-2 1-5 2-7 4s-5 4-6 7c-2 2-4 5-5 8v68h-36v-118h32v20c5-7 11-13 19-17s17-5 27-5c8 0 14 1 19 4s8 6 11 11 4 9 5 14 1 10 1 15zm103 0-31-48-13 13v35h-36v-164h36v95l40-49h39l-43 51 46 67zm-440 48h-24v61h-14v-61h-23v-12h61zm39 19c-4 0-7 1-11 2s-5 4-7 7v33h-14v-54h13v12c2-4 4-7 7-9s6-4 10-4h1c1 0 1 0 2 1v12zm22 43c-2 0-5 0-7-1s-4-2-6-4c-2-1-3-3-4-5s-1-4-1-7 0-5 1-7 3-4 5-6 4-2 7-3 6-1 10-1h7s4 1 6 2v-3c0-4-1-6-3-8s-5-3-9-3c-3 0-6 0-9 1s-5 3-8 5l-4-9c7-5 14-7 22-7s14 2 18 6 7 9 7 16v17c0 1 0 3 1 3s1 1 3 1v12h-4c-1 1-2 1-3 1-3 0-5-1-6-2s-2-3-3-5v-3c-2 3-5 6-9 7-3 2-7 3-11 3zm4-10c2 0 5 0 7-1s3-2 5-3c1-2 2-3 2-4v-7c-2 0-4-1-6-1-1 0-3-1-5-1-4 0-7 1-9 3s-3 3-3 6c0 2 1 4 2 6 2 1 4 2 7 2zm91 9h-14v-30c0-5-1-8-2-10s-4-3-6-3-3 1-5 1c-1 1-2 1-4 2s-2 3-3 4-2 3-2 4v32h-14v-54h12v10c2-3 5-6 9-8s8-3 13-3c3 0 6 1 8 2s4 3 5 5 2 4 2 7 1 5 1 7zm33 1h-7c-2-1-4-1-7-2s-4-1-6-2l-6-3 6-9c7 4 13 6 20 6 3 0 5 0 7-1 1-1 2-3 2-5s-1-3-3-4-5-2-10-3l-9-3s-4-1-6-3c-1-1-2-2-3-4s-1-3-1-5c0-3 1-5 2-7s2-5 4-6c2-2 5-3 7-4 3 0 6-1 9-1 4 0 8 1 11 2s8 3 11 5l-6 8c-3-2-6-3-8-4-3-1-6-1-8-1-3 0-5 0-6 1-2 1-3 3-3 5s1 3 3 4 4 2 8 3 7 2 10 3 5 2 7 3c1 1 3 3 3 4s2 4 2 6c0 3-1 5-2 7s-3 4-4 5c-2 2-5 3-8 4-2 1-5 1-9 1zm34-1v-37h-7v-11h7v-6c0-7 2-12 5-16s8-6 13-6 9 1 14 3l-3 10c-1 0-3-1-4-1s-3-1-4-1c-5 0-7 4-7 10v7h13v11h-13v37zm61 1c-4 0-8-1-12-2s-6-4-9-6-4-6-5-9-2-7-2-11c0-3 0-7 2-10s3-7 5-9c3-3 6-5 9-7s8-2 12-2 9 1 12 2 7 4 9 7c2 2 4 5 6 8s2 7 2 11c0 1 0 2-1 3v2h-42c1 2 1 4 2 5 1 2 2 3 3 5 1 1 3 2 5 2s3 1 5 1 5-1 7-2c3-1 5-3 5-5l12 3c-2 4-5 8-9 10-5 3-10 4-16 4zm14-32c0-5-2-8-4-10-3-3-6-4-10-4-2 0-4 0-5 1s-3 2-4 3c-2 1-3 2-3 4s-2 4-2 6zm55-11c-4 0-8 1-11 2s-6 4-7 7v33h-14v-54h13v12c1-4 4-7 7-9s6-4 9-4h2s1 0 1 1z"/></svg>
+                            </div>
+                            {currentProduct && currentProduct.avl_frimi &&(
+                                <>
+                            <div className={`banktransfer ${showFrimiTypes ? 'active' : ''}`} onClick={() => handleToggleChange('frimiPayment')} checked={showFrimiTypes} style={{ backgroundImage: `url('https://moramerch.s3.eu-north-1.amazonaws.com/slipfiles/order_1719866997389.png')`, backgroundSize: 'cover', backgroundPosition: 'top' }}>
+                            <label class="switch-toggle-container">
+                                <input class="switch-toggle-input" type="checkbox" id="frimiPaymentToggle" onChange={() => handleToggleChange('frimiPayment')} checked={showFrimiTypes} />
+                                <span class="switch-toggle"></span>
+                            </label>
+
+                                <p>Frimi Payment</p><svg height='57' width='75' opacity={0} viewBox="0 0 1000.149 1001.0101" xmlns="http://www.w3.org/2000/svg"><path d="m350.15 409.456h-349c5-3 7-5 9-6 53-28 106-56 158-83 4-2 10-3 14-1 55 28 110 57 165 86 1 1 2 2 3 4zm2 211v26h-348v-26zm0 32v30h-348v-30zm-325-210h47v173h-47zm132 174h-39c-9 0-7-6-7-12v-161h46zm193-201v22h-351c0-3 0-6-1-9-1-10 3-13 13-13zm-110 200h-43v-172h43zm83 0h-43v-172h43zm269-88c0 7-1 13-4 18s-7 9-12 13-11 6-17 7c-7 2-14 3-21 3h-78v-160h89c5 0 10 1 15 4s8 5 11 9c4 4 6 8 8 13 1 5 2 10 2 15 0 8-2 15-5 22-4 6-10 11-18 15 10 3 17 7 22 14s8 16 8 27zm-95-87v33h36c4 0 8-2 11-4 3-3 5-7 5-13 0-5-2-9-5-12s-6-4-10-4zm57 80c0-5-1-10-4-13s-6-5-11-5h-42v35h41c5 0 9-2 12-5s4-7 4-12zm90 50c-5 0-11-1-16-3s-9-4-13-8c-3-3-6-7-8-12s-3-9-3-14c0-6 1-12 3-16s6-9 11-13c4-3 10-6 16-8s13-3 20-3c5 0 10 1 15 1 4 1 8 2 12 4v-5c0-14-8-21-24-21-6 0-12 1-18 3s-12 6-19 10l-10-22c8-5 16-9 24-12 8-2 17-4 27-4 18 0 31 5 41 13s15 21 15 37v30c0 4 0 6 2 8s3 2 7 2v31c-3 0-7 1-10 1h-7c-7 0-12-1-16-4-3-2-5-6-6-11l-1-5c-5 7-11 12-19 16-7 3-15 5-23 5zm11-26c4 0 8 0 11-2 4-1 7-3 9-5 4-3 5-6 5-9v-11c-3-1-6-2-10-3-3 0-7-1-10-1-7 0-12 2-16 5s-7 7-7 12c0 4 2 7 5 10 4 3 8 4 13 4zm202 24h-36v-66c0-8-1-14-4-17-3-4-7-6-12-6-2 0-5 1-8 2-2 1-5 2-7 4s-5 4-6 7c-2 2-4 5-5 8v68h-36v-118h32v20c5-7 11-13 19-17s17-5 27-5c8 0 14 1 19 4s8 6 11 11 4 9 5 14 1 10 1 15zm103 0-31-48-13 13v35h-36v-164h36v95l40-49h39l-43 51 46 67zm-440 48h-24v61h-14v-61h-23v-12h61zm39 19c-4 0-7 1-11 2s-5 4-7 7v33h-14v-54h13v12c2-4 4-7 7-9s6-4 10-4h1c1 0 1 0 2 1v12zm22 43c-2 0-5 0-7-1s-4-2-6-4c-2-1-3-3-4-5s-1-4-1-7 0-5 1-7 3-4 5-6 4-2 7-3 6-1 10-1h7s4 1 6 2v-3c0-4-1-6-3-8s-5-3-9-3c-3 0-6 0-9 1s-5 3-8 5l-4-9c7-5 14-7 22-7s14 2 18 6 7 9 7 16v17c0 1 0 3 1 3s1 1 3 1v12h-4c-1 1-2 1-3 1-3 0-5-1-6-2s-2-3-3-5v-3c-2 3-5 6-9 7-3 2-7 3-11 3zm4-10c2 0 5 0 7-1s3-2 5-3c1-2 2-3 2-4v-7c-2 0-4-1-6-1-1 0-3-1-5-1-4 0-7 1-9 3s-3 3-3 6c0 2 1 4 2 6 2 1 4 2 7 2zm91 9h-14v-30c0-5-1-8-2-10s-4-3-6-3-3 1-5 1c-1 1-2 1-4 2s-2 3-3 4-2 3-2 4v32h-14v-54h12v10c2-3 5-6 9-8s8-3 13-3c3 0 6 1 8 2s4 3 5 5 2 4 2 7 1 5 1 7zm33 1h-7c-2-1-4-1-7-2s-4-1-6-2l-6-3 6-9c7 4 13 6 20 6 3 0 5 0 7-1 1-1 2-3 2-5s-1-3-3-4-5-2-10-3l-9-3s-4-1-6-3c-1-1-2-2-3-4s-1-3-1-5c0-3 1-5 2-7s2-5 4-6c2-2 5-3 7-4 3 0 6-1 9-1 4 0 8 1 11 2s8 3 11 5l-6 8c-3-2-6-3-8-4-3-1-6-1-8-1-3 0-5 0-6 1-2 1-3 3-3 5s1 3 3 4 4 2 8 3 7 2 10 3 5 2 7 3c1 1 3 3 3 4s2 4 2 6c0 3-1 5-2 7s-3 4-4 5c-2 2-5 3-8 4-2 1-5 1-9 1zm34-1v-37h-7v-11h7v-6c0-7 2-12 5-16s8-6 13-6 9 1 14 3l-3 10c-1 0-3-1-4-1s-3-1-4-1c-5 0-7 4-7 10v7h13v11h-13v37zm61 1c-4 0-8-1-12-2s-6-4-9-6-4-6-5-9-2-7-2-11c0-3 0-7 2-10s3-7 5-9c3-3 6-5 9-7s8-2 12-2 9 1 12 2 7 4 9 7c2 2 4 5 6 8s2 7 2 11c0 1 0 2-1 3v2h-42c1 2 1 4 2 5 1 2 2 3 3 5 1 1 3 2 5 2s3 1 5 1 5-1 7-2c3-1 5-3 5-5l12 3c-2 4-5 8-9 10-5 3-10 4-16 4zm14-32c0-5-2-8-4-10-3-3-6-4-10-4-2 0-4 0-5 1s-3 2-4 3c-2 1-3 2-3 4s-2 4-2 6zm55-11c-4 0-8 1-11 2s-6 4-7 7v33h-14v-54h13v12c1-4 4-7 7-9s6-4 9-4h2s1 0 1 1z"/></svg>
+                            </div>
+                            </>
+                            )}
+                            <div className='payhere'>
+                                <img src='https://www.payhere.lk/downloads/images/payhere_short_banner_dark.png' alt=''/>
+                            </div>
+                            
                                 <div></div>
                             </div>
                             
                             {/* put a section like order type to show the account number of the seller */}
 
-                            {showOrderTypes && (
+                            {(showOrderTypes || showFrimiTypes) && (
                                 <div className="accnumber">
                                     <h5>Account Details</h5>
                                     <hr/>
@@ -670,10 +728,32 @@ const OrderConfermation = () => {
                                 </div>
                             )}        
 
-                            {showOrderTypes && (
+                            {(
                                 <div className="ordertype">
                                     <p>Order Type</p>
-                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'pre' || currentProduct.avl_order_types === 'both') && (
+                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'pre' || currentProduct.avl_order_types === 'both') && (showOrderTypes || showFrimiTypes) && (
+                                    <>
+                                <input type="radio" id="preorder" name="order_type" value="Pre-order" onChange={handleOrderTypeChange} checked={orderType === 'Pre-order'} />
+                                <label htmlFor="preorder">Pre-order</label>
+                                </>
+                                )}
+
+                                {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'post' || currentProduct.avl_order_types === 'both') && (!showFrimiTypes && !showOrderTypes) &&(
+                                    <>
+                                <input type="radio" id="postorder" name="order_type" value="Post-order" onChange={handleOrderTypeChange} checked={orderType === 'Post-order'} />
+                                <label htmlFor="postorder">Post-order</label>
+                                </>
+                                )}
+                                <div className="orderconfirmation-itemfield1">
+                                    <p>Enter Your WhatsApp Number </p>
+                                    <input required value={newFormData.whatsApp} onChange={checkWhatsAppReq} type='text' name='whatsApp' placeholder='Type here'/>
+                                </div>
+
+
+
+
+
+                                {/* {currentProduct && currentProduct.avl_order_types && (currentProduct.avl_order_types === 'pre' || currentProduct.avl_order_types === 'both') && (
                                     <>
                                 <input type="radio" id="preorder" name="order_type" value="Pre-order" onChange={handleOrderTypeChange} checked={orderType === 'Pre-order'} />
                                 <label htmlFor="preorder">Pre-order</label>
@@ -689,7 +769,7 @@ const OrderConfermation = () => {
                                     <div className="orderconfirmation-itemfield1">
                                         <p>Enter Your WhatsApp Number : </p>
                                         <input required value={newFormData.whatsApp} onChange={checkWhatsAppReq} type='text' name='whatsApp' placeholder='Type here'/>
-                                    </div>
+                                    </div> */}
                                 </div>
                             )}
                             {modal && (
@@ -706,9 +786,20 @@ const OrderConfermation = () => {
 
                         <div className='orderconfirmation-third'>
                             <div className="pickup-method">
-                                    <p>Pick-Up Method</p>
-                                    <input type="radio" id="pickup" name="uni_pickup" value="Pick-up" onChange={handlePickupMethodChange} checked={pickupMethod === 'Pick-up'} />
-                                    <label htmlFor="pickup">University Pick-Up</label>
+                            <p>Pick-Up Method</p>
+                                <input type="radio" id="pickup" name="uni_pickup" value="Pick-up-from-uni" onChange={handlePickupMethodChange} checked={pickupMethod === 'Pick-up'} />
+                                <label htmlFor="pickup">University Pick-Up</label>
+                                {currentProduct && currentProduct.avl_home_delivery &&
+                                <>
+                                <input type="radio" id="pickup2" name="uni_pickup" value="Home-delivery" onChange={handlePickupMethodChange} checked={pickupMethod === 'Pick-up'} />
+                                <label htmlFor="pickup2">Home Delivery</label>
+                                </>
+                                }
+                                {currentProduct && currentProduct.avl_home_delivery && pickupMethod === 'Home-delivery' &&
+                                    <div className="orderconfirmation-itemfield1">
+                                    <input value={newFormData.address} onChange={handleAddress} type='text' name='address' placeholder='Enter Your Address'/>
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>

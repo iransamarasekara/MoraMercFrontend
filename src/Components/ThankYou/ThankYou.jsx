@@ -12,6 +12,7 @@ const ThankYou = () => {
         <h1>Thank You</h1>
         <h2>For Your Payment!</h2>
         <p>We sent you an email of receipt.</p>
+        <Link to='https://whatsapp.com/channel/0029VajLAIC3gvWZqagiEL2L'><button>For More Details</button></Link>
         <Link to='/'><button>Go to Home Page</button></Link>
       </div>
       <div className="footer-small">

@@ -165,7 +165,12 @@ const OrderConfermation = () => {
 
         all_product.forEach((product)=>{
             if(currentId === product.id){
+                if (showFrimiTypes && product.avl_frimi && product.frimi_discount > 0) {
+                    order.total = cartItems[currentId].q*(product.new_price - product.frimi_discount);
+                    
+                }else{
                 order.total=cartItems[currentId].q*product.new_price;
+                }
                 order.productname=product.name;
             }
         })
@@ -419,9 +424,15 @@ const OrderConfermation = () => {
                                     <ul>
                                         {all_product.map((product) => {
                                             if (currentId === product.id) {
+                                                if (showFrimiTypes && product.avl_frimi && product.frimi_discount > 0) {
+                                                    return (
+                                                        <li key={product.id}>Rs. {cartItems[currentId].q*(product.new_price - product.frimi_discount)}.00</li>
+                                                    );
+                                                }else{
                                                 return (
                                                     <li key={product.id}>Rs. {cartItems[currentId].q*product.new_price}.00</li>
                                                 );
+                                            }
                                             }
                                             else{
                                                 return null;
@@ -549,11 +560,11 @@ const OrderConfermation = () => {
                     <div className='orderconfirmation-third'>
                         <div className="pickup-method">
                                 <p>Pick-Up Method</p>
-                                <input type="radio" id="pickup" name="uni_pickup" value="Pick-up-from-uni" onChange={handlePickupMethodChange} checked={pickupMethod === 'Pick-up'} />
+                                <input type="radio" id="pickup" name="uni_pickup" value="Pick-up-from-uni" onChange={handlePickupMethodChange} checked={pickupMethod === 'Pick-up-from-uni'} />
                                 <label htmlFor="pickup">University Pick-Up</label>
                                 {currentProduct && currentProduct.avl_home_delivery &&
                                 <>
-                                <input type="radio" id="pickup2" name="uni_pickup" value="Home-delivery" onChange={handlePickupMethodChange} checked={pickupMethod === 'Pick-up'} />
+                                <input type="radio" id="pickup2" name="uni_pickup" value="Home-delivery" onChange={handlePickupMethodChange} checked={pickupMethod === 'Home-delivery'} />
                                 <label htmlFor="pickup2">Home Delivery</label>
                                 </>
                                 }
@@ -617,16 +628,22 @@ const OrderConfermation = () => {
                             <div className="orderconfirmation-first-item" >
                                 <p>Total </p>
                                 <div className="orderconfirmation-first-item-total" >
-                                {all_product.map((product)=>{
-                                    if(currentId === product.id){
-                                        return(
-                                            <p key={product.id}>Rs. {cartItems[currentId].q * product.new_price}</p>
-                                        );
-                                    }
-                                    else{
-                                        return null;
-                                    }
-                                })}
+                                {all_product.map((product) => {
+                                            if (currentId === product.id) {
+                                                if (showFrimiTypes && product.avl_frimi && product.frimi_discount > 0) {
+                                                    return (
+                                                        <li key={product.id}>Rs. {cartItems[currentId].q*(product.new_price - product.frimi_discount)}.00</li>
+                                                    );
+                                                }else{
+                                                return (
+                                                    <li key={product.id}>Rs. {cartItems[currentId].q*product.new_price}.00</li>
+                                                );
+                                            }
+                                            }
+                                            else{
+                                                return null;
+                                            }
+                                        })}
                                 </div>
                             </div>
                             <button type="submit" className='add-order-btn' onClick={setField3}>PLACE ORDER</button>
@@ -787,11 +804,11 @@ const OrderConfermation = () => {
                         <div className='orderconfirmation-third'>
                             <div className="pickup-method">
                             <p>Pick-Up Method</p>
-                                <input type="radio" id="pickup" name="uni_pickup" value="Pick-up-from-uni" onChange={handlePickupMethodChange} checked={pickupMethod === 'Pick-up'} />
+                                <input type="radio" id="pickup" name="uni_pickup" value="Pick-up-from-uni" onChange={handlePickupMethodChange} checked={pickupMethod === 'Pick-up-from-uni'} />
                                 <label htmlFor="pickup">University Pick-Up</label>
                                 {currentProduct && currentProduct.avl_home_delivery &&
                                 <>
-                                <input type="radio" id="pickup2" name="uni_pickup" value="Home-delivery" onChange={handlePickupMethodChange} checked={pickupMethod === 'Pick-up'} />
+                                <input type="radio" id="pickup2" name="uni_pickup" value="Home-delivery" onChange={handlePickupMethodChange} checked={pickupMethod === 'Home-delivery'} />
                                 <label htmlFor="pickup2">Home Delivery</label>
                                 </>
                                 }
@@ -839,11 +856,17 @@ const OrderConfermation = () => {
                                 </div>
                                 <div className='productprize'>
                                     <ul>
-                                        {all_product.map((product) => {
+                                    {all_product.map((product) => {
                                             if (currentId === product.id) {
+                                                if (showFrimiTypes && product.avl_frimi && product.frimi_discount > 0) {
+                                                    return (
+                                                        <li key={product.id}>Rs. {cartItems[currentId].q*(product.new_price - product.frimi_discount)}.00</li>
+                                                    );
+                                                }else{
                                                 return (
-                                                    <li key={product.id}>Rs. {cartItems[currentId].q * product.new_price}.00</li>
+                                                    <li key={product.id}>Rs. {cartItems[currentId].q*product.new_price}.00</li>
                                                 );
+                                            }
                                             }
                                             else{
                                                 return null;
@@ -880,16 +903,22 @@ const OrderConfermation = () => {
                                 <div className="orderconfirmation-first-item" >
                                     <p>Total </p>
                                     <div className="orderconfirmation-first-item-total" >
-                                    {all_product.map((product)=>{
-                                        if(currentId === product.id){
-                                            return(
-                                                <p key={product.id}>Rs. {cartItems[currentId].q * product.new_price}</p>
-                                            );
-                                        }
-                                        else{
-                                            return null;
-                                        }
-                                    })}
+                                    {all_product.map((product) => {
+                                            if (currentId === product.id) {
+                                                if (showFrimiTypes && product.avl_frimi && product.frimi_discount > 0) {
+                                                    return (
+                                                        <li key={product.id}>Rs. {cartItems[currentId].q*(product.new_price - product.frimi_discount)}.00</li>
+                                                    );
+                                                }else{
+                                                return (
+                                                    <li key={product.id}>Rs. {cartItems[currentId].q*product.new_price}.00</li>
+                                                );
+                                            }
+                                            }
+                                            else{
+                                                return null;
+                                            }
+                                        })}
                                     </div>
                                 </div>
                                 <button type="submit" className='add-order-btn' onClick={setField3}>PLACE ORDER</button>

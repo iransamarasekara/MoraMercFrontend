@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 .fundraising {
-    background-image: url('https://moramerch.s3.eu-north-1.amazonaws.com/slipfiles/order_1719987238008.jpg');
+    background-image: url('https://moramerch.s3.eu-north-1.amazonaws.com/slipfiles/order_1720003369772.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -39,7 +39,7 @@
 
 .fundraising_content_h {
     padding-top: 50px;
-    color:white;
+    color:rgba(255, 255, 255, 0.692);
     text-align: center;
     font-family: 'La Belle Aurore';
     width: 100%;
@@ -47,14 +47,61 @@
     font-weight: 400;
 }
 
-.progressbar{
-    margin-left: 15%;
+.progressbar {
+    margin: 0 auto;
     margin-right: 15%;
+    margin-left: 15%;
     margin-bottom: 50px;
-    height: 14px;
+    margin-top: 30px;
     border-radius: 10px;
     background-color: #D9D9D9;
     border: none;
+    width: 70%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden; 
+}
+
+.progress {
+    height: 100%;
+    transition: width 0.5s;
+    border-radius: 10px;
+    background-color: #5200FF;
+    position: relative; 
+    overflow: hidden; 
+    box-shadow: 0 0 10px #5200FF; 
+    animation: glow-progress 1s infinite alternate; 
+}
+
+.cap {
+    width: 20px; 
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    position: absolute;
+    right: 0; 
+    top: 0;
+    background-color: #7231ff; 
+    box-shadow: 0 0 10px #5200FF; 
+    animation: glow-cap 1s infinite alternate; 
+}
+
+@keyframes glow-progress {
+    from {
+        box-shadow: 0 0 10px #5200FF;
+    }
+    to {
+        box-shadow: 0 0 30px #5200FF, 0 0 30px #5200FF; 
+    }
+}
+
+@keyframes glow-cap {
+    from {
+        box-shadow: 0 0 10px #5200FF;
+    }
+    to {
+        box-shadow: 0 0 30px #5200FF, 0 0 30px #5200FF; 
+    }
 }
 .progressbar-values {
     display: flex;
@@ -67,11 +114,27 @@
     font-size: 14px;
     color: white;
 }
+
+.progressbar-values-left {
+    color: #fefefe;
+    border: 1px solid #ffffff38;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.progressbar-values-right {
+    color: #fefefe;
+    border: 1px solid #ffffff38;
+    border-radius: 10px;
+    padding: 10px;
+}
+
 .progressbar-values span {
     font-weight: 800;
 }
 .fundraising_content {
-    background-color: #444444;
+    background-color: #00000095;
+    border: 1px solid #ffffff38;
     padding: 20px;
     border-radius: 20px 20px 0px 0px;
     margin-top: 20px;
@@ -94,19 +157,20 @@
     grid-template-columns: 1fr 1fr;
     margin-left: 15%;
     margin-right: 15%;
-    /* ajest acording size */
     gap:20px;
 }
-.left button {
-    background-color: #00FF66;
+.accandpara button {
+    background-color: #ffffff;
     color: #000000;
     border: none;
     padding: 0px 20px;
     border-radius: 25px;
     font-size: 24px;
     font-family: 'Koulen';
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    
 }
+
 .left p {
     font-family: 'Koulen';
     font-size: 14px;
@@ -126,7 +190,6 @@
     align-items: center;
     justify-content: center;
     padding-top:50px; 
-    /* correct acording sizes */
 }
 
 .right p{
@@ -145,8 +208,15 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 100%;
-    color: #F00000;
+    width: 70%;
+    border: 1px solid #ffffff;
+    padding: 20px;
+    padding-top: 3%;
+    border-radius: 10px;
+    background-color: #ff3a3a;
+    margin: 0 auto;
+    margin-top: 50px;
+
 }
 .para1 p {
     padding-bottom: 10px;
@@ -211,4 +281,130 @@
     font-weight: 700;
     font-size: 14px;
     padding-bottom: 7px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .fundraising {
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-top: -120px;
+    }
+
+    .fundraising_content_h {
+        font-size: 20px;
+    }
+
+    .progressbar {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 10%;
+        margin-top: 5%;
+    }
+
+    .progressbar-values {
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .progressbar-values-left {
+        color: #fefefe;
+        border: 1px solid #ffffff38;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
+    .progressbar-values-right {
+        color: #fefefe;
+        border: 1px solid #ffffff38;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .leftbankdetails {
+        width: 90%;
+    }
+
+    .accandpara {
+        display: block;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .para1, .para2 {
+        width: 90%;
+        font-size: 20px;
+    }
+
+    .bottom-left, .bottom-right {
+        text-align: center;
+    }
+
+    .bottom-left button {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .fundraising {
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-top: -120px;
+    }
+
+    .fundraising_content_h {
+        font-size: 14px;
+    }
+
+    .progressbar {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 10%;
+    }
+
+    .progressbar-values {
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 10px;
+        font-weight: 700;
+    }
+
+    .progressbar-values-left {
+        color: #fefefe;
+        border: 1px solid #ffffff38;
+        border-radius: 10px;
+        padding: 10px;;
+    }
+    
+    .progressbar-values-right {
+        color: #fefefe;
+        border: 1px solid #ffffff38;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .leftbankdetails {
+        width: 90%;
+    }
+
+    .accandpara {
+        display: block;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .para1, .para2 {
+        width: 90%;
+        font-size: 18px;
+    }
+
+    .bottom-left, .bottom-right {
+        text-align: center;
+    }
+
+    .bottom-left button {
+        font-size: 14px;
+    }
 }

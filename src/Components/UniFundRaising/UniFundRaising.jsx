@@ -13,6 +13,7 @@ const UniFundRaising = () => {
 
     useEffect(() => {
         let number = amount / 54000;
+
         if (filled < number && loading) {
             const timer = setTimeout(() => {
                 setFilled(prev => {
@@ -25,7 +26,7 @@ const UniFundRaising = () => {
     }, [filled, loading, amount]);
 
   return (
-    <div className='fundraising' style={{ backgroundImage: `url('https://moramerch.s3.eu-north-1.amazonaws.com/slipfiles/order_1719987238008.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+    <div className='fundraising' style={{ backgroundImage: `url('https://moramerch.s3.eu-north-1.amazonaws.com/slipfiles/order_1720003369772.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className='fundraising_content_h'>
             <h1>Your Support Matters!</h1>
         </div>
@@ -40,7 +41,7 @@ const UniFundRaising = () => {
                     <p><span>Rs. {amount} </span>of Rs. 5 400 000</p>
                 </div>
                 <div className="progressbar-values-right">
-                    <p>{donators} Donators</p>
+                    <p>{donators} Donors</p>
                 </div>
             </div>
 
@@ -52,11 +53,13 @@ const UniFundRaising = () => {
                     transition: 'width 0.5s',
                     borderRadius: '10px',
                     border: 'none',
-                    position: 'relative', /* Ensure the cap is positioned correctly */
+                    position: 'relative', 
+
                 }}>
                     <div className="cap"></div>
                 </div>
             </div>
+
         
 
         <div className="accandpara">
@@ -84,7 +87,7 @@ const UniFundRaising = () => {
 
         <div className="para2">
             <p>EVERY DONATION, <span>BIG OR SMALL,</span></p>
-            <p className='greenpara'>Must be done within a week.</p>
+            <p className='greenpara'>HELPS OUR FRIEND!.</p>
         </div>
         <hr/>
         <div className="bottom">

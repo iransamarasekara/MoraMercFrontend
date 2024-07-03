@@ -177,7 +177,6 @@
 .pdf{
     margin-top: 50px;
     text-align: center;
-    cursor: pointer;
 }
 .pdf button {
     background-color: #ffffff;
@@ -189,6 +188,7 @@
     font-family: 'Koulen';
     margin-bottom: 30px;
     text-align: center;
+    cursor: pointer;
 }
 
 .left p {

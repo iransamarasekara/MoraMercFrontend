@@ -39,7 +39,7 @@ const UniFundRaising = () => {
 
             <div className="progressbar-values">
                 <div className="progressbar-values-left">
-                    <p><span>Rs. {amount} </span>of Rs. 5 400 000</p>
+                    <p><span>Rs. {amount} </span><br className='mobile-only-br'></br>of Rs. 5 400 000</p>
                 </div>
                 <div className="progressbar-values-right">
                     <p><span>{donators}</span> Donors</p>
@@ -65,7 +65,7 @@ const UniFundRaising = () => {
 
         <div className="accandpara">
             <div className="left">
-                <button>Donate NOW!</button>
+                <h1>Donate NOW!</h1>
                 <p>Bank Details</p>
                 <div className="leftbankdetails">
                     <p>Account Number</p>

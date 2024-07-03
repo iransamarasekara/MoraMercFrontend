@@ -151,7 +151,7 @@
     text-align: center;
     font-family: 'Jomhuria';
     font-weight: 400;
-    font-size: 64px;
+    font-size: 80px;
     margin-top: -15px;
 }
 .accandpara {
@@ -162,14 +162,14 @@
     gap:20px;
     text-align: center;
 }
-.accandpara button {
-    background-color: #ffffff;
-    color: #000000;
+.accandpara h1 {
+    /* background-color: #ffffff; */
+    color: white;
     border: none;
-    padding: 0px 20px;
-    border-radius: 25px;
-    font-size: 24px;
-    font-family: 'Koulen';
+    /* padding: 0px 20px;
+    border-radius: 25px; */
+    font-size: 30px;
+    font-family: 'League Spartan', sans-serif;
     margin-bottom: 30px;
     text-align: center;
     
@@ -202,7 +202,7 @@
     background-color: #D9D9D924;
     padding: 20px;
     border-radius: 10px;
-    width: 70%;
+    width: 100%;
     font-family: 'Koulen', sans-serif; 
     font-weight: 700;
 }
@@ -236,10 +236,10 @@
     padding: 20px;
     padding-top: 3%;
     border-radius: 10px;
-    background-color: #ff3a3a;
+    background-color: #ed0909;
     margin: 0 auto;
     margin-top: 50px;
-
+    /* #ff3a3a */
 }
 .para1 p {
     padding-bottom: 10px;
@@ -316,6 +316,21 @@
 .holder {
     margin-bottom: 8px;
     font-weight: 500;
+}
+.mobile-only-br {
+    display: none;
+}
+
+@media (min-width: 1224px) {
+    .left p {
+        font-size: 18px;
+    }
+    .right p{
+        font-size: 15px;
+    }
+    .leftbankdetails {
+        width: 100%;
+    }
 }
 
 @media (max-width: 1224px) {
@@ -446,6 +461,12 @@
     .fundraising_content_h {
         font-size: 14px;
     }
+    .fundraising_content_p h2{
+        font-size: 40px;
+    }
+    .progressbar-values span{
+        font-size: 18px;
+    }
 
     .progressbar {
         width: 90%;
@@ -508,5 +529,8 @@
 
     .right p {
         text-align: justify;
+    }
+    .mobile-only-br {
+        display: flex;
     }
 }

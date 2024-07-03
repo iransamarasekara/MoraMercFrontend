@@ -113,6 +113,7 @@
     font-weight: 500;
     font-size: 14px;
     color: white;
+    gap: 10px;
 }
 
 .progressbar-values-left {
@@ -131,6 +132,7 @@
 
 .progressbar-values span {
     font-weight: 800;
+    font-size: 18px;
 }
 .fundraising_content {
     background-color: #00000095;
@@ -158,6 +160,7 @@
     margin-left: 15%;
     margin-right: 15%;
     gap:20px;
+    text-align: center;
 }
 .accandpara button {
     background-color: #ffffff;
@@ -168,13 +171,31 @@
     font-size: 24px;
     font-family: 'Koulen';
     margin-bottom: 30px;
+    text-align: center;
     
+}
+.pdf{
+    margin-top: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+.pdf button {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 0px 20px;
+    border-radius: 25px;
+    font-size: 24px;
+    font-family: 'Koulen';
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .left p {
-    font-family: 'Koulen';
+    font-family: 'Poppins';
     font-size: 14px;
     color: white;
+    text-align: left;
 }
 .leftbankdetails {
     margin-top: 20px;
@@ -182,7 +203,8 @@
     padding: 20px;
     border-radius: 10px;
     width: 70%;
-    font-family: 'League Spartan', sans-serif; 
+    font-family: 'Koulen', sans-serif; 
+    font-weight: 700;
 }
 
 .right {
@@ -193,9 +215,10 @@
 }
 
 .right p{
-    font-family: 'Koulen';
+    font-family: 'Poppins';
     font-size: 14px;
     color: white;
+    text-align: left;
 }
 
 .para1 {
@@ -282,6 +305,18 @@
     font-size: 14px;
     padding-bottom: 7px;
 }
+.accno {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.bankname {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.holder {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
 
 @media (max-width: 1224px) {
     .accandpara {
@@ -292,6 +327,9 @@
     .right {
         padding-top: 10px;
     }
+    .leftbankdetails {
+        width: 100%;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -301,7 +339,7 @@
         gap:10px;
     }
     .right {
-        padding-top: 10px;
+        padding-top: 0px;
     }
     .fundraising {
         padding-left: 10%;
@@ -365,7 +403,7 @@
     }
 
     .leftbankdetails {
-        width: 90%;
+        width: 100%;
     }
 
     .accandpara {
@@ -392,6 +430,9 @@
 
     .bottom-left button {
         font-size: 16px;
+    }
+    .right p {
+        text-align: justify;
     }
 }
 
@@ -434,7 +475,7 @@
     }
 
     .leftbankdetails {
-        width: 90%;
+        width: 100%;
     }
 
     .accandpara {
@@ -463,5 +504,9 @@
 
     .bottom-left button {
         font-size: 10px;
+    }
+
+    .right p {
+        text-align: justify;
     }
 }

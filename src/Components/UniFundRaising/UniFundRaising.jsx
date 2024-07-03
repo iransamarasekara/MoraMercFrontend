@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './UniFundRaising.css'
+import { Link } from 'react-router-dom';
 
 const UniFundRaising = () => {
     const [filled, setFilled] = useState(0);
@@ -41,7 +42,7 @@ const UniFundRaising = () => {
                     <p><span>Rs. {amount} </span>of Rs. 5 400 000</p>
                 </div>
                 <div className="progressbar-values-right">
-                    <p>{donators} Donors</p>
+                    <p><span>{donators}</span> Donors</p>
                 </div>
             </div>
 
@@ -68,16 +69,20 @@ const UniFundRaising = () => {
                 <p>Bank Details</p>
                 <div className="leftbankdetails">
                     <p>Account Number</p>
-                    <p>92431885</p>
+                    <p className='accno'>92431885</p>
                     <p>Bank</p>
-                    <p>BOC (Katubedda Branch)</p>
+                    <p className='bankname'>BOC (Katubedda Branch)</p>
                     <p>Account Holder</p>
-                    <p>E-FAC 22 BATCH</p>
+                    <p className='holder'>E-FAC 22 BATCH</p>
                 </div>
             </div>
             <div className="right">
                 <p>Join us in the fight against cancer! Every donation you make brings us closer to better treatments, more survivor stories, and ultimately, a world without this devastating disease. Your support fuels groundbreaking research, provides vital patient resources, and gives hope to countless individuals and families battling cancer. Donate today and help us create a future where cancer is no longer a threat. Thank you for standing with us in this important cause.</p>
             </div>
+        </div>
+
+        <div className="pdf">
+            <Link to='https://moramerch.s3.eu-north-1.amazonaws.com/pet+ct+after+2nd+line+chemo.pdf'><button>View Details</button></Link>
         </div>
 
         <div className="para1">
@@ -97,7 +102,7 @@ const UniFundRaising = () => {
                 <p>075 744 2780 (Whatsapp)</p>
             </div>
             <div className="bottom-right">
-                <p>22nd Batch</p>
+                <p>22 Batch</p>
                 <p>Faculty Of Engineering</p>
                 <p>University Of Moratuwa</p>
             </div>

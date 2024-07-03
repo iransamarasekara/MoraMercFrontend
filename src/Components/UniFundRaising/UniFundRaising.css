@@ -283,6 +283,47 @@
     padding-bottom: 7px;
 }
 
+@media (max-width: 1224px) {
+    .accandpara {
+        margin-left: 15%;
+        margin-right: 15%;
+        gap:10px;
+    }
+    .right {
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .accandpara {
+        margin-left: 15%;
+        margin-right: 15%;
+        gap:10px;
+    }
+    .right {
+        padding-top: 10px;
+    }
+    .fundraising {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@media (max-width: 850px) {
+    .accandpara {
+        margin-left: 15%;
+        margin-right: 15%;
+        gap:10px;
+    }
+    .right {
+        padding-top: 10px;
+    }
+    .fundraising {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
 
 @media only screen and (max-width: 768px) {
     .fundraising {
@@ -335,11 +376,18 @@
 
     .para1, .para2 {
         width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: center;
         font-size: 20px;
+    }
+    .bottom {
+        gap: 10px;
     }
 
     .bottom-left, .bottom-right {
-        text-align: center;
+        /* text-align: center; */
+        font-size: 10px;
     }
 
     .bottom-left button {
@@ -347,7 +395,7 @@
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 470px) {
     .fundraising {
         padding-left: 5%;
         padding-right: 5%;
@@ -400,11 +448,20 @@
         font-size: 18px;
     }
 
-    .bottom-left, .bottom-right {
-        text-align: center;
+    .bottom {
+        margin-left: 3%;
+        margin-right: 3%;
+        font-size: 10px;
     }
 
+    .bottom-left, .bottom-right {
+        font-size: 10px;
+    }
+     .bottom-right {
+        margin-top: 0px;
+     }
+
     .bottom-left button {
-        font-size: 14px;
+        font-size: 10px;
     }
 }

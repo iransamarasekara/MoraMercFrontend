@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+.fundraising {
+    background-image: url('https://moramerch.s3.eu-north-1.amazonaws.com/slipfiles/order_1719987238008.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -120px;
+    padding-left: 15%;
+    padding-right: 15%;
+    position: relative; 
+    color: white;
+}
+
+.fundraising::before {
+    content: ''; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000C2; 
+    z-index: 1;
+}
+
+.fundraising > * {
+    position: relative;
+    z-index: 2;
+}
+
+.fundraising_content_h {
+    padding-top: 50px;
+    color:white;
+    text-align: center;
+    font-family: 'La Belle Aurore';
+    width: 100%;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.progressbar{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 50px;
+    height: 14px;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    border: none;
+}
+.progressbar-values {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+}
+.progressbar-values span {
+    font-weight: 800;
+}
+.fundraising_content {
+    background-color: #444444;
+    padding: 20px;
+    border-radius: 20px 20px 0px 0px;
+    margin-top: 20px;
+    width: 100%;
+}
+.fundraising_content_p {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.fundraising_content_p h2{
+    color:white;
+    text-align: center;
+    font-family: 'Jomhuria';
+    font-weight: 400;
+    font-size: 64px;
+    margin-top: -15px;
+}
+.accandpara {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 15%;
+    margin-right: 15%;
+    /* ajest acording size */
+    gap:20px;
+}
+.left button {
+    background-color: #00FF66;
+    color: #000000;
+    border: none;
+    padding: 0px 20px;
+    border-radius: 25px;
+    font-size: 24px;
+    font-family: 'Koulen';
+    margin-bottom: 20px;
+}
+.left p {
+    font-family: 'Koulen';
+    font-size: 14px;
+    color: white;
+}
+.leftbankdetails {
+    margin-top: 20px;
+    background-color: #D9D9D924;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    font-family: 'League Spartan', sans-serif; 
+}
+
+.right {
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    padding-top:50px; 
+    /* correct acording sizes */
+}
+
+.right p{
+    font-family: 'Koulen';
+    font-size: 14px;
+    color: white;
+}
+
+.para1 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    color: #F00000;
+}
+.para1 p {
+    padding-bottom: 10px;
+}
+.para2 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    color: white;
+}
+.para2 span{
+    color: #F0BB00;
+}
+
+.greenpara {
+    color: #00F035;
+}
+hr {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 40px;
+}
+.bottom-left button {
+    background-color: #D9D9D980;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.bottom-left p {
+    font-weight: 500;
+    font-size: 14px;
+    padding-left: 20px;
+}
+.bottom-right {
+    margin-top: 20px;
+}
+
+.bottom-right p {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding-bottom: 7px;
+}

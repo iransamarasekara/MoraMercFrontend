@@ -20,6 +20,7 @@ import kid_banner from './Components/Assets/banner_kids.png';
 import EmailVerification from './Pages/EmailVerification';
 import PreLoader from './Components/PreLoader/PreLoader';
 import ThankYou from './Components/ThankYou/ThankYou';
+import FundRaising from './Pages/FundRaising';
 
 
 function App() {
@@ -45,11 +46,12 @@ const WithLayout = () => {
   const location = useLocation();
   const isPaymentPage = location.pathname === '/order';
   const isThanksPage = location.pathname === '/thanks';
+  const isFundRaising = location.pathname === '/fundraising';
   return (
     <div>
       {/* <Navbar /> */}
       <PreLoader />
-      {!isPaymentPage && !isThanksPage && <Navbar />}
+      {!isPaymentPage && !isThanksPage && !isFundRaising && <Navbar />}
       <Routes>
         <Route path='/' element={<Shop />} />
         <Route path='/t-shirt' element={<ShopCategory banner={men_banner} category="t-shirts" />} />
@@ -66,9 +68,10 @@ const WithLayout = () => {
         <Route path='/notification' element={<Notification />} />
         <Route path='/search' element={<Search />} />
         <Route path='/thanks' element={<ThankYou />} />
+        <Route path='/fundraising' element={<FundRaising />} />
 
       </Routes>
-      {!isPaymentPage && !isThanksPage && <Footer />}
+      {!isPaymentPage && !isThanksPage && !isFundRaising && <Footer />}
       {/* <Footer /> */}
     </div>
   );

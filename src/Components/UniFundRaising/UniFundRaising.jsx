@@ -12,15 +12,15 @@ const UniFundRaising = () => {
     },[])
 
     useEffect(() => {
-        let number = amount / 540000;
+        let number = amount / 54000;
         if (filled < number && loading) {
             const timer = setTimeout(() => {
                 setFilled(prev => {
                     const nextFilled = prev + 5;
-                    return nextFilled < number ? nextFilled : number;
+                    return nextFilled < number ? nextFilled : number; // Prevent exceeding the target number
                 });
             }, 50);
-            return () => clearTimeout(timer);
+            return () => clearTimeout(timer); // Cleanup the timeout
         }
     }, [filled, loading, amount]);
 
@@ -37,7 +37,7 @@ const UniFundRaising = () => {
 
             <div className="progressbar-values">
                 <div className="progressbar-values-left">
-                    <p><span>Rs. {amount} </span>of Rs. 54 000 000</p>
+                    <p><span>Rs. {amount} </span>of Rs. 5 400 000</p>
                 </div>
                 <div className="progressbar-values-right">
                     <p>{donators} Donators</p>

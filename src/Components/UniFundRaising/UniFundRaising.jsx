@@ -8,7 +8,7 @@ const UniFundRaising = () => {
     const [donators, setDonators] = useState(0);
 
     useEffect(() => {
-        let number = amount / 540000;
+        let number = amount / 240000;
         if (filled < number && loading) {
             const timer = setTimeout(() => {
                 setFilled(prev => {
@@ -21,7 +21,7 @@ const UniFundRaising = () => {
     }, [filled, loading, amount]);
 
   return (
-    <div className='fundraising' style={{ backgroundImage: `url('https://moramerch.s3.eu-north-1.amazonaws.com/slipfiles/order_1719987238008.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+    <div className='fundraising' style={{ backgroundImage: `url('https://moramerch.s3.eu-north-1.amazonaws.com/slipfiles/order_1720003369772.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className='fundraising_content_h'>
             <h1>Your Support Matters!</h1>
         </div>
@@ -36,20 +36,24 @@ const UniFundRaising = () => {
                     <p><span>Rs. {amount} </span>of Rs. 54 000 000</p>
                 </div>
                 <div className="progressbar-values-right">
-                    <p>{donators} Donators</p>
+                    <p>{donators} Donors</p>
                 </div>
             </div>
 
             <div className="progressbar">
-                <div style={{
+                <div className="progress" style={{
                     width: `${filled}%`,
                     height: '100%',
                     backgroundColor: '#5200FF',
                     transition: 'width 0.5s',
                     borderRadius: '10px',
                     border: 'none',
-                }}></div>
+                    position: 'relative', 
+                }}>
+                    <div className="cap"></div>
+                </div>
             </div>
+
         
 
         <div className="accandpara">
@@ -77,7 +81,7 @@ const UniFundRaising = () => {
 
         <div className="para2">
             <p>EVERY DONATION, <span>BIG OR SMALL,</span></p>
-            <p className='greenpara'>Must be done within a week.</p>
+            <p className='greenpara'>HELPS OUR FRIEND!.</p>
         </div>
         <hr/>
         <div className="bottom">

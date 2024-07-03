@@ -4,19 +4,24 @@ import './UniFundRaising.css'
 const UniFundRaising = () => {
     const [filled, setFilled] = useState(0);
     const [loading, setLoading] = useState(true);
-    const [amount, setAmount] = useState(1000000);
+    const [amount, setAmount] = useState(0);
     const [donators, setDonators] = useState(0);
 
     useEffect(() => {
-        let number = amount / 240000;
+        fetch('https://projectbisonbackend.onrender.com/fundraising123').then((response)=>response.json()).then((data)=>{setAmount(data.amount);setDonators(data.donators)});
+    },[])
+
+    useEffect(() => {
+        let number = amount / 54000;
+
         if (filled < number && loading) {
             const timer = setTimeout(() => {
                 setFilled(prev => {
                     const nextFilled = prev + 5;
-                    return nextFilled < number ? nextFilled : number;
+                    return nextFilled < number ? nextFilled : number; // Prevent exceeding the target number
                 });
             }, 50);
-            return () => clearTimeout(timer);
+            return () => clearTimeout(timer); // Cleanup the timeout
         }
     }, [filled, loading, amount]);
 
@@ -33,7 +38,7 @@ const UniFundRaising = () => {
 
             <div className="progressbar-values">
                 <div className="progressbar-values-left">
-                    <p><span>Rs. {amount} </span>of Rs. 54 000 000</p>
+                    <p><span>Rs. {amount} </span>of Rs. 5 400 000</p>
                 </div>
                 <div className="progressbar-values-right">
                     <p>{donators} Donors</p>
@@ -49,6 +54,7 @@ const UniFundRaising = () => {
                     borderRadius: '10px',
                     border: 'none',
                     position: 'relative', 
+
                 }}>
                     <div className="cap"></div>
                 </div>

@@ -4,8 +4,12 @@ import './UniFundRaising.css'
 const UniFundRaising = () => {
     const [filled, setFilled] = useState(0);
     const [loading, setLoading] = useState(true);
-    const [amount, setAmount] = useState(1000000);
+    const [amount, setAmount] = useState(0);
     const [donators, setDonators] = useState(0);
+
+    useEffect(() => {
+        fetch('https://projectbisonbackend.onrender.com/fundraising123').then((response)=>response.json()).then((data)=>{setAmount(data.amount);setDonators(data.donators)});
+    },[])
 
     useEffect(() => {
         let number = amount / 540000;
@@ -41,14 +45,17 @@ const UniFundRaising = () => {
             </div>
 
             <div className="progressbar">
-                <div style={{
+                <div className="progress" style={{
                     width: `${filled}%`,
                     height: '100%',
                     backgroundColor: '#5200FF',
                     transition: 'width 0.5s',
                     borderRadius: '10px',
                     border: 'none',
-                }}></div>
+                    position: 'relative', /* Ensure the cap is positioned correctly */
+                }}>
+                    <div className="cap"></div>
+                </div>
             </div>
         
 

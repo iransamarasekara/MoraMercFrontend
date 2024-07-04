@@ -11,6 +11,7 @@
     font-size: 16px;
     font-weight: 500;
     color: #374151;
+    width:250px;
 
 }
 .item-prices{
@@ -92,6 +93,7 @@
 
     .name {
         font-size: 14px;
+        width:230px;
     }
 
     .item-prices {
@@ -129,6 +131,7 @@
 
     .name {
         font-size: 12px;
+        width: 230px;
     }
 
     .item-prices {
@@ -166,6 +169,7 @@
 
     .name {
         font-size: 12px;
+        width: 190px;
     }
 
     .item-prices {
@@ -210,6 +214,7 @@
     .name {
         font-weight: 600;
         font-size: 12px; /* Decrease font size further */
+        width: 193px;
     }
 
     .item-prices {

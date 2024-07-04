@@ -20,16 +20,34 @@ const useResponsiveStyles = () => {
           height: '360px', // Adjust height as needed
           margin: '0 0',
         });
+      } else if (window.innerWidth <= 560) {
+        setContainerStyles({
+          width: '200px', // Smaller width on tablets
+          height: '250px', // Adjust height as needed
+          margin: '0 0',
+        });
       } else if (window.innerWidth <= 768) {
         setContainerStyles({
           width: '250px', // Smaller width on tablets
           height: '300px', // Adjust height as needed
           margin: '0 0',
         });
+      } else if (window.innerWidth <= 900) {
+        setContainerStyles({
+          width: '300px', // Smaller width on tablets
+          height: '360px', // Adjust height as needed
+          margin: '0 0',
+        });
       } else if (window.innerWidth <= 1024) {
         setContainerStyles({
           width: '350px', // Smaller width on tablets
           height: '440px', // Adjust height as needed
+          margin: '0 0',
+        });
+      } else if (window.innerWidth <= 1330) {
+        setContainerStyles({
+          width: '500px', // Smaller width on tablets
+          height: '600px', // Adjust height as needed
           margin: '0 0',
         });
       } else {

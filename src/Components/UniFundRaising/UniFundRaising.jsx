@@ -41,9 +41,11 @@ const UniFundRaising = () => {
                 <div className="progressbar-values-left">
                     <p><span>Rs. {amount} </span><br className='mobile-only-br'></br>of Rs. 5 400 000</p>
                 </div>
+                {!(donators === 0) &&
                 <div className="progressbar-values-right">
                     <p><span>{donators}</span> Donors</p>
                 </div>
+                }
             </div>
 
             <div className="progressbar">
@@ -69,15 +71,15 @@ const UniFundRaising = () => {
                 <p>Bank Details</p>
                 <div className="leftbankdetails">
                     <p>Account Number</p>
-                    <p className='accno'>92431885</p>
+                    <p className='accno'>158020079893</p>
                     <p>Bank</p>
-                    <p className='bankname'>BOC (Katubedda Branch)</p>
+                    <p className='bankname'>Hatton National Bank - Pottuvil Branch</p>
                     <p>Account Holder</p>
-                    <p className='holder'>E-FAC 22 BATCH</p>
+                    <p className='holder'>S.Anold Erickshan</p>
                 </div>
             </div>
             <div className="right">
-                <p>Join us in the fight against cancer! Every donation you make brings us closer to better treatments, more survivor stories, and ultimately, a world without this devastating disease. Your support fuels groundbreaking research, provides vital patient resources, and gives hope to countless individuals and families battling cancer. Donate today and help us create a future where cancer is no longer a threat. Thank you for standing with us in this important cause.</p>
+                <p>Join us to fight against cancer! Every donation you make will boost us to help our dear friend to get better treatments, hear survivor stories from him, and ultimately, provide him a world without this devastating disease. Your support would give hope to Erickshan and his family in this journey of battling cancer. Donate today and help us create a future where cancer is no longer a threat. Thank you for standing with us in this remarkable trial against cancer. This is the time to show our love and care as a batch towards our beloved batchmate Erickshan!!</p>
             </div>
         </div>
 
@@ -86,8 +88,8 @@ const UniFundRaising = () => {
         </div>
 
         <div className="para1">
-            <p>Surgery delayed due to lack of funds.</p>
-            <p>Must be done within a week.</p>
+            <p>Surgery is scheduled for 05.07.2024</p>
+            <p>Your urgent support is needed to settle the hospital bills within two weeks.</p>
         </div>
 
         <div className="para2">

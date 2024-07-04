@@ -94,7 +94,7 @@ const UniFundRaising = () => {
 
         <div className="para2">
             <p>EVERY DONATION, <span>BIG OR SMALL,</span></p>
-            <p className='greenpara'>HELPS OUR FRIEND!.</p>
+            <p className='greenpara'>HELPS OUR FRIEND!</p>
         </div>
         <hr/>
         <div className="bottom">

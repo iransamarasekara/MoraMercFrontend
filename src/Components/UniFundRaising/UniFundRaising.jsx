@@ -109,6 +109,7 @@ const UniFundRaising = () => {
                 <p>University Of Moratuwa</p>
             </div>
         </div>
+        <p className='copy'>© moramerc.lk. All right reserved.</p>
         </div>
     </div>
   )

@@ -320,6 +320,10 @@
 .mobile-only-br {
     display: none;
 }
+.copy {
+    text-align: center;
+    padding-top: 30px;
+}
 
 @media (min-width: 1224px) {
     .left p {

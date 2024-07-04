@@ -534,4 +534,11 @@
     .mobile-only-br {
         display: flex;
     }
+    .left {
+        margin-bottom: 20px;
+    }
+    .pdf {
+        margin-top: 20px;
+        margin-bottom: -10px;
+    }
 }

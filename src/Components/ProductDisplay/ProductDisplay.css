@@ -604,5 +604,8 @@
         font-size: 12px;
         font-weight: 500;
     }
+    .event_logo {
+        margin-bottom: 0px;
+    }
   }
   

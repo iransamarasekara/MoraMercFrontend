@@ -152,6 +152,7 @@
     flex-wrap: nowrap;
     justify-content: flex-start;
     scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
     padding-right: 25px;
     padding-left: 25px;
     padding-top: 50px; /* Add padding to accommodate the fixed-position elements */

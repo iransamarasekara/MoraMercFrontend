@@ -105,6 +105,14 @@ const ProductDisplay = (props) => {
   const handleAction = () => {
     if (product.available) {
       if (localStorage.getItem('auth-token')) {
+        if (!size1) {
+          setAlertMessage('*Please select size');
+          return;
+        }
+        if (!color1) {
+          setAlertMessage('*Please select color');
+          return;
+        }
         if (!size1 || !color1) {
           setAlertMessage('*Please select both size and color');
         } else {

@@ -28,7 +28,8 @@ const SpecialComboPacks = () => {
                 <Link to='/combopacks'><button>Click here</button></Link>
             </div>
             <div className='shop-category-banner-mobile'>
-                <ImageSlider slides={arr}/>
+                <Link to='/combopacks'><ImageSlider slides={arr}/></Link>
+                {/* <ImageSlider slides={arr}/> */}
             </div>
         </div>
     )

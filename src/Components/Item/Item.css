@@ -233,6 +233,7 @@
 
     .productdisplay-right-star {
         font-size: 6px; /* Decrease star font size further */
+        padding-top: 8px;
     }
 
     .productdisplay-right-star img {

@@ -25,10 +25,11 @@ const SpecialComboPacks = () => {
         <div  className='home-ad'>
             <div className='home-ad-desc'>
                 <h2>Check Special Offers for You.</h2>
-                <Link to='/others'><button>Click here</button></Link>
+                <Link to='/combopacks'><button>Click here</button></Link>
             </div>
             <div className='shop-category-banner-mobile'>
-                <ImageSlider slides={arr}/>
+                <Link to='/combopacks'><ImageSlider slides={arr}/></Link>
+                {/* <ImageSlider slides={arr}/> */}
             </div>
         </div>
     )

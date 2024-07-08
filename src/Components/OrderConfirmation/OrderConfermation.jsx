@@ -266,8 +266,23 @@ const OrderConfermation = () => {
         const handleSubmit = (event) => {
             event.preventDefault();
             setMessage('Plase wait while we process your request...');
+            if(!field2){
+                setMessage('Please select payment method');
+                alert('Please select payment method');
+                return;
+            }
+            if(!field1){
+                setMessage('Please enter your WhatsApp number');
+                alert('Please enter your WhatsApp number');
+                return;
+            }
             if (!field1 || !field2) {
                 alert('Please fill all required fields');
+                return;
+            }
+            if(imgReq ==='Pre-order' && !image){
+                setMessage('Please upload the slip image');
+                alert('Please upload the slip image');
                 return;
             }
             if (!field3) {
@@ -355,7 +370,7 @@ const OrderConfermation = () => {
             setOrderType('');
             setImage(null);
             setModal(false);
-            setField1('');
+            // setField1('');
             setField2('');
             setField3('');
             setNewFormData({

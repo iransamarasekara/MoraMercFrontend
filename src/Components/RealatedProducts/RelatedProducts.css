@@ -75,9 +75,14 @@
     margin-top: -30px;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
-    scale: 0.9;
+    scale: 1;
 }
 }
+@media (max-width: 900px) {
+    .relatedproducts-item {
+        scale: 0.9;
+    }
+  }
 
 /* Mobile Version */
 @media (max-width: 768px) {

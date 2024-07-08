@@ -5,7 +5,6 @@ import { UserContext } from '../../Context/UserContext';
 
 const DescriptionBox = (props) => {
   const { product } = props;
-  // const { all_user } = useContext(UserContext);
   const [activeTab, setActiveTab] = useState('description');
   const [allReviews, setAllReviews] = useState(product.reviewText);
   const [review, setReview] = useState('');
@@ -46,11 +45,6 @@ const DescriptionBox = (props) => {
     }
 }, []);
 
-  // useEffect(() => {
-  //   const user = all_user.find((user) => userEmail === user.email);
-  //   setCurrentUser(user);
-  // }, [all_user, userEmail]);
-
   useEffect(() => {
     if (product && product.reviewText) {
       setAllReviews(product.reviewText);
@@ -73,8 +67,8 @@ const DescriptionBox = (props) => {
     if (currentUser && rating) {
       const newReview = {
         itemId: product.id,
-        profilephoto: isAnonymous ? 'Anonymous User' : currentUser.profile_pic, // If anonymous, no profile photo
-        name: isAnonymous ? 'Anonymous User' : currentUser.name, // If anonymous, display as 'Anonymous User'
+        profilephoto: isAnonymous ? 'Anonymous User' : currentUser.profile_pic, 
+        name: isAnonymous ? 'Anonymous User' : currentUser.name, 
         rating: rating ? rating : 0,
         text: review ? review : 'No review',
       };

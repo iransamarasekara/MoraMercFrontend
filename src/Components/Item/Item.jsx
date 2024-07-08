@@ -11,9 +11,11 @@ const Item = (props) => {
   };
 
   return (
-    <Link to={`/product/${props.name.replace(/\s+/g, '_')}`} style={{textDecoration:'none', color:'black'}} className="item-link" onClick={handleItemClick}>
+    // <Link to={`/product/${props.name.replace(/\s+/g, '_')}`} style={{textDecoration:'none', color:'black'}} className="item-link" onClick={handleItemClick}>
       <div className='item'>
+      <Link to={`/product/${props.name.replace(/\s+/g, '_')}`} style={{textDecoration:'none', color:'black'}} className="item-link" onClick={handleItemClick}>
         <img src={props.image} alt='' />
+        </Link>
         <p className='name'>{props.name}</p>
         <p>{props.brand}</p>
         <div className='item-prices'>
@@ -35,7 +37,7 @@ const Item = (props) => {
         </div>
         {/* <button>Buy Now</button> */}
       </div>
-    </Link>
+    // </Link>
   );
 };
 

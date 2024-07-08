@@ -1,5 +1,5 @@
 .hero{
-    height: 70vh;
+    height: auto;
     width: 80%;
     margin: 0 auto;
     margin-top: 80px;
@@ -85,7 +85,7 @@
     font-size: 22px;
     font-weight: 500;
     text-decoration: none;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     /* padding: 0 10px; */
 }
 
@@ -101,7 +101,7 @@
 }
 
 /* Tablet Version */
-@media (max-width: 1024px) {
+@media (max-width: 1224px) {
     .hero {
         flex-direction: column;
         height: auto;

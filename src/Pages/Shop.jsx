@@ -13,9 +13,10 @@ const Shop = () => {
       <Hero/>
       <SpecialComboPacks/>
       
-      <Popular/>
-      <HomeAd/>
       <NewCollectionTrue/>
+      <HomeAd/>
+      <Popular/>
+      
       <NewCollections/>
       {/* <NewsLetter/> */}
     </div>

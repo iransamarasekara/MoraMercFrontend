@@ -225,6 +225,8 @@ const OrderConfermation = () => {
                         setMessage('Failed to add the order. Please try again later.');
                     }
                 })
+            }else {
+                setMessage('Failed to upload the slip image.');
             }
         }else{
             order.slip_image = 'This is post-order';

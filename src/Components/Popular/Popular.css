@@ -126,6 +126,7 @@
     display: flex;
     padding-bottom: 70px;
     padding-top: 80px; /* Add padding to accommodate the fixed-position elements */
+    margin-top: -80px;
   }
 
   .popular h1 {

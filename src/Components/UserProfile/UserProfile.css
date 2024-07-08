@@ -328,8 +328,11 @@ body.active-modal {
   }
 
   .userAcc-header {
+    width: 105%;
+    height: 16%;
     display: inline;
-    margin-top: 20px;
+    margin-top: -10px;
     margin-bottom: 20px;
+    border-top-left-radius: 20px;
   }
 }

@@ -10,14 +10,16 @@ const ThankYou = () => {
       <div className="greeting">
         <img src={logo} alt="logo" />
         <h1>Thank You</h1>
-        <h2>For Your Payment!</h2>
-        <p>We sent you an email of receipt.</p>
+
+        <h2>For The Order!</h2>
+        <p>We sent you an email of the receipt.</p>
+
         <Link to='https://whatsapp.com/channel/0029VajLAIC3gvWZqagiEL2L'><button>For Further Updates</button></Link>
         <Link to='/'><button>Go to Home Page</button></Link>
       </div>
       <div className="footer-small">
         <div className="footer-left">
-            <p>Proudly Design & Developed<br></br>by BISON CORPS.</p>
+            <p>Proudly Designed & Developed<br></br>by BISON CORPS.</p>
             {/* <p>by BISON CORPS.</p> */}
         </div>
         <div className="footer-right">
@@ -25,7 +27,7 @@ const ThankYou = () => {
         </div>
         
       </div>
-      <p>© moramerc.lk. All right reserved.</p>
+      <p>© moramerc.lk All rights reserved.</p>
     </div>
   )
 }

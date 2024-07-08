@@ -585,7 +585,7 @@ const OrderConfermation = () => {
                                 {currentProduct && currentProduct.avl_home_delivery &&
                                 <>
                                 <input type="radio" id="pickup2" name="uni_pickup" value="Home-delivery" onChange={handlePickupMethodChange} checked={pickupMethod === 'Home-delivery'} />
-                                <label htmlFor="pickup2">Home Delivery</label>
+                                <label htmlFor="pickup2">Home Delivery(Delivery charges may apply)</label>
                                 </>
                                 }
                                 {currentProduct && currentProduct.avl_home_delivery && pickupMethod === 'Home-delivery' &&
@@ -835,7 +835,7 @@ const OrderConfermation = () => {
                                 {currentProduct && currentProduct.avl_home_delivery &&
                                 <>
                                 <input type="radio" id="pickup2" name="uni_pickup" value="Home-delivery" onChange={handlePickupMethodChange} checked={pickupMethod === 'Home-delivery'} />
-                                <label htmlFor="pickup2">Home Delivery</label>
+                                <label htmlFor="pickup2">Home Delivery(Please note that the delivery charges may apply)</label>
                                 </>
                                 }
                                 {currentProduct && currentProduct.avl_home_delivery && pickupMethod === 'Home-delivery' &&

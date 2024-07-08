@@ -100,7 +100,7 @@ const Signup = () => {
                   <option value='Department of Textile & Apparel Engineering'>Department of Textile & Apparel Engineering</option>
                   <option value='Department of Earth Resource Engineering'>Department of Earth Resource Engineering</option>
                   <option value='Department of Material Science & Engineering'>Department of Interdisciplinary Studies</option>
-                  <option value='None'>Department of Interdisciplinary Studies</option>
+                  <option value='None'>None</option>
                 </select>
               )}
               <select Name='batch' value={formData.batch} onChange={changeHandler} required>

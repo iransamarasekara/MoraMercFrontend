@@ -229,7 +229,7 @@ const Navbar = () => {
           </div> */}
         </div>
         <div className='dropdown'>
-        <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/others'>OTHERS</Link></li>
+        <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/combopacks'>COMBO PACKS</Link></li>
           {/* <li className='dropbtn'><Link className='link-1' style={{ textDecoration: 'none' }} to='/others'>OTHERS {'>'} </Link></li>
           <div className="dropdown-content">
             <div className="dropdown-column">
@@ -293,7 +293,7 @@ const Navbar = () => {
             <li><Link to='/' onClick={closeMenu}>HOME</Link></li>
             <li><Link to='/t-shirt' onClick={closeMenu}>T-SHIRTS</Link></li>
             <li><Link to='/wristbands' onClick={closeMenu}>WRISTBANDS</Link></li>
-            <li><Link to='/others' onClick={closeMenu}>OTHERS</Link></li>
+            <li><Link to='/combopacks' onClick={closeMenu}>COMBO PACKS</Link></li>
             <li><Link to='/contact' onClick={closeMenu}>CONTACT</Link></li>
             <div className='powered-by'>
               <p>Powered by BISON Corps.</p>

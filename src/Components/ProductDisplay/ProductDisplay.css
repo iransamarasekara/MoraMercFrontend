@@ -538,6 +538,8 @@
     }
     .productdisplay-right-star {
       font-size: 12px;
+      margin-top: 20px;
+      margin-bottom: 0px;
     }
 
     .productdisplay-right-star img {

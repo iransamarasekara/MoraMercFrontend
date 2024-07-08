@@ -56,7 +56,7 @@ const WithLayout = () => {
         <Route path='/' element={<Shop />} />
         <Route path='/t-shirt' element={<ShopCategory banner={men_banner} category="t-shirts" />} />
         <Route path='/wristbands' element={<ShopCategory banner={women_banner} category="wristbands" />} />
-        <Route path='/others' element={<ShopCategory banner={kid_banner} category="others" />} />
+        <Route path='/combopacks' element={<ShopCategory banner={kid_banner} category="others" />} />
         <Route path='/product'>
           <Route path=':productId' element={<Product />} />
         </Route>

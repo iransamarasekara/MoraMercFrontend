@@ -69,6 +69,8 @@ const useResponsiveStyles = () => {
   return containerStyles;
 };
 
+
+
 const ProductDisplay = (props) => {
   const { product } = props;
   const { addToCart } = useContext(ShopContext);
@@ -92,6 +94,13 @@ const ProductDisplay = (props) => {
       alert('This Product is not available');
     }
   };
+
+  useEffect(() => {
+    // If there are no available sizes, call selectSize with a default message
+    if (!product.avl_size || product.avl_size.length === 0) {
+      selectSize('-');
+    }
+  }, [product.avl_size]); // Depend on product.avl_size to re-run this effect
 
   const handleAction = () => {
     if (product.available) {
@@ -214,24 +223,28 @@ const ProductDisplay = (props) => {
           </div>
         </div>
         <div className="productdisplay-right-size">
-          <h4>Select Size</h4>
-          <div className="productdisplay-right-sizes">
-            {product.avl_size.map((size, index) => (
-              <button
-                key={index}
-                className={size1 === size ? 'active' : ''}
-                onClick={() => selectSize(size)}
-              >
-                {size}
-              </button>
-            ))}
-          </div>
-          {(product.size_guide)?<div className="sizeguide">
-            <a href = {product.size_guide}>Size Guide</a>
-          </div>
-          :<></>
-          }
+    {product.avl_size && product.avl_size.length > 0 ? (
+      <>
+        <h4>Select Size</h4>
+        <div className="productdisplay-right-sizes">
+          {product.avl_size.map((size, index) => (
+            <button
+              key={index}
+              className={size1 === size ? 'active' : ''}
+              onClick={() => selectSize(size)}
+            >
+              {size}
+            </button>
+          ))}
         </div>
+      </>
+    ) : null} {/* Removed the direct call to selectSize here */}
+    {product.size_guide && (
+      <div className="sizeguide">
+        <a href={product.size_guide}>Size Guide</a>
+      </div>
+    )}
+  </div>
         <div className="productdisplay-right-addtoCart">
           <button onClick={() => { handleAction() }} className={!product.available ? 'unavailable-button' : ''}>
             {product.available ? 'ADD TO BAG' : 'UNAVAILABLE'}

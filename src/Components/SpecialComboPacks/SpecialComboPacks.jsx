@@ -24,7 +24,7 @@ const SpecialComboPacks = () => {
         arr.length > 0 &&
         <div  className='home-ad'>
             <div className='home-ad-desc'>
-                <h2>Check Special Offers for You.</h2>
+                <h2>Checking For Special Offers?</h2>
                 <Link to='/combopacks'><button>Click here</button></Link>
             </div>
             <div className='shop-category-banner-mobile'>

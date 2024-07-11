@@ -29,12 +29,12 @@ const UniFundRaising = () => {
   return (
     <div className='fundraising' style={{ backgroundImage: `url('https://moramerch.s3.eu-north-1.amazonaws.com/slipfiles/order_1720003369772.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className='fundraising_content_h'>
-            <h1>Your Support Matters!</h1>
+            <h1>Thank you for Your Incredible Support!</h1>
         </div>
         <div className='fundraising_content'>
             <div className='fundraising_content_p'>
-                <h2>ERICKSHAN NEEDS </h2>
-                <h2>YOUR HELP!</h2>
+                <h2>We raised 5.9 million</h2>
+                <h2>for Erickshan!</h2>
             </div>
 
             <div className="progressbar-values">
@@ -52,7 +52,7 @@ const UniFundRaising = () => {
                 <div className="progress" style={{
                     width: `${filled}%`,
                     height: '100%',
-                    backgroundColor: '#5200FF',
+                    backgroundColor: '#39e74d',
                     transition: 'width 0.5s',
                     borderRadius: '10px',
                     border: 'none',
@@ -79,7 +79,9 @@ const UniFundRaising = () => {
                 </div>
             </div>
             <div className="right">
-                <p>Join us to fight against cancer! Every donation you make will boost us to help our dear friend to get better treatments, hear survivor stories from him, and ultimately, provide him a world without this devastating disease. Your support would give hope to Erickshan and his family in this journey of battling cancer. Donate today and help us create a future where cancer is no longer a threat. Thank you for standing with us in this remarkable trial against cancer. This is the time to show our love and care as a batch towards our beloved batchmate Erickshan!!</p>
+                <p>We are profoundly moved by your overwhelming generosity. Thanks to your contributions, we have raised 5.9 million for our dear friend, S. Anold Erickshan, exceeding our initial goal.</p>
+                <p>Your prompt and heartfelt responses have provided immense hope and relief to Erickshan and his family during this critical time.</p>
+                <p>From the bottom of our hearts, thank you for your kindness and support.</p>
             </div>
         </div>
 

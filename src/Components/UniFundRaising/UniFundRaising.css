@@ -222,7 +222,6 @@
     color: white;
     /* text-align: left; */
     text-align: justify;
-    text-align: center;
     margin-bottom: 20px;
 
 }
@@ -342,6 +341,7 @@
     }
     .right p{
         font-size: 20px;
+        text-align: justify;
     }
     .leftbankdetails {
         width: 100%;

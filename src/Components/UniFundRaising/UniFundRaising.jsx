@@ -59,7 +59,7 @@ const UniFundRaising = () => {
                     position: 'relative', 
 
                 }}>
-                    <div className="cap"></div>
+                    {/* <div className="cap"></div> */}
                 </div>
             </div>
 

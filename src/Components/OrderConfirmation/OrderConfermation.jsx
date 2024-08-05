@@ -481,7 +481,7 @@ const OrderConfermation = () => {
                     <div className='orderconfirmation-billinput'>
                         
                         <div className="paymentmethods">
-                            <p>Payment Methods</p>
+                            <p>Payment Methods (*please select)</p>
                             <div className='banktransfer'>
                             <label class="switch-toggle-container">
                                 <input class="switch-toggle-input" type="checkbox" id="bankTransferToggle" onChange={() => handleToggleChange('bankTransfer')} checked={showOrderTypes} />
@@ -708,7 +708,7 @@ const OrderConfermation = () => {
                     
                         
                             <div className="paymentmethods">
-                                <p>Payment Methods</p>
+                                <p>Payment Methods (*please select)</p>
                                 <div className={`banktransfer ${showOrderTypes ? 'active' : ''}`} onClick={() => handleToggleChange('bankTransfer')} checked={showOrderTypes}>
                             <label class="switch-toggle-container">
                                 <input class="switch-toggle-input" type="checkbox" id="bankTransferToggle" onChange={() => handleToggleChange('bankTransfer')} checked={showOrderTypes} />

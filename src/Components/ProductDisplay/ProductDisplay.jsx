@@ -189,7 +189,7 @@ const ProductDisplay = (props) => {
           )}
         </div>
         <div className='productdisplay-right-color'>
-          <h4>Select Color</h4>
+          <h4>Select {product.category==="t-shirts"?"Shirt":"Wristband"} Color</h4>
           <div className='productdisplay-right-colors'>
             {product.colors.map((color, index) => (
               <button
@@ -233,7 +233,7 @@ const ProductDisplay = (props) => {
         <div className="productdisplay-right-size">
     {product.avl_size && product.avl_size.length > 0 ? (
       <>
-        <h4>Select Size</h4>
+        <h4>Select Shirt Size</h4>
         <div className="productdisplay-right-sizes">
           {product.avl_size.map((size, index) => (
             <button

@@ -201,6 +201,35 @@
   .review-item:last-child {
     margin-bottom: 0;
   }
+
+  .video-container {
+    position: relative;  
+    width: 100%;         
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
+    overflow: hidden;    
+    background-color: #ffffff; 
+  }
+  
+  
+  .product-video, .descriptionbox iframe {
+    position: absolute;  
+    top: 0;              
+    left: 0;             
+    width: 100%;         
+    height: 100%;        
+  }
+  
+  .product-photo {
+    width: 100%;         
+    max-width: 100%;     
+    height: auto;        
+    display: block;      
+    margin: 0 auto;      
+  }
+  
+  .descriptionbox {
+    padding: 16px;       
+  }
   
 
 @media (max-width: 768px) {
@@ -237,6 +266,10 @@
   .review-item {
       grid-template-columns: 1fr 1fr 3fr;
   }
+  .descriptionbox {
+    padding: 8px;      
+  }
+
 }
 
 /* Mobile view */
@@ -275,5 +308,8 @@
       display: flex;
       flex-direction: column;
       margin-left: 10px;
+  }
+  .descriptionbox {
+    padding: 4px; 
   }
 }

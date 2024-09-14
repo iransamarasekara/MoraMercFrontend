@@ -87,6 +87,7 @@ const Signup = () => {
                 <option value='Faculty of Business'>Faculty of Business</option>
                 <option value='Faculty of Architecture'>Faculty of Architecture</option>
                 <option value='Faculty of Medicine'>Faculty of Medicine</option>
+                <option value='NDT'>NDT</option>
               </select>
               {formData.faculty === 'Faculty of Engineering' && (
                 <select Name='department' value={formData.department} onChange={changeHandler} required>

@@ -22,14 +22,14 @@ const NewCollection = () => {
           </div>
         </Link>
         <div className="right-box">
-        <Link to='/wristbands' style={{ textDecoration: 'none' }}>
+        <Link to='/other-items' style={{ textDecoration: 'none' }}>
             <div className="item" style={{ backgroundImage: `url(${image2})`, color: 'white' }}>
               <div className="item-details">
                 <h2>WRISTBANDS</h2>
               </div>
             </div>
           </Link>
-          <Link to='/others' style={{ textDecoration: 'none' }}>
+          <Link to='/other-items' style={{ textDecoration: 'none' }}>
             <div className="item" style={{ backgroundImage: `url(${image3})`, color: 'white' }}>
               <div className="item-details">
                 <h2>LAPTOP STICKERS</h2>
@@ -38,7 +38,7 @@ const NewCollection = () => {
           </Link>
         </div>
       </div>
-      <Link to='/others' style={{ textDecoration: 'none' }}>
+      <Link to='/other-items' style={{ textDecoration: 'none' }}>
         <div className="bottom-box" style={{ backgroundImage: `url(${image4})`, color: 'white' }}>
           <div className="item-details">
             <h2>OTHER ITEMS</h2>

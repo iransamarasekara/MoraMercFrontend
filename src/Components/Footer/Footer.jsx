@@ -35,7 +35,7 @@ const Footer = () => {
             <li><a href="/">Home</a></li>
             <li><a href="/t-shirt">T-Shirts</a></li>
             <li><a href="/other-items">Other Items</a></li>
-            <li><a href="/others">Others</a></li>
+            <li><a href="/combopacks">Combo Packs</a></li>
             <li><a href="/contact Us">Contact Us</a></li>
           </ul>
         </div>
@@ -74,7 +74,7 @@ const Footer = () => {
               <li><a href="/">Home</a></li>
               <li><a href="/t-shirt">T-Shirts</a></li>
               <li><a href="/other-items">Other Items</a></li>
-              <li><a href="/others">Others</a></li>
+              <li><a href="/combopacks">Combo Packs</a></li>
               <li><a href="/contact">Contact</a></li>
             </ul>
           </div>

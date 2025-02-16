@@ -6,7 +6,7 @@ const NewCollectionTrue = () => {
     const [new_collection, setNewCollection] = useState([]);
 
     useEffect(() => {
-      fetch('https://projectbisonbackend.onrender.com/newcollections')
+      fetch(`${process.env.REACT_APP_DATABASE_URL}/newcollections`)
         .then((response) => response.json())
         .then((data) => setNewCollection(data));
     }, []);

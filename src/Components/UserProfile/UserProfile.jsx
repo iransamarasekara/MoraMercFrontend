@@ -29,7 +29,7 @@ const UserProfile = () => {
         formData.append('product', profile_pic);
         
 
-        await fetch('https://projectbisonbackend.onrender.com/upload',{
+        await fetch(`${process.env.REACT_APP_DATABASE_URL}/upload`,{
             method:'POST',
             headers:{
                 Accept:'application/json',
@@ -40,7 +40,7 @@ const UserProfile = () => {
 
         if(responceData.success)
         {
-            fetch('https://projectbisonbackend.onrender.com/addprofilephoto',{
+            fetch(`${process.env.REACT_APP_DATABASE_URL}/addprofilephoto`,{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -77,7 +77,7 @@ const UserProfile = () => {
 
     useEffect(() => {
         if (localStorage.getItem('auth-token')) {
-            fetch('https://projectbisonbackend.onrender.com/getuser', {
+            fetch(`${process.env.REACT_APP_DATABASE_URL}/getuser`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -93,7 +93,7 @@ const UserProfile = () => {
 
     useEffect(() => {
         if (localStorage.getItem('auth-token')) {
-            fetch('https://projectbisonbackend.onrender.com/getuserbymail', {
+            fetch(`${process.env.REACT_APP_DATABASE_URL}/getuserbymail`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -121,7 +121,7 @@ const UserProfile = () => {
     const checkHandler = async () => {
         // setFormData({ ...formData, email: userEmail, password: password });
         let responseData;
-        await fetch('https://projectbisonbackend.onrender.com/login', {
+        await fetch(`${process.env.REACT_APP_DATABASE_URL}/login`, {
         method: 'POST',
         headers: {
             Accept: 'application/form-data',
@@ -150,7 +150,7 @@ const UserProfile = () => {
     const changePassword = () => {
         toggleModal();
         if (localStorage.getItem('auth-token') && newPassword) {
-            fetch('https://projectbisonbackend.onrender.com/changepassword', {
+            fetch(`${process.env.REACT_APP_DATABASE_URL}/changepassword`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',

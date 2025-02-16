@@ -18,7 +18,7 @@ const EmailVerification = () => {
             }
 
             try {
-                const response = await fetch(`https://projectbisonbackend.onrender.com/verify-email?token=${token}`);
+                const response = await fetch(`${process.env.REACT_APP_DATABASE_URL}/verify-email?token=${token}`);
                 const data = await response.json();
                 if (response.ok) {
                     setMessage(data.message);

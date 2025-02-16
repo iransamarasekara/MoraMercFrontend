@@ -11,56 +11,79 @@ const Signup = () => {
     faculty: "",
     department: "none",
     batch: "",
-    profile_pic: '', // profile_default, ////
+    profile_pic: profile_default,
   });
 
-  const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState({ type: '', content: '' });
+
+  const validateForm = () => {
+    // Username validation
+    if (formData.username.length < 3) {
+      setMessage({ type: 'error', content: 'Username must be at least 3 characters long' });
+      return false;
+    }
+
+    // Index number validation
+    const indexRegex = /^\d{6}[A-Z]$/;
+    if (!indexRegex.test(formData.index)) {
+      setMessage({ type: 'error', content: 'Please enter a valid index number (e.g., 200001A)' });
+      return false;
+    }
+
+    return true;
+  };
 
   const changeHandler = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setMessage({ type: '', content: '' });
   };
 
   const signup = async () => {
-    console.log("Signup Function Executed", formData);
+    try {
+      setIsLoading(true);
+      const response = await fetch(`${process.env.REACT_APP_DATABASE_URL}/signup`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    let responseData;
-    await fetch('https://projectbisonbackend.onrender.com/signup', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/form-data',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    }).then((response) => response.json()).then((data) => responseData = data);
+      const data = await response.json();
 
-    if (responseData.success) {
-      setMessage('Signup successful! Please check your email to verify your account.');
-      alert('Please check your email to verify your account. If not check your spam folder.');
-    } else {
-      alert(responseData.errors);
-      setMessage(responseData.errors);
+      if (data.success) {
+        setMessage({
+          type: 'success',
+          content: 'Signup successful! Please check your email to verify your account.'
+        });
+      } else {
+        setMessage({ type: 'error', content: data.message });
+      }
+    } catch (error) {
+      setMessage({ type: 'error', content: 'An error occurred. Please try again later.' });
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // const emailRegex = /^[a-zA-Z0-9._%+-]+@uom\.lk$/;
-    // if (!emailRegex.test(formData.email)) {
-    //   alert('Please enter a valid uom mail address');
-    //   return;
-    // }
-    setMessage('Plase wait while we process your request...');
+    
+    if (!validateForm()) return;
+
     const isFormFilled = Object.entries(formData).every(([key, value]) => {
-      if (key === 'profile_pic') {
-        return true;
-      }
+      if (key === 'profile_pic' || key === 'department') return true;
       return value.trim() !== '';
     });
+
     if (!isFormFilled) {
-      alert('Please fill in all the required fields.');
+      setMessage({ type: 'error', content: 'Please fill in all required fields.' });
       return;
     }
-    signup();
+
+    setMessage({ type: 'info', content: 'Processing your request...' });
+    await signup();
   };
 
   return (
@@ -71,15 +94,37 @@ const Signup = () => {
           <p>Already have an account?</p>
           <p>Login with your personal info</p>
           <div>
-            <button className='switch signup button' onClick={() => window.location.replace("/login")}>Login</button>
+            <button 
+              className='switch signup button' 
+              onClick={() => window.location.href = "/login"}
+              disabled={isLoading}
+            >
+              Login
+            </button>
           </div>
         </div>
         <div className="signup-form">
           <h1>Sign Up</h1>
-          <div className='signup-fields'>
-            <form onSubmit={handleSubmit} className='signup-fields'>
-              <input name='username' value={formData.username} onChange={changeHandler} type='text' placeholder=' Your Name' required />
-              <input name='index' value={formData.index} onChange={changeHandler} type='text' placeholder=' University Index' required />
+          <form onSubmit={handleSubmit} className='signup-fields'>
+            <input
+              name='username'
+              value={formData.username}
+              onChange={changeHandler}
+              type='text'
+              placeholder='Your Full Name'
+              required
+              minLength={3}
+              maxLength={50}
+            />
+            <input
+              name='index'
+              value={formData.index}
+              onChange={changeHandler}
+              type='text'
+              placeholder='University Index (e.g., 200001A)'
+              required
+              pattern="^\d{6}[A-Z]$"
+            />
               <select Name='faculty' value={formData.faculty} onChange={changeHandler} required>
                 <option value=''>Select Faculty</option>
                 <option value='Faculty of Engineering'>Faculty of Engineering</option>
@@ -112,12 +157,32 @@ const Signup = () => {
                 <option value='22'>22</option>
                 <option value='23'>23</option>
               </select>
-              <input name='email' value={formData.email} onChange={changeHandler} type='email' placeholder='Email Address' required />
-              <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder=' Password' required />
-              {message && <p className="message">{message}</p>}
-              <button type="submit">Sign Up</button>
-            </form>
-          </div>
+              <input
+              name='email'
+              value={formData.email}
+              onChange={changeHandler}
+              type='email'
+              placeholder='Email Address'
+              required
+            />
+            <input
+              name='password'
+              value={formData.password}
+              onChange={changeHandler}
+              type="password"
+              placeholder='Password'
+              required
+              minLength={8}
+            />
+            
+            {message.content && (
+              <p className={`message ${message.type}`}>{message.content}</p>
+            )}
+            
+            <button type="submit" disabled={isLoading}>
+              {isLoading ? 'Processing...' : 'Sign Up'}
+            </button>
+          </form>
         </div>
       </div>
     </div>
@@ -125,4 +190,3 @@ const Signup = () => {
 };
 
 export default Signup;
-

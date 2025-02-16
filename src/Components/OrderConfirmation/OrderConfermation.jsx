@@ -38,7 +38,7 @@ const OrderConfermation = () => {
 
     useEffect(() => {
         if(localStorage.getItem('auth-token')){
-            fetch('https://projectbisonbackend.onrender.com/getuser',{
+            fetch(`${process.env.REACT_APP_DATABASE_URL}/getuser`,{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -52,7 +52,7 @@ const OrderConfermation = () => {
 
     useEffect(() => {
         if (localStorage.getItem('auth-token')) {
-            fetch('https://projectbisonbackend.onrender.com/getuserbymail', {
+            fetch(`${process.env.REACT_APP_DATABASE_URL}/getuserbymail`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -66,42 +66,6 @@ const OrderConfermation = () => {
                 .catch((error) => console.error('Error fetching user data:', error));
         }
     }, []);
-
-    // useEffect(() => {
-    //     window.addEventListener('beforeunload', alertUser);
-    //     return () => {
-    //       window.removeEventListener('beforeunload', alertUser);
-    //     };
-    // }, []);
-    
-    // const alertUser = (e) => {
-    //     if (!field1 || !field2 || !field3) {
-    //         e.preventDefault();
-    //         e.returnValue = '';
-    //     }
-    //     // e.preventDefault();
-    //     // e.returnValue = '';
-    // };
-
-    // useEffect(() => {
-    //     // Fetch all product images and store them in state
-    //     const fetchProductImages = async () => {
-    //         const images = {};
-    //         for (const product of all_product) {
-    //             try {
-    //                 const response = await fetch('http://localhost:4000/getProductImage/${product.id}');
-    //                 const data = await response.json();
-    //                 images[product.id] = data.imageUrl;
-    //             } catch (error) {
-    //                 console.error('Failed to fetch image for product ${product.id}:, error');
-    //             }
-    //         }
-    //         setProductImages(images);
-    //     };
-
-    //     fetchProductImages();
-    // }, [all_product]);
-    
 
     const [newFormData,setNewFormData] = useState({
         uder_id:"",//provide email of the user
@@ -132,9 +96,10 @@ const OrderConfermation = () => {
         })
     })
 
-    const imageHandler = (e)=>{
+    const imageHandler = (e) => {
         setImage(e.target.files[0]);
-    }
+        setNewFormData({ ...newFormData, slip_image: e.target.files[0] });
+    };
 
     const changeHandler = (e)=>{
         setNewFormData({...newFormData,[e.target.name]:e.target.value});
@@ -161,7 +126,7 @@ const OrderConfermation = () => {
         let order = newFormData;
 
         let formData = new FormData();
-        formData.append('order', image);
+        formData.append('slip_image', image); // Append the image file to the FormData object
 
         all_product.forEach((product)=>{
             if(currentId === product.id){
@@ -187,7 +152,7 @@ const OrderConfermation = () => {
         if(imgReq ==='Pre-order')
 
         {
-            await fetch('https://projectbisonbackend.onrender.com/slipupload',{
+            await fetch(`${process.env.REACT_APP_DATABASE_URL}/slipupload`,{
             method:'POST',
             headers:{
                 Accept:'application/json',
@@ -205,7 +170,7 @@ const OrderConfermation = () => {
                 order.product_color = cartItems[currentId].color;///////////
                 // removeAllFromCart(currentId);//new-line-has-small-error
                 console.log(order);
-                await fetch('https://projectbisonbackend.onrender.com/orderconfirmation',{
+                await fetch(`${process.env.REACT_APP_DATABASE_URL}/orderconfirmation`,{
                     method:'POST',
                     headers:{
                         Accept:'application/json',
@@ -233,7 +198,7 @@ const OrderConfermation = () => {
                 order.product_color = cartItems[currentId].color;///////////
                 // removeAllFromCart(currentId);//new-line-has-small-error
                 console.log(order);
-                await fetch('https://projectbisonbackend.onrender.com/orderconfirmation',{
+                await fetch(`${process.env.REACT_APP_DATABASE_URL}/orderconfirmation`,{
                     method:'POST',
                     headers:{
                         Accept:'application/json',

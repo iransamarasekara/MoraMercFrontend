@@ -9,7 +9,7 @@ const UniFundRaising = () => {
     const [donators, setDonators] = useState(0);
 
     useEffect(() => {
-        fetch('https://projectbisonbackend.onrender.com/fundraising123').then((response)=>response.json()).then((data)=>{setAmount(data.amount);setDonators(data.donators)});
+        fetch(`${process.env.REACT_APP_DATABASE_URL}/fundraising123`).then((response)=>response.json()).then((data)=>{setAmount(data.amount);setDonators(data.donators)});
     },[])
 
     useEffect(() => {

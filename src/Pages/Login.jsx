@@ -14,7 +14,7 @@ const Login = () => {
   const login = async () => {
     console.log("Login Function Executed", formData);
     let responseData;
-    await fetch('https://projectbisonbackend.onrender.com/login', {
+    await fetch(`${process.env.REACT_APP_DATABASE_URL}/login`, {
       method: 'POST',
       headers: {
         Accept: 'application/form-data',

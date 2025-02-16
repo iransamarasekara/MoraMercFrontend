@@ -2,12 +2,13 @@ import React, { useRef, useEffect } from 'react';
 import './Popular.css';
 import Item from '../Item/Item';
 import { useState} from 'react';
+const databaseUrl = process.env.REACT_APP_DATABASE_URL;
 
 const Popular = () => {
   const [popularProducts, setPopularProducts] = useState([]);
 
   useEffect(() => {
-    fetch('https://projectbisonbackend.onrender.com/popularinmora')
+    fetch(`${databaseUrl}/popularinmora`)
       .then((response) => response.json())
       .then((data) => setPopularProducts(data));
   }, []);

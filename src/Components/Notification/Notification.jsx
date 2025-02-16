@@ -10,7 +10,7 @@ const Notification = () => {
 
     useEffect(() => {
         if (localStorage.getItem('auth-token')) {
-            fetch('https://projectbisonbackend.onrender.com/getuser', {
+            fetch(`${process.env.REACT_APP_DATABASE_URL}/getuser`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -26,7 +26,7 @@ const Notification = () => {
 
     useEffect(() => {
         if (localStorage.getItem('auth-token')) {
-            fetch('https://projectbisonbackend.onrender.com/getordersofuser', {
+            fetch(`${process.env.REACT_APP_DATABASE_URL}/getordersofuser`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',

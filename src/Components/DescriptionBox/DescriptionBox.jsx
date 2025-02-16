@@ -16,7 +16,7 @@ const DescriptionBox = (props) => {
 
   useEffect(() => {
     if (localStorage.getItem('auth-token')) {
-      fetch('https://projectbisonbackend.onrender.com/getuser', {
+      fetch(`${process.env.REACT_APP_DATABASE_URL}/getuser`, {
         method: 'POST',
         headers: {
           Accept: 'application/form-data',
@@ -30,7 +30,7 @@ const DescriptionBox = (props) => {
 
   useEffect(() => {
     if (localStorage.getItem('auth-token')) {
-        fetch('https://projectbisonbackend.onrender.com/getuserbymail', {
+        fetch(`${process.env.REACT_APP_DATABASE_URL}/getuserbymail`, {
             method: 'POST',
             headers: {
                 Accept: 'application/form-data',
@@ -74,7 +74,7 @@ const DescriptionBox = (props) => {
       };
       setAllReviews(prevReviews => [newReview, ...prevReviews]);
       if (localStorage.getItem('auth-token')) {
-        fetch('https://projectbisonbackend.onrender.com/addreview', {
+        fetch(`${process.env.REACT_APP_DATABASE_URL}/addreview`, {
           method: 'POST',
           headers: {
             Accept: 'application/json',
